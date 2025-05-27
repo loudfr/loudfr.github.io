@@ -1,3 +1,10 @@
+fetch("includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        initHeader(); // appelle la fonction d'init après chargement
+      });
+
 document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.querySelector('.cards-container');
     const cards = Array.from(document.querySelectorAll('.card'));

@@ -123,62 +123,53 @@ body {
     margin-bottom: 50px;
 }
 
-/* Modification du conteneur de parcours pour encourager la superposition */
+/* Styles des conteneurs SVG */
 .parcours-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0; /* Suppression de l'espace entre les éléments */
-    max-width: 1000px; /* Réduit légèrement la largeur maximum */
+    gap: 20px; /* Un peu d'espace entre les éléments pour éviter confusion */
+    max-width: 1000px;
     position: relative;
 }
 
 /* Positionnement du premier élément SVG */
 .parcours-item:first-child {
     position: relative;
-    z-index: 2; /* Mettre au-dessus pour la superposition */
-    transform: translateX(40px); /* Décaler vers la droite */
+    z-index: 2;
+    transform: translateX(47px); /* Décalage réduit pour meilleure lisibilité */
 }
 
 /* Positionnement du deuxième élément SVG */
 .parcours-item:last-child {
     position: relative;
     z-index: 1;
-    transform: translateX(-40px); /* Décaler vers la gauche */
-    margin-top: -20px; /* Légère superposition verticale pour plus d'effet */
+    transform: translateX(-47px);
 }
 
 /* Animation subtile au survol pour renforcer l'interaction */
 .parcours-item {
-    transition: transform 0.3s ease, z-index 0s;
+    transition: transform 0.3s ease, z-index 0.2s;
 }
 
 .parcours-item:hover {
-    z-index: 3; /* Mettre au premier plan lors du survol */
-    transform: scale(1.02) translateY(-5px); /* Légèrement agrandir et soulever */
+    z-index: 3;
+    transform: scale(1.03) translateY(-8px);
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.1));
 }
 
-/* Ajuster le parcours-svg pour qu'il reste contenu */
-.parcours-svg {
-    max-width: 100%;
-    height: auto;
+/* Styles pour les textes dans les foreignObject */
+[xmlns="http://www.w3.org/1999/xhtml"] h6 {
+ 
+    color: var(--noir);
+    margin: 5px 0 0 0;
 }
 
-.parcours-an {
-    font-size: 26px;
-    fill: var(--bleu);
+
+foreignObject:nth-of-type(3) div p {
+    margin: 0px;
 }
 
-.parcours-title {
-    font-size: 48px;
-    fill: var(--bleu);
-    font-weight: 800;
-}
-
-.parcours-text {
-    fill: var(--noir);
-    font-size: 14px;
-}
 
 /* Card Navigation Dots */
 .cards-nav {
@@ -207,3 +198,4 @@ body {
 .card.transition {
     transition: transform 0.5s ease, z-index 0s linear 0.25s;
 }
+
