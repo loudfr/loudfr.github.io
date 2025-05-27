@@ -1,0 +1,61 @@
+.be-vietnam-pro-regular {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
+}
+
+.be-vietnam-pro-semibold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
+}
+
+.be-vietnam-pro-extrabold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
+}
+
+.manrope {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --jaune: #FEFFDD;
+  --rose: #FA9DBC;
+  --bleu: #5C8A85;
+  --noir: #0E2F2B;
+}
+
+h1 {
+  font-size: 72px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 3px var(--noir);
+  color: transparent;
+}
+
+h2 {
+  font-size: 48px;
+  text-transform: uppercase;
+
+}
+
+h3 {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}

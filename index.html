@@ -1,7 +1,145 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>Site en Construction</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mon Site Web</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/homepage.css">
+        <script src="js/cards.js"></script>
+    </head>
+
+    <body>
+        <section id="presentation">
+            <h1 class="be-vietnam-pro-extrabold">Bonjour, <br>
+            je m'appelle <span>Louise</span>, <br>
+            et je suis étudiante en informatique</h1>
+        </section>
+
+        <section id="propos">
+            <h1 class="be-vietnam-pro-extrabold">À propos</h1>
+            
+            <div class="cards-container">
+                <div class="card" id="card-info">
+                    <div class="card-content">
+                        <h3 class="be-vietnam-pro-extrabold">Informations</h3>
+                        <ul>
+                            <li>✉️ Email : louise@example.com</li>
+                            <li>📍 Paris, France</li>
+                            <li>🎓 Master en Informatique</li>
+                            <li>💻 Développeuse Full-stack</li>
+                            <li>🔗 <a href="https://github.com/loudfr">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card" id="card-passions">
+                    <div class="card-content">
+                        <h2 class="be-vietnam-pro-extrabold">Passions</h2>
+                        <ul>
+                            <li>🎮 Jeux vidéo</li>
+                            <li>🎨 Design UI/UX</li>
+                            <li>📚 Science-fiction</li>
+                            <li>🏕️ Randonnée</li>
+                            <li>🎧 Musique électronique</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card" id="card-langues">
+                    <div class="card-content">
+                        <h2 class="be-vietnam-pro-extrabold">Langues</h2>
+                        <ul>
+                            <li>🇫🇷 Français - Natif</li>
+                            <li>🇬🇧 Anglais - Courant (C1)</li>
+                            <li>🇪🇸 Espagnol - Intermédiaire (B1)</li>
+                            <li>🇩🇪 Allemand - Notions (A2)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cards-nav">
+                    <span class="nav-dot active" data-index="0"></span>
+                    <span class="nav-dot" data-index="1"></span>
+                    <span class="nav-dot" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="parcours">
+            <h1 class="be-vietnam-pro-extrabold">Mon parcours</h1>
+            <!-- Premier SVG avec texte -->
+            <div class="parcours-container">
+                <div class="parcours-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="339" height="339" viewBox="0 0 339 339" fill="none" class="parcours-svg">
+                        <mask id="path-1-inside-1_46_173" fill="white">
+                            <path d="M339 103.434C339 114.834 325.895 122.53 314.494 122.53C287.425 122.53 265.482 144.474 265.482 171.542C265.482 198.611 287.425 220.554 314.494 220.554C325.895 220.554 339 228.247 339 239.648V299C339 321.091 321.091 339 299 339H40C17.9086 339 0 321.091 0 299V40C0 17.9086 17.9086 0 40 0H299C321.091 0 339 17.9086 339 40V103.434Z"/>
+                        </mask>
+                        <path d="M339 103.434C339 114.834 325.895 122.53 314.494 122.53C287.425 122.53 265.482 144.474 265.482 171.542C265.482 198.611 287.425 220.554 314.494 220.554C325.895 220.554 339 228.247 339 239.648V299C339 321.091 321.091 339 299 339H40C17.9086 339 0 321.091 0 299V40C0 17.9086 17.9086 0 40 0H299C321.091 0 339 17.9086 339 40V103.434Z" fill="#FEFFDD"/>
+                        <g clip-path="url(#paint0_angular_46_173_clip_path)" data-figma-skip-parse="true" mask="url(#path-1-inside-1_46_173)">
+                            <g transform="matrix(0 0.1695 -0.1695 0 169.5 169.5)">
+                                <foreignObject x="-1029.5" y="-1029.5" width="2059" height="2059">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(249, 157, 188, 1) 0deg,rgba(254, 255, 221, 1) 54deg,rgba(249, 157, 188, 1) 360deg);height:100%;width:100%;opacity:1"></div>
+                                </foreignObject>
+                            </g>
+                        </g>
+                        <path d="M314.494 122.53V117.53C284.664 117.53 260.482 141.712 260.482 171.542H265.482H270.482C270.482 147.235 290.187 127.53 314.494 127.53V122.53ZM265.482 171.542H260.482C260.482 201.372 284.664 225.554 314.494 225.554V220.554V215.554C290.187 215.554 270.482 195.849 270.482 171.542H265.482ZM339 239.648H334V299H339H344V239.648H339ZM299 339V334H40V339V344H299V339ZM0 299H5V40H0H-5V299H0ZM40 0V5H299V0V-5H40V0ZM339 40H334V103.434H339H344V40H339ZM299 0V5C318.33 5 334 20.67 334 40H339H344C344 15.1472 323.853 -5 299 -5V0ZM0 40H5C5 20.67 20.67 5 40 5V0V-5C15.1472 -5 -5 15.1472 -5 40H0ZM40 339V334C20.67 334 5 318.33 5 299H0H-5C-5 323.853 15.1472 344 40 344V339ZM314.494 220.554V225.554C319.168 225.554 324.278 227.161 328.122 229.898C331.95 232.625 334 236.042 334 239.648H339H344C344 231.852 339.497 225.723 333.923 221.753C328.364 217.794 321.221 215.554 314.494 215.554V220.554ZM339 299H334C334 318.33 318.33 334 299 334V339V344C323.853 344 344 323.853 344 299H339ZM314.494 122.53V127.53C321.221 127.53 328.364 125.29 333.923 121.33C339.497 117.359 344 111.229 344 103.434H339H334C334 107.039 331.95 110.457 328.121 113.185C324.278 115.923 319.168 117.53 314.494 117.53V122.53Z" data-figma-gradient-fill="{&quot;type&quot;:&quot;GRADIENT_ANGULAR&quot;,&quot;stops&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.86666667461395264,&quot;a&quot;:1.0},&quot;position&quot;:0.15000000596046448},{&quot;color&quot;:{&quot;r&quot;:0.97980779409408569,&quot;g&quot;:0.61709046363830566,&quot;b&quot;:0.73799622058868408,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;stopsVar&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.86666667461395264,&quot;a&quot;:1.0},&quot;position&quot;:0.15000000596046448},{&quot;color&quot;:{&quot;r&quot;:0.97980779409408569,&quot;g&quot;:0.61709046363830566,&quot;b&quot;:0.73799622058868408,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;transform&quot;:{&quot;m00&quot;:2.0757763793976571e-14,&quot;m01&quot;:-339.0,&quot;m02&quot;:339.0,&quot;m10&quot;:339.0,&quot;m11&quot;:2.0757763793976571e-14,&quot;m12&quot;:3.0109248427834245e-13},&quot;opacity&quot;:1.0,&quot;blendMode&quot;:&quot;NORMAL&quot;,&quot;visible&quot;:true}" mask="url(#path-1-inside-1_46_173)"/>
+                        
+                        <!-- Texte ajouté à l'intérieur du SVG -->
+                        <text x="50" y="80" class="parcours-title be-vietnam-pro-extrabold">LYCEE</text>
+                        <text x="50" y="120" class="parcours-an be-vietnam-pro-semibold">2023</text>
+                        <text x="50" y="120" class="parcours-text be-vietnam-pro-semibold">
+                            <tspan x="50" dy="30">BACCALAUREAT GENERAL</tspan>
+                            <tspan x="50" dy="30">Avec mention</tspan>
+                            <tspan x="50" dy="30">SPECIALITES</tspan>
+                            <tspan x="50" dy="30">Mathématiques et Sciences de la vie de de la Terre</tspan>
+                            <tspan x="50" dy="30">OPTION</tspan>
+                            <tspan x="50" dy="30">Mathématiques expertes</tspan>
+                        </text>
+                        
+                        <defs>
+                            <clipPath id="paint0_angular_46_173_clip_path">
+                                <path d="M314.494 122.53V117.53C284.664 117.53 260.482 141.712 260.482 171.542H265.482H270.482C270.482 147.235 290.187 127.53 314.494 127.53V122.53ZM265.482 171.542H260.482C260.482 201.372 284.664 225.554 314.494 225.554V220.554V215.554C290.187 215.554 270.482 195.849 270.482 171.542H265.482ZM339 239.648H334V299H339H344V239.648H339ZM299 339V334H40V339V344H299V339ZM0 299H5V40H0H-5V299H0ZM40 0V5H299V0V-5H40V0ZM339 40H334V103.434H339H344V40H339ZM299 0V5C318.33 5 334 20.67 334 40H339H344C344 15.1472 323.853 -5 299 -5V0ZM0 40H5C5 20.67 20.67 5 40 5V0V-5C15.1472 -5 -5 15.1472 -5 40H0ZM40 339V334C20.67 334 5 318.33 5 299H0H-5C-5 323.853 15.1472 344 40 344V339ZM314.494 220.554V225.554C319.168 225.554 324.278 227.161 328.122 229.898C331.95 232.625 334 236.042 334 239.648H339H344C344 231.852 339.497 225.723 333.923 221.753C328.364 217.794 321.221 215.554 314.494 215.554V220.554ZM339 299H334C334 318.33 318.33 334 299 334V339V344C323.853 344 344 323.853 344 299H339ZM314.494 122.53V127.53C321.221 127.53 328.364 125.29 333.923 121.33C339.497 117.359 344 111.229 344 103.434H339H334C334 107.039 331.95 110.457 328.121 113.185C324.278 115.923 319.168 117.53 314.494 117.53V122.53Z" mask="url(#path-1-inside-1_46_173)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+        
+                <!-- Deuxième SVG avec texte -->
+                <div class="parcours-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="413" height="339" viewBox="0 0 413 339" fill="none" class="parcours-svg">
+                        <mask id="path-1-inside-1_46_172" fill="white">
+                            <path d="M413 299C413 321.091 395.091 339 373 339H113.604C91.5125 339 73.604 321.091 73.604 299V239.675C73.604 228.259 60.4857 220.554 49.0693 220.554C21.9691 220.554 0 198.611 0 171.542C0 144.474 21.9691 122.53 49.0693 122.53C60.4854 122.53 73.604 114.822 73.604 103.406V40C73.604 17.9086 91.5126 0 113.604 0H373C395.091 0 413 17.9086 413 40V299Z"/>
+                        </mask>
+                        <path d="M413 299C413 321.091 395.091 339 373 339H113.604C91.5125 339 73.604 321.091 73.604 299V239.675C73.604 228.259 60.4857 220.554 49.0693 220.554C21.9691 220.554 0 198.611 0 171.542C0 144.474 21.9691 122.53 49.0693 122.53C60.4854 122.53 73.604 114.822 73.604 103.406V40C73.604 17.9086 91.5126 0 113.604 0H373C395.091 0 413 17.9086 413 40V299Z" fill="#FEFFDD"/>
+                        <g clip-path="url(#paint0_angular_46_172_clip_path)" data-figma-skip-parse="true" mask="url(#path-1-inside-1_46_172)">
+                            <g transform="matrix(0 0.1695 -0.2065 0 206.5 169.5)">
+                                <foreignObject x="-1029.5" y="-1029.5" width="2059" height="2059">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(249, 157, 188, 1) 0deg,rgba(254, 255, 221, 1) 54deg,rgba(249, 157, 188, 1) 360deg);height:100%;width:100%;opacity:1"></div>
+                                </foreignObject>
+                            </g>
+                        </g>
+                        <path d="M373 339V334H113.604V339V344H373V339ZM73.604 299H78.604V239.675H73.604H68.604V299H73.604ZM49.0693 220.554V215.554C24.725 215.554 5 195.844 5 171.542H0H-5C-5 201.378 19.2132 225.554 49.0693 225.554V220.554ZM0 171.542H5C5 147.24 24.725 127.53 49.0693 127.53V122.53V117.53C19.2132 117.53 -5 141.707 -5 171.542H0ZM73.604 103.406H78.604V40H73.604H68.604V103.406H73.604ZM113.604 0V5H373V0V-5H113.604V0ZM413 40H408V299H413H418V40H413ZM373 0V5C392.33 5 408 20.67 408 40H413H418C418 15.1472 397.853 -5 373 -5V0ZM73.604 40H78.604C78.604 20.67 94.274 5 113.604 5V0V-5C88.7511 -5 68.604 15.1472 68.604 40H73.604ZM73.604 239.675H78.604C78.604 231.873 74.0988 225.737 68.519 221.761C62.9544 217.797 55.804 215.554 49.0693 215.554V220.554V225.554C53.751 225.554 58.8679 227.164 62.7165 229.906C66.55 232.637 68.604 236.061 68.604 239.675H73.604ZM49.0693 122.53V127.53C55.8044 127.53 62.9549 125.286 68.5193 121.321C74.0989 117.345 78.604 111.208 78.604 103.406H73.604H68.604C68.604 107.02 66.5498 110.445 62.716 113.177C58.8672 115.92 53.7504 117.53 49.0693 117.53V122.53ZM113.604 339V334C94.274 334 78.604 318.33 78.604 299H73.604H68.604C68.604 323.853 88.7511 344 113.604 344V339ZM373 339V344C397.853 344 418 323.853 418 299H413H408C408 318.33 392.33 334 373 334V339Z" data-figma-gradient-fill="{&quot;type&quot;:&quot;GRADIENT_ANGULAR&quot;,&quot;stops&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.86666667461395264,&quot;a&quot;:1.0},&quot;position&quot;:0.15000000596046448},{&quot;color&quot;:{&quot;r&quot;:0.97980779409408569,&quot;g&quot;:0.61709046363830566,&quot;b&quot;:0.73799622058868408,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;stopsVar&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.86666667461395264,&quot;a&quot;:1.0},&quot;position&quot;:0.15000000596046448},{&quot;color&quot;:{&quot;r&quot;:0.97980779409408569,&quot;g&quot;:0.61709046363830566,&quot;b&quot;:0.73799622058868408,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;transform&quot;:{&quot;m00&quot;:2.5288958074983978e-14,&quot;m01&quot;:-413.0,&quot;m02&quot;:413.0,&quot;m10&quot;:339.0,&quot;m11&quot;:2.0757763793976571e-14,&quot;m12&quot;:-2.0757763793976571e-14},&quot;opacity&quot;:1.0,&quot;blendMode&quot;:&quot;NORMAL&quot;,&quot;visible&quot;:true}" mask="url(#path-1-inside-1_46_172)"/>
+                        
+                        <!-- Texte ajouté à l'intérieur du SVG -->
+                        <text x="50" y="80" class="parcours-title be-vietnam-pro-extrabold">SUPERIEUR</text>
+                        <text x="50" y="120" class="parcours-an be-vietnam-pro-semibold">2026</text>
+                        <text x="50" y="120" class="parcours-text be-vietnam-pro-semibold">
+                            <tspan x="50" dy="30">BUT INFORMATIQUE (BAC +3)</tspan>
+                            <tspan x="50" dy="30">Parcours réalisation d'applications : conception, développement, validation</tspan>
+                        </text>
+                        
+                        <defs>
+                            <clipPath id="paint0_angular_46_172_clip_path">
+                                <path d="M373 339V334H113.604V339V344H373V339ZM73.604 299H78.604V239.675H73.604H68.604V299H73.604ZM49.0693 220.554V215.554C24.725 215.554 5 195.844 5 171.542H0H-5C-5 201.378 19.2132 225.554 49.0693 225.554V220.554ZM0 171.542H5C5 147.24 24.725 127.53 49.0693 127.53V122.53V117.53C19.2132 117.53 -5 141.707 -5 171.542H0ZM73.604 103.406H78.604V40H73.604H68.604V103.406H73.604ZM113.604 0V5H373V0V-5H113.604V0ZM413 40H408V299H413H418V40H413ZM373 0V5C392.33 5 408 20.67 408 40H413H418C418 15.1472 397.853 -5 373 -5V0ZM73.604 40H78.604C78.604 20.67 94.274 5 113.604 5V0V-5C88.7511 -5 68.604 15.1472 68.604 40H73.604ZM73.604 239.675H78.604C78.604 231.873 74.0988 225.737 68.519 221.761C62.9544 217.797 55.804 215.554 49.0693 215.554V220.554V225.554C53.751 225.554 58.8679 227.164 62.7165 229.906C66.55 232.637 68.604 236.061 68.604 239.675H73.604ZM49.0693 122.53V127.53C55.8044 127.53 62.9549 125.286 68.5193 121.321C74.0989 117.345 78.604 111.208 78.604 103.406H73.604H68.604C68.604 107.02 66.5498 110.445 62.716 113.177C58.8672 115.92 53.7504 117.53 49.0693 117.53V122.53ZM113.604 339V334C94.274 334 78.604 318.33 78.604 299H73.604H68.604C68.604 323.853 88.7511 344 113.604 344V339ZM373 339V344C397.853 344 418 323.853 418 299H413H408C408 318.33 392.33 334 373 334V339Z" mask="url(#path-1-inside-1_46_172)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>

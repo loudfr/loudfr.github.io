@@ -1,0 +1,209 @@
+body {
+    background-color: var(--jaune);
+    margin: 0px;
+}
+
+#presentation {
+    background: radial-gradient(50% 50% at 50% 50%, var(--rose, #FA9DBC) 40%, var(--jaune, #FEFFDD) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 155px;
+}
+
+#presentation h1 {
+    -webkit-text-stroke: 3px var(--jaune);
+}
+
+#presentation span {
+    color: var(--jaune);
+}
+
+#propos {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#propos h1 {
+    -webkit-text-stroke: 3px var(--bleu);
+}
+
+/* Cards Container */
+.cards-container {
+    position: relative;
+    width: 85%;
+    max-width: 1000px;
+    height: 350px;
+    margin: 40px auto;
+    perspective: 1000px;
+    user-select: none;
+}
+
+/* Card Styling */
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: grab; /* Indique que l'élément est "attrapable" */
+    transition: transform 0.5s ease, box-shadow 0.3s;
+    transform-origin: center;
+    touch-action: none; /* Important pour les appareils tactiles */
+}
+
+.card:active {
+    cursor: grabbing; /* Change le curseur quand on "attrape" */
+}
+
+.card-content {
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 5px;
+    margin-top: 0;
+}
+
+.card li {
+    margin: 16px 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+
+#card-info {
+    background-color: var(--bleu);
+    color: var(--jaune);
+    z-index: 3;
+}
+
+#card-passions {
+    background-color: var(--noir);
+    color: var(--jaune);
+    z-index: 2;
+}
+
+#card-langues {
+    background-color: var(--rose);
+    color: var(--noir);
+    z-index: 1;
+}
+
+/* Styles pour la section parcours */
+#parcours {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#parcours h1 {
+    -webkit-text-stroke: 3px var(--bleu);
+    margin-bottom: 50px;
+}
+
+/* Modification du conteneur de parcours pour encourager la superposition */
+.parcours-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0; /* Suppression de l'espace entre les éléments */
+    max-width: 1000px; /* Réduit légèrement la largeur maximum */
+    position: relative;
+}
+
+/* Positionnement du premier élément SVG */
+.parcours-item:first-child {
+    position: relative;
+    z-index: 2; /* Mettre au-dessus pour la superposition */
+    transform: translateX(40px); /* Décaler vers la droite */
+}
+
+/* Positionnement du deuxième élément SVG */
+.parcours-item:last-child {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-40px); /* Décaler vers la gauche */
+    margin-top: -20px; /* Légère superposition verticale pour plus d'effet */
+}
+
+/* Animation subtile au survol pour renforcer l'interaction */
+.parcours-item {
+    transition: transform 0.3s ease, z-index 0s;
+}
+
+.parcours-item:hover {
+    z-index: 3; /* Mettre au premier plan lors du survol */
+    transform: scale(1.02) translateY(-5px); /* Légèrement agrandir et soulever */
+}
+
+/* Ajuster le parcours-svg pour qu'il reste contenu */
+.parcours-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.parcours-an {
+    font-size: 26px;
+    fill: var(--bleu);
+}
+
+.parcours-title {
+    font-size: 48px;
+    fill: var(--bleu);
+    font-weight: 800;
+}
+
+.parcours-text {
+    fill: var(--noir);
+    font-size: 14px;
+}
+
+/* Card Navigation Dots */
+.cards-nav {
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bleu);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-dot.active {
+    background: var(--noir);
+}
+
+/* Card Animation States */
+.card.transition {
+    transition: transform 0.5s ease, z-index 0s linear 0.25s;
+}
