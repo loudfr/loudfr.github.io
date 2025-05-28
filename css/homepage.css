@@ -20,6 +20,16 @@ body {
     color: var(--jaune);
 }
 
+@media (max-width: 768px) {
+    #presentation {
+        padding: 100px 20px;
+    }
+
+    #presentation h1 {
+        -webkit-text-stroke: 2px var(--jaune);
+    }
+}
+
 #propos {
     padding: 100px 50px;
     display: flex;
@@ -81,7 +91,6 @@ body {
 
 .card li {
     margin: 16px 0;
-    font-family: 'Manrope', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -109,67 +118,6 @@ body {
     color: var(--noir);
     z-index: 1;
 }
-
-/* Styles pour la section parcours */
-#parcours {
-    padding: 100px 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#parcours h1 {
-    -webkit-text-stroke: 3px var(--bleu);
-    margin-bottom: 50px;
-}
-
-/* Styles des conteneurs SVG */
-.parcours-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Un peu d'espace entre les éléments pour éviter confusion */
-    max-width: 1000px;
-    position: relative;
-}
-
-/* Positionnement du premier élément SVG */
-.parcours-item:first-child {
-    position: relative;
-    z-index: 2;
-    transform: translateX(47px); /* Décalage réduit pour meilleure lisibilité */
-}
-
-/* Positionnement du deuxième élément SVG */
-.parcours-item:last-child {
-    position: relative;
-    z-index: 1;
-    transform: translateX(-47px);
-}
-
-/* Animation subtile au survol pour renforcer l'interaction */
-.parcours-item {
-    transition: transform 0.3s ease, z-index 0.2s;
-}
-
-.parcours-item:hover {
-    z-index: 3;
-    transform: scale(1.03) translateY(-8px);
-    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.1));
-}
-
-/* Styles pour les textes dans les foreignObject */
-[xmlns="http://www.w3.org/1999/xhtml"] h6 {
- 
-    color: var(--noir);
-    margin: 5px 0 0 0;
-}
-
-
-foreignObject:nth-of-type(3) div p {
-    margin: 0px;
-}
-
 
 /* Card Navigation Dots */
 .cards-nav {
@@ -199,3 +147,145 @@ foreignObject:nth-of-type(3) div p {
     transition: transform 0.5s ease, z-index 0s linear 0.25s;
 }
 
+@media (max-width: 768px) {
+    #propos h1 {
+        -webkit-text-stroke: 2px var(--bleu);
+    }
+
+    #propos {
+        padding: 50px 50px;
+    }
+}
+
+/* Styles pour la section parcours */
+#parcours {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#parcours h1 {
+    -webkit-text-stroke: 3px var(--bleu);
+}
+
+#parcours h3 {
+    margin-bottom: 0;
+    color: var(--bleu);
+}
+#parcours h4 {
+    margin: 0 0 20px;
+    color: var(--bleu);
+
+}
+#parcours h6 {
+    margin: 10px 0 0;
+}
+#parcours p {
+    margin: 0;
+}
+
+/* Styles des conteneurs SVG */
+.parcours-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: -10px; /* Un peu d'espace entre les éléments pour éviter confusion */
+    max-width: 1000px;
+    position: relative;
+}
+
+.parcours-item:first-child {
+    margin-right: -37px; /* Rapproche vers la droite */
+}
+
+.parcours-item:last-child {
+    margin-left: -37px; /* Rapproche vers la gauche */
+}
+
+.parcours-text {
+    display: none; /* Hide the original separate text section */
+}
+
+.parcours-item-text {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 260px;
+    z-index: 10;
+    pointer-events: none; /* Allows clicks to pass through to the SVG element */
+}
+
+
+
+/* Position first text element (left SVG) */
+.parcours-item:first-child .parcours-item-text {
+    top: 0;
+    left: 40px;
+}
+
+/* Position second text element (right SVG) */
+.parcours-item:last-child .parcours-item-text {
+    top: 0;
+    left: 380px; /* Adjusted for the different SVG width */
+}
+
+
+
+@media (max-width: 768px) {
+    #parcours h1 {
+        -webkit-text-stroke: 2px var(--bleu);
+        text-align: center;
+    }
+
+    /* For mobile, stack items vertically */
+    .parcours-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding-top: 50px;
+    }
+
+    /* Reset margins for mobile */
+    .parcours-item:first-child {
+        margin: 0;
+    }
+    .parcours-item:last-child {
+        margin: -36px 0 0;
+    }
+
+    /* Rotate SVGs 90 degrees on mobile */
+    .parcours-svg {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
+
+    /* Keep text in original orientation and adjust positioning */
+    .parcours-item-text {
+        position: absolute;
+        width: 250px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+    }
+
+    /* Reset specific positioning for both items on mobile */
+    .parcours-item:first-child .parcours-item-text,
+    .parcours-item:last-child .parcours-item-text {
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Adjust parcours item container for mobile */
+    .parcours-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+}
