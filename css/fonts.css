@@ -35,12 +35,12 @@ h1 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
-    -webkit-text-stroke: 1px var(--noir);
+    font-size: 36px !important;
+    -webkit-text-stroke: 1px var(--noir) !important;
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 32px !important;
   }
 
   h3 {
