@@ -248,7 +248,13 @@ a {
     transition: all 0.3s ease;
 }
 
-a:hover {
+/* Regular links hover effect - excluding navigation elements */
+#AC1 a:hover, 
+#AC2 a:hover, 
+#AC3 a:hover, 
+#AC4 a:hover, 
+#conclusion a:hover, 
+#auto-evaluation a:hover {
     transition: all 0.3s ease;
     color: var(--rose);
     font-style: italic;
