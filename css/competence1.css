@@ -31,7 +31,6 @@ body {
     color: var(--bleu);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
     border-radius: 20px;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -48,6 +47,123 @@ body {
     background-color: var(--bleu);
 }
 
+/* Menu déroulant mobile */
+.mobile-sections-dropdown {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bleu);
+    color: var(--jaune);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.dropdown-trigger:hover {
+    background-color: var(--noir);
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-trigger.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--jaune);
+    border: 2px solid var(--bleu);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu .section-link {
+    display: block;
+    padding: 15px 20px;
+    color: var(--bleu);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 0;
+    white-space: normal;
+}
+
+.dropdown-menu .section-link:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.dropdown-menu .section-link:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.dropdown-menu .section-link:hover {
+    background-color: var(--bleu);
+    color: var(--jaune);
+    padding-left: 25px;
+}
+
+.dropdown-menu .section-link.active {
+    background-color: var(--rose);
+    color: var(--jaune);
+}
+
+@media (max-width: 768px) {
+    .sections-nav {
+        display: none;
+    }
+    
+    .mobile-sections-dropdown {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-sections-dropdown {
+        max-width: 280px;
+        margin: 15px auto;
+    }
+    
+    .dropdown-trigger {
+        padding: 12px 15px;
+    }
+    
+    .dropdown-menu .section-link {
+        padding: 12px 15px;
+    }
+}
+
 #competence-hero {
     text-align: center;
     padding: 120px 0 50px;
@@ -59,7 +175,7 @@ body {
     color: transparent;
 }
 
-#competence-hero h2 {
+#competence-hero h3 {
     color: var(--bleu);
     margin: 20px 0;
 }
@@ -81,12 +197,10 @@ body {
 
 section[id^="AC"] h3 {
     color: var(--bleu);
-    font-size: 1.8rem;
     margin: 0 0 25px;
 }
 
 section[id^="AC"] p {
-    font-size: 1.1rem;
     color: var(--noir);
     margin-bottom: 20px;
 }
@@ -98,7 +212,6 @@ section[id^="AC"] ul {
 
 section[id^="AC"] li {
     margin-bottom: 8px;
-    font-size: 1.05rem;
     color: var(--noir);
 }
 
@@ -123,7 +236,6 @@ section[id^="AC"] li {
 figcaption {
     margin-top: 15px;
     color: var(--noir);
-    font-size: 0.95rem;
     font-style: italic;
 }
 
@@ -207,12 +319,10 @@ a {
 
 #auto-evaluation h3, #conclusion h3 {
     color: var(--bleu);
-    font-size: 1.8rem;
     margin: 0 0 25px;
 }
 
 #auto-evaluation p, #conclusion p {
-    font-size: 1.1rem;
     color: var(--noir);
     margin-bottom: 20px;
 }
@@ -232,7 +342,6 @@ a {
 
 #conclusion li {
     margin-bottom: 8px;
-    font-size: 1.05rem;
     color: var(--noir);
 }
 
@@ -300,12 +409,10 @@ a {
 }
 
 .modal-title {
-    font-size: 1.2rem;
     font-weight: bold;
 }
 
 .close {
-    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
     line-height: 1;
@@ -358,7 +465,6 @@ a {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
-    font-size: 30px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -416,7 +522,6 @@ a {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
     font-weight: bold;
     transition: all 0.3s ease;
     opacity: 0;
@@ -449,26 +554,16 @@ a {
     }
     
     #competence-hero h1 {
-        font-size: 2.5rem;
-        -webkit-text-stroke: 2px var(--bleu);
-    }
-    
-    #competence-hero h2 {
-        font-size: 1.5rem;
+        -webkit-text-stroke: 1px var(--bleu) !important;
     }
     
     .competence-description {
-        font-size: 1rem;
         padding: 0 15px;
     }
     
     section[id^="AC"] {
         margin: 20px 15px;
         padding: 25px;
-    }
-    
-    section[id^="AC"] h3 {
-        font-size: 1.5rem;
     }
     
     .project-image {
@@ -487,7 +582,12 @@ a {
     }
 
     .tableau-evaluation {
-        font-size: 0.9rem;
+        margin: 20px 0;
+        padding: 0 5px;
+    }
+    
+    .tableau-evaluation table {
+        min-width: 500px;
     }
     
     .tableau-evaluation th,
@@ -495,12 +595,21 @@ a {
         padding: 8px 4px;
     }
     
-    .tableau-evaluation table {
-        border-width: 4px;
+    .tableau-evaluation th {
+        line-height: 1.2;
+    }
+    
+    .tableau-evaluation td:first-child {
+        max-width: 150px;
+        line-height: 1.3;
+    }
+
+    .tableau-evaluation td:not(:first-child) {
+        width: 60px;
+        min-width: 60px;
     }
 
     #auto-evaluation, #conclusion {
-        margin: 20px 15px;
         padding: 25px;
     }
 
@@ -514,14 +623,9 @@ a {
         padding: 10px 15px;
     }
     
-    .modal-title {
-        font-size: 1rem;
-    }
-    
     .nav-btn {
         width: 40px;
         height: 40px;
-        font-size: 24px;
     }
     
     .zoom-controls {
@@ -532,7 +636,6 @@ a {
     
     .zoom-btn {
         padding: 6px 12px;
-        font-size: 14px;
     }
 
     .scroll-to-top {
@@ -540,7 +643,6 @@ a {
         right: 20px;
         width: 45px;
         height: 45px;
-        font-size: 18px;
     }
 
     .sections-nav {
@@ -558,12 +660,82 @@ a {
     
     .section-link {
         padding: 10px 16px;
-        font-size: 0.9rem;
         min-width: fit-content;
     }
     
     #AC1, #AC2, #AC3, #AC4, #conclusion, #auto-evaluation {
         scroll-margin-top: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .tableau-evaluation::after {
+        content: "*I = Insuffisant, B = Bien, TB = Très bien, E = Excellent";
+    }
+    .tableau-evaluation {
+
+        font-size: 0.75rem;
+        margin: 15px 0;
+        padding: 0;
+    }
+    
+    .tableau-evaluation table {
+        min-width: 350px; /* Réduit la largeur minimale */
+    }
+    
+    .tableau-evaluation th,
+    .tableau-evaluation td {
+        padding: 6px 3px;
+        font-size: 0.75rem;
+    }
+    
+    .tableau-evaluation th {
+        font-size: 0.7rem;
+        line-height: 1.1;
+    }
+    
+    /* Masquer le texte complet des en-têtes sur mobile */
+    .tableau-evaluation th:nth-child(2)::after {
+        content: "I";
+    }
+    .tableau-evaluation th:nth-child(3)::after {
+        content: "B";
+    }
+    .tableau-evaluation th:nth-child(4)::after {
+        content: "TB";
+    }
+    .tableau-evaluation th:nth-child(5)::after {
+        content: "E";
+    }
+    
+    .tableau-evaluation th:nth-child(2),
+    .tableau-evaluation th:nth-child(3),
+    .tableau-evaluation th:nth-child(4),
+    .tableau-evaluation th:nth-child(5) {
+        font-size: 0;
+        width: 40px;
+        min-width: 40px;
+    }
+    
+    .tableau-evaluation th:nth-child(2)::after,
+    .tableau-evaluation th:nth-child(3)::after,
+    .tableau-evaluation th:nth-child(4)::after,
+    .tableau-evaluation th:nth-child(5)::after {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    
+    .tableau-evaluation td:first-child {
+        max-width: 120px;
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .tableau-evaluation td:not(:first-child) {
+        width: 40px;
+        min-width: 40px;
+        font-size: 0.9rem;
     }
 }
 
@@ -574,19 +746,6 @@ a {
     
     .section-link {
         padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-    
-    #competence-hero h1 {
-        font-size: 2rem;
-    }
-    
-    section[id^="AC"] {
-        padding: 20px;
-    }
-    
-    section[id^="AC"] p {
-        font-size: 1rem;
     }
     
     .project-image {

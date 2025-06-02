@@ -20,12 +20,13 @@
     </button>
         <section id="competence-hero">
             <h1>Compétence 1</h1>
-            <h2>Réaliser un développement d'application</h2>
+            <h3>Réaliser un développement d'application</h3>
             <p class="competence-description">
                 Développer des applications informatiques simples en respectant les bonnes pratiques de programmation.
             </p>
         </section>
 
+        <!-- Menu desktop -->
         <div class="sections-nav">
             <div class="sections-hover-bg"></div>
             <a href="#AC1" class="section-link">AC1</a>
@@ -36,6 +37,21 @@
             <a href="#conclusion" class="section-link">Conclusion</a>
         </div>
 
+        <!-- Menu mobile déroulant -->
+        <div class="mobile-sections-dropdown">
+            <button class="dropdown-trigger" id="dropdownTrigger">
+                <span id="currentSection">Sections</span>
+                <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#AC1" class="section-link mobile-section-link">AC1 - Spécifications fonctionnelles</a>
+                <a href="#AC2" class="section-link mobile-section-link">AC2 - Accessibilité et ergonomie</a>
+                <a href="#AC3" class="section-link mobile-section-link">AC3 - Bonnes pratiques</a>
+                <a href="#AC4" class="section-link mobile-section-link">AC4 - Tests et validation</a>
+                <a href="#auto-evaluation" class="section-link mobile-section-link">Auto-évaluation</a>
+                <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
+            </div>
+        </div>
 
         <section id="AC1">
             <h3 class="section-toggle">
