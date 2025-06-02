@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louise - Compétence 1</title>
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/competence1.css">
+    <script src="../../js/header.js"></script>
+    <script src="../../js/portfolio.js"></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <button id="scrollToTop" class="scroll-to-top" title="Retour en haut">
+        <span class="arrow-up">↑</span>
+    </button>
+        <section id="competence-hero">
+            <h1>Compétence 1</h1>
+            <h2>Réaliser un développement d'application</h2>
+            <p class="competence-description">
+                Développer des applications informatiques simples en respectant les bonnes pratiques de programmation.
+            </p>
+        </section>
+
+        <div class="sections-nav">
+            <div class="sections-hover-bg"></div>
+            <a href="#AC1" class="section-link">AC1</a>
+            <a href="#AC2" class="section-link">AC2</a>
+            <a href="#AC3" class="section-link">AC3</a>
+            <a href="#AC4" class="section-link">AC4</a>
+            <a href="#auto-evaluation" class="section-link">Auto-évaluation</a>
+            <a href="#conclusion" class="section-link">Conclusion</a>
+        </div>
+
+
+        <section id="AC1">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                AC1 - Élaborer et implémenter des spécifications fonctionnelles et non fonctionnelles
+            </h3>
+            <div class="section-content">
+                <p>
+                    J'ai appris à analyser et à rédiger un cahier des charges, puis à transformer ces spécifications en code, en respectant les bonnes pratiques de développement. <br><br>
+                    Durant le premier semestre, nous avons dû réaliser un site web en HTML, CSS, PHP pour une association sportive, avec certaines fonctionnalités codées en Java (<a href="https://gitlab.univ-lorraine.fr/e9267u/rapidos" target="_blank">voir le projet</a>). Ce projet nécessitait la rédaction d'un cahier des charges fonctionnel comportant une étude des concurrents, une analyse fonctionnelle, la liste des fonctionnalités à développer, une estimation du budget, ainsi qu'une organisation du travail avec Trello (<a href="https://trello.com/b/sDhsLzTb/louise-leanne-course-a-pied" target="_blank">voir le Trello</a>), ce qui nous a vraiment permis d'avoir une bonne organisation claire du travail à prévoir et un planning prévisionnel comme le Gantt ci-dessous qui présente une vue globale du projet.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/gantt.png" alt="Cahier des charges du projet" class="project-image clickable-image" data-title="Gantt représentant le planning">
+                    <figcaption>Gantt représentant le planning</figcaption>
+                </div>
+                <p>
+                    Nous avons également produit un cahier des charges technique, intégrant un benchmark des solutions concurrentes, des considérations marketing, une conception graphique (ci dessous la charte graphique (sans les polices) que nous avions fourni) et des choix technologiques adaptés aux contraintes du projet.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/logo_rapidos.png" alt="Logo Rapidos" class="project-image logo_rapidos clickable-image" data-title="Logo Rapidos">
+                    <img src="../../imgs/chartegraphique.png" alt="Charte graphique Rapidos" class="project-image clickable-image" data-title="Charte graphique du site">
+                    <figcaption>Charte graphique du site</figcaption>
+                </div>
+                <p>
+                    Au second semestre, nous avons travaillé sur un autre projet qui consistait à corriger et améliorer la SAE précédente réalisée par un autre groupe. Là encore, un cahier des charges clair et structuré était nécessaire. Il incluait le contexte et les objectifs du projet, son périmètre, les contraintes techniques, l'organisation du travail en équipe, les livrables attendus, ainsi que le planning et les délais. Ce document s'est révélé indispensable pour bien se répartir les tâches, harmoniser les contributions de chacun, et garder un fil conducteur tout au long du développement.
+                </p>
+            </div>
+        </section>
+
+        <section id="AC2">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                AC2 - Appliquer des principes d'accessibilité et d'ergonomie
+            </h3>
+            <div class="section-content">
+                <p> 
+                    Dans les projets comprenant une interface graphique (interfaces web et IHM en Java), j'ai appris à prendre en compte les principes d'ergonomie et d'accessibilité afin d'améliorer l'expérience utilisateur. Mon objectif a toujours été de concevoir des interfaces claires, intuitives et facilement compréhensibles par tous, quel que soit le niveau d'expérience ou les éventuelles limitations de l'utilisateur.<br><br>
+
+                    Par exemple, dans un projet réalisé en Java avec une base de données MySQL (<a href="https://github.com/loudfr/java_sql_vols" target="_blank">voir le projet</a>), j'ai conçu une interface graphique permettant d'afficher les vols disponibles en fonction de critères de recherche (ville de départ, ville d'arrivée). L'interface proposait des filtres supplémentaires et une navigation fluide afin de s'adapter aux besoins de tous les utilisateurs. J'ai veillé à respecter les bonnes pratiques : tailles de police lisibles, contraste suffisant, disposition logique des éléments et messages d'erreur clairs.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/voljavasql.png" alt="Interface Java SQL" class="project-image clickable-image" data-title="Interface de gestion des vols">
+                    <figcaption>Interface de gestion des vols</figcaption>
+                </div>
+                <p>
+                    J'ai également travaillé sur une interface web interactive développée avec WebGL (<a href="https://gitlab.univ-lorraine.fr/villard5/webgl25/-/tree/main/DUFOUR?ref_type=heads" target="_blank">voir le projet</a>), dans le cadre d'un projet de modélisation 3D de la chambre de Van Gogh. L'application permettait à l'utilisateur d'interagir avec l'environnement, par exemple en ajustant la grille d'affichage via une console intégrée ou en modifiant l'éclairage. L'ensemble de ces fonctionnalités a été pensé pour offrir une expérience immersive, fluide et accessible, tout en facilitant la compréhension de l'espace 3D et la navigation.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/chambregl.png" alt="Modélisation 3D WebGL" class="project-image clickable-image" data-title="Chambre de Van Gogh en WebGL">
+                    <figcaption>Chambre de Van Gogh en WebGL</figcaption>
+                </div>
+                <p>
+                    Dans chacun de ces projets, j'ai intégré des notions fondamentales comme :
+
+                    <ul>
+                        <li>L'organisation logique et hiérarchisée des éléments visuels,</li>
+                        <li>La prise en compte des contrastes et des couleurs pour les personnes malvoyantes,</li>
+                        <li>La clarté des messages et des feedbacks utilisateur,</li>
+                        <li>Et une navigation cohérente, que ce soit via clavier, souris ou tactile.</li>
+                    </ul>
+
+                    Ces expériences m'ont permis de mieux comprendre les enjeux de l'accessibilité numérique et de les intégrer naturellement à mes développements.
+                </p>
+            </div>
+        </section>
+
+        <section id="AC3">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                AC3 - Adopter de bonnes pratiques de conception et de programmation
+            </h3>
+            <div class="section-content">
+                <p> 
+                    Au cours des différents projets, j'ai appris à appliquer des bonnes pratiques de conception logicielle afin d'écrire un code plus clair, modulaire, maintenable et évolutif.
+
+                    Grâce aux enseignements en programmation orientée objet et en architecture logicielle, j'ai intégré les principes SOLID dans mes conceptions :
+                    <ul>
+                        <li>Responsabilité unique,</li>
+                        <li>Faible couplage et forte cohésion,</li>
+                        <li>Ouverture/fermeture à l'extension,</li>
+                        <li>Interface claire et indépendante.</li>
+                    </ul>
+
+                    J'ai notamment pu mettre ces principes en œuvre lors de projets comprenant la création de diagrammes UML (comme des diagrammes de classes), qui ont servi de base à la conception du code. L'utilisation de ces diagrammes m'a permis de modéliser proprement les entités et leurs relations avant même d'écrire une ligne de code, ce qui a fortement facilité le développement. Le passage du diagramme au code permet aussi de s'assurer que l'architecture respecte la logique métier et reste évolutive.
+                </p>
+
+                <div class="project-image-container">
+                    <img src="../../imgs/TD1_militaire.png" alt="Diagramme UML du projet" class="project-image clickable-image" data-title="Diagramme UML du projet militaire">
+                    <img src="../../imgs/militaire-code.png" alt="Code du projet militaire" class="project-image clickable-image" data-title="Code Java du projet militaire">
+                    <figcaption>Diagramme UML du projet</figcaption>
+                </div>
+
+                <p>
+                    Concernant la gestion de version, j'ai continué à me perfectionner dans l'utilisation de Git et GitHub. Par exemple, lors du projet de modélisation 3D de la chambre de Van Gogh, j'ai utilisé Git pour suivre l'évolution du projet avec des commits réguliers et descriptifs, créer des branches pour tester des fonctionnalités sans impacter la version principale et collaborer efficacement avec mes coéquipiers via les pull requests. <br>
+
+                    L'ensemble de ces pratiques m'a permis de développer dans un cadre structuré, avec une documentation claire, un code lisible par d'autres développeurs, et une capacité à corriger ou améliorer facilement les fonctionnalités existantes.
+                </p>
+            </div>
+        </section>
+
+        <section id="AC4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                AC4 - Vérifier et valider la qualité de l'application par les tests
+            </h3>
+            <div class="section-content">
+                <p>
+                    Dans le développement logiciel, les tests jouent un rôle fondamental. Ils permettent de s'assurer que le code fonctionne comme prévu, de détecter les erreurs le plus tôt possible, et de garantir que les évolutions ou corrections futures n'introduisent pas de nouvelles anomalies (régressions). Tester une application, c'est aussi augmenter sa fiabilité, sa maintenabilité et sa robustesse, ce qui est essentiel, surtout dans un contexte de développement en équipe ou sur le long terme.
+
+                    Sans tests, le risque est grand de livrer un logiciel instable, difficile à maintenir et dont les erreurs ne seront découvertes qu'en production, parfois par l'utilisateur final. C'est pourquoi les tests font partie intégrante du cycle de développement logiciel moderne, notamment dans les approches agiles et DevOps.
+                </p>
+
+                <p>
+                    Dans le cadre de mes enseignements en qualité de développement, j'ai appris à rédiger et exécuter des tests unitaires, en particulier avec les frameworks JUnit et Mockito en Java.
+
+                    JUnit m'a permis de tester individuellement chaque méthode pour vérifier qu'elle renvoie bien les résultats attendus selon différents cas.
+
+                    Mockito, quant à lui, m'a été très utile pour créer des objets simulés (mocks), afin de tester des classes de manière isolée sans dépendre des autres composants du système, comme une base de données ou une API externe.
+
+                    Exemple : dans un projet de gestion de réservation, j'ai pu tester une classe ReservationService sans avoir besoin de réellement interagir avec la base de données, en simulant un ReservationRepository avec Mockito.
+                </p>
+
+                <div class="project-image-container">
+                    <img src="../../imgs/testjavastructure.png" alt="Tests unitaires du projet" class="project-image clickable-image" data-title="Structure des tests unitaires">
+                    <img src="../../imgs/testunitresult.png" alt="Résultats des tests unitaires" class="project-image clickable-image" data-title="Résultats des tests unitaires">
+                    <figcaption>Tests unitaires du projet</figcaption>
+                </div>
+
+                <p>
+                    Au fil des projets, j'ai mis en œuvre plusieurs bonnes pratiques :
+                    <ul>
+                        <li>Rédaction de tests unitaires systématiques pour les classes métier (services, contrôleurs, utilitaires...),</li>
+                        <li>Utilisation de l'approche TDD (Test-Driven Development) dans certains cas : écrire les tests avant d'implémenter les méthodes,</li>
+                        <li>Mise en place de tests automatisés pour pouvoir les rejouer rapidement après chaque modification du code,</li>
+                        <li>Analyse de la couverture de tests pour identifier les parties non testées du code,</li>
+                        <li>Utilisation de linters et d'outils d'analyse statique (Checkstyle, SonarLint) pour corriger les erreurs potentielles et uniformiser le code,</li>
+                        <li>Relectures de code en groupe, pour améliorer la qualité globale et apprendre des autres.</li>
+                    </ul>
+
+                    Grâce à ces pratiques, j'ai développé des réflexes de rigueur qui me permettent aujourd'hui de livrer un code plus fiable, mieux structuré, et plus simple à faire évoluer, ce qui est indispensable dans des projets collaboratifs ou en environnement professionnel.
+                </p>
+            </div>
+        </section>
+            
+
+        <section id="auto-evaluation">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                Auto-évaluation des apprentissages critiques
+            </h3>
+            <div class="section-content">
+                <p>Voici mon niveau d'acquisition pour chaque apprentissage critique de cette compétence :</p>
+                
+                <div class="tableau-evaluation">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Compétence : Nom de la compétence et/ou du niveau attendu</th>
+                                <th>Insuffisant</th>
+                                <th>Bien</th>
+                                <th>Très bien</th>
+                                <th>Excellent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Implémenter des conceptions simples</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Élaborer des conceptions simples</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Faire des essais et évaluer leurs résultats en regard des spécifications</td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Développer des interfaces utilisateurs</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Appliquer des principes d'accessibilité et d'ergonomie</td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Adopter de bonnes pratiques de conception et de programmation</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Vérifier et valider la qualité de l'application par les tests</td>
+                                <td></td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Choisir et implémenter les architectures adaptées</td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Faire évoluer une application existante</td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Intégrer des solutions dans un environnement de production</td>
+                                <td></td>
+                                <td>•</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                Conclusion
+            </h3>
+            <div class="section-content">
+                <h5>Quelle évolution ai-je constatée dans ma maîtrise de ces apprentissages ?</h5>
+                <p>
+                    Au début de la formation, je maîtrisais les bases du développement, mais je manquais de méthode pour structurer un projet de bout en bout. Grâce aux SAE et aux ressources enseignées, j'ai appris à partir des besoins exprimés dans un cahier des charges, à les traduire en interfaces accessibles et ergonomiques, à les implémenter en respectant des bonnes pratiques de conception, et à valider la qualité du code à l'aide de tests.
+
+                    Par exemple, lors de la SAE de développement d'une application, j'ai su :
+                    <ul>
+                        <li>Élaborer un cahier des charges fonctionnel et technique structuré avec étude de la concurrence, fonctionnalités, maquettes, Trello, etc.,</li>
+                        <li>Concevoir une interface graphique en Java simple, compréhensible et accessible à tous,</li>
+                        <li>Modéliser le projet en UML, en appliquant les principes SOLID, avec du code clair, modulaire et versionné avec GitHub,</li>
+                        <li>Rédiger des tests unitaires avec JUnit et Mockito, et utiliser des outils comme SonarLint pour garantir la qualité du code.</li>
+                    </ul>
+
+                    Cette progression m'a permis de prendre conscience des exigences réelles du développement professionnel, notamment l'importance de la rigueur, de la documentation et du travail collaboratif.
+                </p>
+
+                <h5>Quelles ressources ai-je mobilisées parmi les enseignements reçus ?</h5>
+                <p> 
+                    Parmis les ensegnements reçus j'ai mobilisé :
+                    <ul>
+                        <li>R3.C1 Développement web : </li>
+                        <li>R3.C2 Développement Efficace (algorithmes avancés)</li>
+                        <li>R3.C3 Analyse (conception UML)</li>
+                        <li>R3.C4 Qualité de développement</li>
+                        <li>R4.C1 Architecture logicielle</li>
+                        <li>R4.C2 Qualité de développement</li>
+                        <li>R4.10 Complément Web</li>
+                    </ul>
+
+                </p>
+
+                <h5>Est-ce que cela m'a permis de mieux les comprendre/maîtriser ?</h5>
+                <p>
+                    Oui, les mettre en pratique m'a permis de passer de la théorie à la maîtrise concrète. J'ai compris l'intérêt de chaque étape :
+
+                    <ul>
+                        <li>Sans cahier des charges, l'équipe se perd.</li>
+                        <li>Sans interface claire, l'utilisateur se décourage.</li>
+                        <li>Sans bonne conception, le code devient vite ingérable.</li>
+                        <li>Sans tests, on découvre les erreurs trop tard.</li>
+                    </ul>
+
+                    Les projets m'ont permis d'apprendre par la pratique, de mieux communiquer en équipe, de corriger mes erreurs et d'améliorer mes méthodes.
+                </p>
+
+                <h5>Quelles ressources ai-je dû chercher en plus de celles reçues lors des enseignements ?</h5>
+                <p>
+                    <ul>
+                        <li>Documentation officielle de JUnit, Mockito, JavaFX, Bootstrap, Angular, etc.</li>
+                        <li>Tutoriels en ligne (YouTube, OpenClassrooms, Stack Overflow) pour résoudre des problèmes spécifiques (gestion des mocks, routing Angular, tests avancés…).</li>
+                        <li>Projets open source sur GitHub pour comprendre comment les autres organisent leur code, structurent leurs tests, et documentent leurs projets.</li>
+                    </ul>
+
+                    Cela m'a permis d'élargir ma vision et de découvrir d'autres façons de coder, plus professionnelles. De plus l'IA générative évoluant très rapidement, j'ai aussi utilisé des outils comme Claude pour m'aider à résoudre des problèmes de code ou à générer des exemples de tests unitaires.
+                </p>
+
+                <h5>Si c'était à refaire, qu'est-ce que je changerais ?</h5>
+                <p>
+                    <ul>
+                        <li>Je mettrais en place des tests dès le début (approche TDD) pour éviter les erreurs tardives.</li>
+                        <li>J'impliquerais plus l'équipe dans la rédaction du cahier des charges, pour que chacun comprenne bien le besoin.</li>
+                        <li>J'intégrerais des retours utilisateurs en amont pour améliorer l'ergonomie.</li>
+                        <li>Je structurerais mes projets avec une architecture plus claire dès le départ et des conventions de nommage plus strictes.</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation-competences">
+            <div class="nav-buttons">
+                <a href="portfolio.html" class="btn-retour"><p>← Retour au Portfolio</p></a>
+                <a href="pf-S2-C2.html" class="btn-suivant"><p>Compétence 2 →</p></a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal pour affichage des images -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle"></span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="">
+                    <div class="image-controls">
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="resetZoom">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
