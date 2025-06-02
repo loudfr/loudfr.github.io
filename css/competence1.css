@@ -2,6 +2,7 @@ body {
     background-color: var(--jaune);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 #competence-hero {
@@ -13,145 +14,85 @@ body {
 #competence-hero h1 {
     margin: 0;
     -webkit-text-stroke: 3px var(--bleu);
-    font-size: 3rem;
     color: transparent;
 }
 
 #competence-hero h2 {
     color: var(--bleu);
-    font-size: 1.8rem;
     margin: 20px 0;
 }
 
 .competence-description {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-style: italic;
+    color: var(--noir);
+    padding: 0 20px;
 }
 
-#competence-content {
-    padding: 50px 20px;
+/* Sections AC */
+#AC1, #AC2, #AC3, #AC4 {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
+    padding: 40px;
+    border-left: 6px solid var(--bleu);
 }
 
-.competence-item {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--bleu);
-}
-
-.competence-item h3 {
+section[id^="AC"] h3 {
     color: var(--bleu);
+    font-size: 1.8rem;
     margin-top: 0;
-    font-size: 1.4rem;
-}
-
-.ac-description {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
     margin-bottom: 25px;
 }
 
-.projets-ac h4 {
-    color: var(--bleu);
-    margin-top: 25px;
-    font-size: 1.2rem;
+section[id^="AC"] p {
+    font-size: 1.1rem;
+    color: var(--noir);
+    margin-bottom: 20px;
 }
 
-.projet-details {
-    background: #f0f8ff;
+section[id^="AC"] ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+section[id^="AC"] li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: var(--noir);
+}
+
+/* Images de projet */
+.project-image-container {
+    text-align: center;
+    margin: 30px 0;
     padding: 20px;
-    border-radius: 8px;
-    margin: 15px 0;
 }
 
-.projet-details h5 {
-    color: var(--bleu);
-    margin-bottom: 10px;
+.project-image {
+    max-width: 45%;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
 }
 
-.impact {
-    background: #e8f5e8;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #28a745;
+figcaption {
     margin-top: 15px;
+    color: var(--noir);
+    font-size: 0.95rem;
     font-style: italic;
 }
 
-.technologies-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tech-badge {
-    background: var(--bleu);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.projects-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.project-card {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #dee2e6;
-}
-
-.project-card h4 {
+/* Liens */
+a {
     color: var(--bleu);
-    margin-top: 0;
+    text-decoration: none;
 }
 
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
+#AC1 a:hover {
+    text-decoration: underline;
 }
 
-.project-tech span {
-    background: #6c757d;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-}
-
-.validation-status {
-    text-align: center;
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.validated {
-    background: #d4edda;
-    color: #155724;
-    border: 2px solid #28a745;
-}
-
+/* Navigation */
 #navigation-competences {
     padding: 50px 20px;
     max-width: 1200px;
@@ -166,30 +107,103 @@ body {
 
 .btn-retour, .btn-suivant {
     background: var(--bleu);
-    color: white;
-    padding: 12px 25px;
+    color: var(--jaune);
+    padding: 15px 30px;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s ease;
 }
 
 .btn-retour:hover, .btn-suivant:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+/* Tableau d'évaluation */
+.tableau-evaluation {
+    overflow-x: auto;
+    margin: 20px 100px;
+}
+
+.tableau-evaluation table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.tableau-evaluation td:not(:first-child):not(:empty) {
+    background: radial-gradient(50% 50% at 50% 50%, var(--rose, #FA9DBC) 10%, var(--jaune, #FEFFDD) 100%);
+    color: var(--noir);
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.tableau-evaluation th,
+.tableau-evaluation td {
+    border: 2px solid var(--bleu);
+    padding: 12px;
+    text-align: center;
+}
+
+.tableau-evaluation th {
+    background-color: var(--bleu);
+    color: var(--jaune);
+}
+
+.tableau-evaluation td:first-child {
+    text-align: left;
+}
+
+.tableau-evaluation td:not(:first-child) {
+    color: var(--bleu);
 }
 
 @media (max-width: 768px) {
+    .tableau-evaluation {
+        font-size: 0.9rem;
+    }
+    
+    .tableau-evaluation th,
+    .tableau-evaluation td {
+        padding: 8px 4px;
+    }
+    
+    .tableau-evaluation table {
+        border-width: 4px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #competence-hero {
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+    
     #competence-hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        -webkit-text-stroke: 2px var(--bleu);
     }
     
     #competence-hero h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     
-    .competence-item {
-        padding: 20px;
+    .competence-description {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    section[id^="AC"] {
+        margin: 20px 15px;
+        padding: 25px;
+    }
+    
+    section[id^="AC"] h3 {
+        font-size: 1.5rem;
+    }
+    
+    .project-image {
+        max-width: 90%;
+        margin: 10px 0;
     }
     
     .nav-buttons {
@@ -197,7 +211,78 @@ body {
         text-align: center;
     }
     
-    .projects-list {
-        grid-template-columns: 1fr;
+    .btn-retour, .btn-suivant {
+        width: 100%;
+        max-width: 300px;
     }
+}
+
+@media (max-width: 480px) {
+    #competence-hero h1 {
+        font-size: 2rem;
+    }
+    
+    section[id^="AC"] {
+        padding: 20px;
+    }
+    
+    section[id^="AC"] p {
+        font-size: 1rem;
+    }
+    
+    .project-image {
+        max-width: 100%;
+    }
+}
+
+/* Auto-évaluation et conclusion */
+#auto-evaluation, #conclusion {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    border-left: 6px solid var(--bleu);
+}
+
+#auto-evaluation h3, #conclusion h3 {
+    color: var(--bleu);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#auto-evaluation p, #conclusion p {
+    font-size: 1.1rem;
+    color: var(--noir);
+    margin-bottom: 20px;
+}
+
+#conclusion h5 {
+    color: var(--rose);
+    font-style: italic;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 30px 0 0;
+}
+
+#conclusion ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+#conclusion li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: var(--noir);
+}
+
+
+
+/* Responsive pour les nouvelles sections */
+@media (max-width: 768px) {
+    #auto-evaluation, #conclusion {
+        margin: 20px 15px;
+        padding: 25px;
+    }
+    
+
 }
