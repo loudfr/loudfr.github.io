@@ -5,6 +5,7 @@ body {
     line-height: 1.6;
 }
 
+/* nav dans la page (entre section AC, ...) */
 .sections-nav {
     display: flex;
     justify-content: center;
@@ -47,7 +48,7 @@ body {
     background-color: var(--bleu);
 }
 
-/* Menu déroulant mobile */
+/* Menu déroulant mobile entre sections */
 .mobile-sections-dropdown {
     display: none;
     position: relative;
@@ -164,6 +165,8 @@ body {
     }
 }
 
+
+
 #competence-hero {
     text-align: center;
     padding: 120px 0 50px;
@@ -242,10 +245,13 @@ figcaption {
 a {
     color: var(--bleu);
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-#AC1 a:hover {
-    text-decoration: underline;
+a:hover {
+    transition: all 0.3s ease;
+    color: var(--rose);
+    font-style: italic;
 }
 
 #navigation-competences {
