@@ -83,8 +83,8 @@ function moveHoverBgTo(targetLink) {
 function getHeaderPath() {
   const currentPath = window.location.pathname;
   
-  // Depuis /pages/portfolio/ (vérifier en PREMIER car plus spécifique)
-  if (currentPath.includes('/pages/portfolio/')) {
+  // Depuis /pages/ (vérifier en PREMIER car plus spécifique)
+  if (currentPath.includes('/pages/')) {
     return "../../includes/header.html";
   }
   // Depuis /pages/ (vérifier en SECOND)
