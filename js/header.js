@@ -22,37 +22,30 @@ function initHeader() {
   window.addEventListener("scroll", () => {
     let st = window.scrollY || document.documentElement.scrollTop;
     
-    // Gestion du header (le nav disparaît mais pas le logo)
     if (st > lastScrollTop) {
-        header.style.top = "-100px"; // scroll down, cache le header
+        header.style.top = "-100px";
     } else {
-        header.style.top = "15px"; // scroll up, montre le header
+        header.style.top = "15px";
     }
     
-    // Gestion de la taille du logo (il reste visible mais change de taille)
     if (st > 50) {
-        logo.style.height = "35px"; // taille réduite
+        logo.style.height = "35px";
     } else {
-        logo.style.height = "60px"; // taille normale
+        logo.style.height = "60px";
     }
     
     lastScrollTop = st <= 0 ? 0 : st;
   }, false);
 
-  // Hover déplacement
   links.forEach(link => {
     link.addEventListener("mouseenter", () => moveHoverBgTo(link));
     link.addEventListener("mouseleave", () => moveHoverBgTo(activeLink));
-    link.addEventListener("click", () => {
-      // Ne pas changer l'active ici car la navigation va changer de page
-      // L'active sera défini automatiquement par setActivePageLink()
-    });
   });
 }
 
-// Fonction pour définir le lien actif selon la page actuelle
 function setActivePageLink(links) {
   const currentPage = window.location.pathname;
+  const fileName = currentPage.split('/').pop(); // Récupère le nom du fichier
   
   // Retirer la classe active de tous les liens
   links.forEach(link => link.classList.remove("active"));
@@ -61,12 +54,15 @@ function setActivePageLink(links) {
   links.forEach(link => {
     const href = link.getAttribute("href");
     
-    if (currentPage.includes("portfolio.html") && href.includes("portfolio.html")) {
+    // Si le fichier commence par "pf" ou contient "portfolio", activer Portfolio
+    if ((fileName.startsWith("pf") || currentPage.includes("portfolio.html")) && href.includes("portfolio.html")) {
       link.classList.add("active");
     } else if (currentPage.includes("contact.html") && href.includes("contact.html")) {
       link.classList.add("active");
+    } else if (currentPage.includes("projets.html") && href.includes("projets.html")) {
+      link.classList.add("active");
     } else if (currentPage.includes("index.html") || currentPage === "/" || currentPage.endsWith("/")) {
-      if (href.includes("index.html") || href === "/") {
+      if (href.includes("index.html") || href === "/" || href.includes("LOUISE")) {
         link.classList.add("active");
       }
     }
@@ -75,7 +71,6 @@ function setActivePageLink(links) {
 
 function moveHoverBgTo(targetLink) {
   if (!targetLink || !hoverBg) return;
-  
   const nav = targetLink.parentElement;
   const linkRect = targetLink.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
@@ -84,11 +79,29 @@ function moveHoverBgTo(targetLink) {
   hoverBg.style.width = linkRect.width + "px";
 }
 
-fetch("includes/header.html")
+// Détection automatique du chemin selon l'emplacement du fichier
+function getHeaderPath() {
+  const currentPath = window.location.pathname;
+  
+  // Depuis /pages/portfolio/ (vérifier en PREMIER car plus spécifique)
+  if (currentPath.includes('/pages/portfolio/')) {
+    return "../../includes/header.html";
+  }
+  // Depuis /pages/ (vérifier en SECOND)
+  else if (currentPath.includes('/pages/')) {
+    return "../includes/header.html";
+  }
+  // Depuis la racine du site
+  else {
+    return "includes/header.html";
+  }
+}
+
+fetch(getHeaderPath())
   .then(response => response.text())
   .then(data => {
     document.getElementById("header-placeholder").innerHTML = data;
-    initHeader(); // appelle la fonction d'init après chargement
+    initHeader();
   })
   .catch(error => {
     console.error("Erreur lors du chargement du header:", error);
