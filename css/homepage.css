@@ -20,16 +20,6 @@ body {
     color: var(--jaune);
 }
 
-@media (max-width: 768px) {
-    #presentation {
-        padding: 100px 20px;
-    }
-
-    #presentation h1 {
-        -webkit-text-stroke: 2px var(--jaune);
-    }
-}
-
 #propos {
     padding: 100px 50px;
     display: flex;
@@ -147,16 +137,6 @@ body {
     transition: transform 0.5s ease, z-index 0s linear 0.25s;
 }
 
-@media (max-width: 768px) {
-    #propos h1 {
-        -webkit-text-stroke: 2px var(--bleu);
-    }
-
-    #propos {
-        padding: 50px 50px;
-    }
-}
-
 /* Styles pour la section parcours */
 #parcours {
     padding: 100px 50px;
@@ -233,8 +213,22 @@ body {
 
 
 @media (max-width: 768px) {
+
+    #presentation {
+        padding: 100px 20px;
+    }
+
     #parcours h1 {
-        -webkit-text-stroke: 2px var(--bleu);
+        -webkit-text-stroke: 1px var(--bleu) !important;
+        text-align: center;
+    }
+
+     #presentation {
+        padding: 100px 20px;
+    }
+
+    #presentation h1 {
+        -webkit-text-stroke: 1px var(--jaune) !important;
         text-align: center;
     }
 
