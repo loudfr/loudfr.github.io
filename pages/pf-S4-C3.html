@@ -34,7 +34,6 @@
             <a href="#AC1" class="section-link">AC1</a>
             <a href="#AC2" class="section-link">AC2</a>
             <a href="#AC3" class="section-link">AC3</a>
-            <a href="#AC4" class="section-link">AC4</a>
             <a href="#auto-evaluation" class="section-link">Auto-évaluation</a>
             <a href="#conclusion" class="section-link">Conclusion</a>
         </div>
@@ -46,10 +45,9 @@
                 <span class="dropdown-arrow">▼</span>
             </button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#AC1" class="section-link mobile-section-link">AC1 - Spécifications fonctionnelles</a>
-                <a href="#AC2" class="section-link mobile-section-link">AC2 - Accessibilité et ergonomie</a>
-                <a href="#AC3" class="section-link mobile-section-link">AC3 - Bonnes pratiques</a>
-                <a href="#AC4" class="section-link mobile-section-link">AC4 - Tests et validation</a>
+                <a href="#AC1" class="section-link mobile-section-link">AC1 - Concevoir et développer des applications communicantes</a>
+                <a href="#AC2" class="section-link mobile-section-link">AC2 - Utiliser des serveurs et des services réseaux virtualisés</a>
+                <a href="#AC3" class="section-link mobile-section-link">AC3 - Sécuriser les services et données d'un système</a>
                 <a href="#auto-evaluation" class="section-link mobile-section-link">Auto-évaluation</a>
                 <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
             </div>
@@ -61,37 +59,108 @@
                 AC1 - Élaborer et implémenter des spécifications fonctionnelles et non fonctionnelles
             </h3>
             <div class="section-content">
-              
+                Dans cette UE, comme dans les autres, la maîtrise de l’anglais technique a été essentielle.
+                Les interfaces des outils comme VirtualBox, virt-manager, ou les messages d’erreurs du terminal sont en anglais.
+                De plus, la documentation (comme celle de libvirt, iptables, ou les pages man) est souvent uniquement en anglais. Cela m’a habitué à lire et comprendre de la documentation technique anglophone, une compétence indispensable pour un futur développeur ou administrateur système. <br>
+                J’ai aussi eu des modules d’anglais technique, où nous avons travaillé sur du vocabulaire informatique, la compréhension de documentation, et même la rédaction de courriels techniques ou la présentation de projets en anglais.<br><br>
+
+                Par exemple, lors d’un TP de programmation système ou orientée objet, j’ai développé une application Java avec sockets, dans laquelle un serveur écoute les connexions des clients et leur répond selon une logique définie. Cela m’a permis de comprendre :
+                <ul>
+                    <li>la gestion de flux réseau (entrée/sortie),</li>
+                    <li>la synchronisation des communications multiclients (via threads),</li>
+                    <li>et l'importance du protocole utilisé (TCP, UDP, etc.).</li>
+                </ul>
+
+                J’ai aussi pu manipuler des outils comme netcat pour tester les ports ouverts ou simuler un serveur, et analyser le trafic réseau de mon application à l’aide de Wireshark, ce qui m’a permis de visualiser les paquets échangés.<br><br>
+
+                Ces exercices m’ont appris à concevoir une application capable de communiquer sur un réseau, et à diagnostiquer d’éventuelles erreurs de transmission, de ports ou de protocoles.
+
+                Pour mieux comprendre la communication entre machines, j’ai utilisé Cisco Packet Tracer. Cet outil m’a permis de concevoir des architectures réseau virtuelles (avec postes clients, serveurs, switches, routeurs) et de simuler la communication entre eux. J’ai configuré manuellement les adresses IP, observé les paquets échangés, et expérimenté le comportement du réseau en cas de mauvaise configuration (erreurs de routage, DNS…).<br><br>
+                
+                <div class="project-image-container">
+                    <img src="../../imgs/Wireshark.png" alt="Wireshark" class="project-image clickable-image" data-title="Capture de réseau avec Wireshark">
+                    <img src="../../imgs/cisco.png" alt="Cisco Packet Tracer" class="project-image clickable-image" data-title="Cisco Packet Tracer">
+                    <figcaption>Wireshark & Cisco Packet Tracer</figcaption>
+                </div>
+                Cette expérience m’a aidé à mieux comprendre la base sur laquelle reposent les applications communicantes, et m’a permis de visualiser concrètement le cheminement des données dans un réseau.
             </div>
         </section>
 
         <section id="AC2">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC2 - Appliquer des principes d'accessibilité et d'ergonomie
+                AC2 - Utiliser des serveurs et des services réseaux virtualisés
             </h3>
             <div class="section-content">
+                L'une des compétences majeures que j'ai développées au cours de cette UE est la capacité à déployer et gérer des services réseau dans un environnement virtualisé, en m'appuyant sur des outils comme VirtualBox, QEMU/KVM, et libvirt. 
+
+                <div class="project-image-container">
+                    <img src="../../imgs/vmbox.png" alt="VirtualBox" class="project-image clickable-image" data-title="Installation de VirtualBox">
+                    <figcaption>Installation de VirtualBox</figcaption>
+                </div>
                 
+                Lors du TP de virtualisation, j'ai d'abord installé VirtualBox puis le VirtualBox Extension Pack sur une machine Ubuntu. Cela m'a permis de créer mes premières machines virtuelles, tester leur configuration réseau, et comprendre l'importance des privilèges utilisateurs (root vs utilisateur classique), en corrigeant une mauvaise configuration de droits par la commande <code>su - louise</code>.
+
+                Ensuite, j'ai exploré des environnements de virtualisation plus avancés avec KVM/QEMU, en :
+                <ul>
+                    <li>Vérifiant la compatibilité du processeur (flags <code>vmx</code> ou <code>svm</code>),</li>
+                    <li>Installant et configurant les paquets nécessaires (<code>qemu-kvm</code>, <code>libvirt</code>, <code>virt-manager</code>, etc.),</li>
+                    <li>Ajoutant l'utilisateur aux groupes <code>kvm</code> et <code>libvirt</code> pour l'accès aux VM,</li>
+                    <li>Observant les réseaux actifs comme <code>virbr0</code>,</li>
+                    <li>Créant des VM en ligne de commande avec <code>virt-install</code>, notamment :
+                        <ul>
+                            <li>une VM passerelle sous Debian 10 (avec configuration réseau via bridge),</li>
+                            <li>une VM Debian 11 pour les tests,</li>
+                            <li>une VM graphique sous Ubuntu 18.04.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                J'ai pu configurer les interfaces réseau, vérifier la connectivité entre les machines, me connecter en SSH d'une VM à l'autre, et tester l'accès depuis et vers l'hôte. Cela m'a permis de simuler des scénarios proches d'une infrastructure en entreprise avec services, accès distant, utilisateurs et sécurité réseau.
+
+                <br><br>Cette mise en situation m'a permis de maîtriser les bases d'un environnement virtualisé multi-VM, et de mieux comprendre les outils utilisés en administration système et réseau.
             </div>
         </section>
 
         <section id="AC3">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC3 - Adopter de bonnes pratiques de conception et de programmation
+                AC3 - Sécuriser les services et données d'un système
             </h3>
             <div class="section-content">
-                
-            </div>
-        </section>
+                La sécurité informatique fait partie des compétences transversales que j'ai développées progressivement à travers des TP pratiques, en particulier lors du TP de cryptographie.<br><br>
 
-        <section id="AC4">
-            <h3 class="section-toggle">
-                <span class="toggle-triangle"></span>
-                AC4 - Vérifier et valider la qualité de l'application par les tests
-            </h3>
-            <div class="section-content">
-                
+                Dans ce TP, j'ai mis en œuvre plusieurs concepts fondamentaux :
+
+                <ul>
+                    <li>Le chiffrement symétrique (ex : méthode de César, Vigenère),</li>
+                    <li>Le chiffrement asymétrique (ex : RSA),</li>
+                    <li>L'utilisation de fonctions de hachage comme SHA-256 ou SHA-512,</li>
+                    <li>La signature numérique,</li>
+                    <li>Et la vérification de l'intégrité des données.</li>
+                </ul>
+
+                <div class="project-image-container">
+                    <img src="../../imgs/chiffrement-cesar.png" alt="chiffrement de Cesar" class="project-image clickable-image" data-title="Chiffrement de Cesar">
+                    <img src="../../imgs/Jupyter.webp" alt="Jupyter" class="project-image clickable-image" data-title="Jupyter">
+                    <figcaption>Chiffrement de Cesar & Jupyter</figcaption>
+                </div>
+                J'ai travaillé sur ce TP en Python via un notebook Jupyter, ce qui m'a permis d'expérimenter directement les algorithmes, de modifier les clés et les messages, et d'observer comment les algorithmes réagissent face à de légères variations.
+
+                Cela m'a permis de comprendre concrètement les mécanismes cryptographiques utilisés dans la sécurisation des services comme HTTPS, le stockage des mots de passe, ou l'authentification par clés publiques/privées.
+
+                <h5>SÉCURITÉ SYSTÈME ET RÉSEAU</h5>
+
+                En parallèle de la cryptographie, mes TP système m'ont aussi permis de :
+
+                <ul>
+                    <li>Appliquer des politiques de sécurité (accès limité aux services),</li>
+                    <li>Configurer l'authentification via clés SSH entre VMs,</li>
+                    <li>Contrôler les droits d'accès aux fichiers sensibles,</li>
+                    <li>Et comprendre l'intérêt des utilisateurs/groupes restreints dans un système Linux.</li>
+                </ul>
+
+                J'ai donc pu mettre en œuvre des pratiques fondamentales pour sécuriser un environnement réseau et applicatif.
             </div>
         </section>
             
@@ -179,77 +248,46 @@
             <div class="section-content">
                 <h5>Quelle évolution ai-je constatée dans ma maîtrise de ces apprentissages ?</h5>
                 <p>
-                    Au début de la formation, je maîtrisais les bases du développement, mais je manquais de méthode pour structurer un projet de bout en bout. Grâce aux SAE et aux ressources enseignées, j'ai appris à partir des besoins exprimés dans un cahier des charges, à les traduire en interfaces accessibles et ergonomiques, à les implémenter en respectant des bonnes pratiques de conception, et à valider la qualité du code à l'aide de tests.
-
-                    Par exemple, lors de la SAE de développement d'une application, j'ai su :
-                    <ul>
-                        <li>Élaborer un cahier des charges fonctionnel et technique structuré avec étude de la concurrence, fonctionnalités, maquettes, Trello, etc.,</li>
-                        <li>Concevoir une interface graphique en Java simple, compréhensible et accessible à tous,</li>
-                        <li>Modéliser le projet en UML, en appliquant les principes SOLID, avec du code clair, modulaire et versionné avec GitHub,</li>
-                        <li>Rédiger des tests unitaires avec JUnit et Mockito, et utiliser des outils comme SonarLint pour garantir la qualité du code.</li>
-                    </ul>
-
-                    Cette progression m'a permis de prendre conscience des exigences réelles du développement professionnel, notamment l'importance de la rigueur, de la documentation et du travail collaboratif.
-                </p>
+                    Au fil de cette UE, j’ai constaté une évolution significative dans ma maîtrise des environnements systèmes, réseaux et virtualisés. Au départ, je n’avais qu’une compréhension assez théorique du fonctionnement des communications entre machines. Aujourd’hui, je suis capable de concevoir une application qui dialogue sur le réseau, de créer une architecture réseau simulée et de configurer des services sur des machines virtuelles. Par exemple, lors d’un TP en Java, j’ai développé une application utilisant des sockets pour permettre à un client de se connecter à un serveur et d’échanger des données. J’ai pu visualiser le trafic réseau généré avec Wireshark et comprendre l’impact du protocole utilisé. Pour approfondir la compréhension de l’architecture réseau, j’ai également utilisé Cisco Packet Tracer, un simulateur dans lequel j’ai configuré des machines, attribué des adresses IP, testé la connectivité et observé les paquets circulant dans le réseau. Cela m’a permis de mieux appréhender la logique des couches réseau et d’identifier les erreurs liées à une mauvaise configuration. En parallèle, le TP de virtualisation m’a appris à déployer des services sur des VMs, d’abord avec VirtualBox, puis avec KVM/QEMU. J’ai installé plusieurs systèmes (Debian 10, Debian 11, Ubuntu 18.04), configuré les interfaces réseau, et mis en place des connexions SSH entre les machines. Enfin, le TP de cryptographie en Python m’a permis d’expérimenter des algorithmes comme RSA, César ou Vigenère, et d’en comprendre les usages concrets dans la sécurisation des échanges de données. Ces expériences m’ont permis de passer d’une compréhension théorique à une approche beaucoup plus technique, concrète et structurée.
 
                 <h5>Quelles ressources ai-je mobilisées parmi les enseignements reçus ?</h5>
                 <p> 
                     Parmis les ensegnements reçus j'ai mobilisé :
                     <ul>
-                    <li>R1.03 Introduction à l'architecture des ordinateurs</li>
-                    <li>R1.04 Introduction aux systèmes d'exploitation et à leur fonctionnement</li>
-                    <li>R1.10 Anglais technique</li>
-                    <li>R2.01 Développement orienté objets</li>
-                    <li>R2.04 Communication et fonctionnement bas niveau</li>
-                    <li>R2.07 Graphes</li>
-                    <li>R2.09 Méthodes numériques</li>
-                    <li>R3.C5 Prog. système</li>
-                    <li>R3.C6 Archi. Réseaux</li>
-                    <li>R3.9 Cryptographie</li>
-                    <li>R3.12 Anglais</li>
-                    <li>R4.C1 Architecture logicielle</li>
-                    <li>R4.A.8 Virtualisation</li>
-                    <li>SAE 1.03 - Installation d'un poste pour le développement</li>
-                    <li>SAE 2.03 - Installation de services réseau</li>
-                    <li>SAE S3 et S4</li>
-                    <li>Stage, alternance, réalisations personnelles</li>
+                        <li>R1.03 Introduction à l'architecture des ordinateurs</li>
+                        <li>R1.04 Introduction aux systèmes d'exploitation et à leur fonctionnement</li>
+                        <li>R1.10 Anglais technique</li>
+                        <li>R2.01 Développement orienté objets</li>
+                        <li>R2.04 Communication et fonctionnement bas niveau</li>
+                        <li>R2.07 Graphes</li>
+                        <li>R2.09 Méthodes numériques</li>
+                        <li>R3.C5 Prog. système</li>
+                        <li>R3.C6 Archi. Réseaux</li>
+                        <li>R3.9 Cryptographie</li>
+                        <li>R3.12 Anglais</li>
+                        <li>R4.C1 Architecture logicielle</li>
+                        <li>R4.A.8 Virtualisation</li>
+                        <li>SAE 1.03 - Installation d'un poste pour le développement</li>
+                        <li>SAE 2.03 - Installation de services réseau</li>
+                        <li>SAE S3 et S4</li>
+                        <li>Stage, alternance, réalisations personnelles</li>
                     </ul>
 
                 </p>
 
                 <h5>Est-ce que cela m'a permis de mieux les comprendre/maîtriser ?</h5>
                 <p>
-                    Oui, les mettre en pratique m'a permis de passer de la théorie à la maîtrise concrète. J'ai compris l'intérêt de chaque étape :
-
-                    <ul>
-                        <li>Sans cahier des charges, l'équipe se perd.</li>
-                        <li>Sans interface claire, l'utilisateur se décourage.</li>
-                        <li>Sans bonne conception, le code devient vite ingérable.</li>
-                        <li>Sans tests, on découvre les erreurs trop tard.</li>
-                    </ul>
-
-                    Les projets m'ont permis d'apprendre par la pratique, de mieux communiquer en équipe, de corriger mes erreurs et d'améliorer mes méthodes.
+                    La mise en pratique à travers les TP m’a clairement aidé à mieux comprendre et maîtriser les notions abordées. Concevoir une architecture réseau ou déployer un service dans une VM n’a rien à voir avec lire la théorie dans un cours. C’est en confrontant les erreurs, les messages du terminal, les limitations matérielles ou logicielles que j’ai réellement progressé. Comprendre une configuration, savoir l'expliquer, et pouvoir la corriger sont devenus des automatismes grâce à cette approche concrète. En cryptographie par exemple, manipuler moi-même les clés, hachages et signatures dans un notebook Python m’a permis d’en saisir les mécanismes de manière intuitive et durable. De la même façon, utiliser VirtualBox ou virt-manager m’a appris à anticiper les problèmes liés aux droits d’accès, à l’adressage ou au réseau, ce que je n’aurais pas pu acquérir seulement avec la théorie.
                 </p>
 
                 <h5>Quelles ressources ai-je dû chercher en plus de celles reçues lors des enseignements ?</h5>
                 <p>
-                    <ul>
-                        <li>Documentation officielle de JUnit, Mockito, JavaFX, Bootstrap, Angular, etc.</li>
-                        <li>Tutoriels en ligne (YouTube, OpenClassrooms, Stack Overflow) pour résoudre des problèmes spécifiques (gestion des mocks, routing Angular, tests avancés…).</li>
-                        <li>Projets open source sur GitHub pour comprendre comment les autres organisent leur code, structurent leurs tests, et documentent leurs projets.</li>
-                    </ul>
-
-                    Cela m'a permis d'élargir ma vision et de découvrir d'autres façons de coder, plus professionnelles. De plus l'IA générative évoluant très rapidement, j'ai aussi utilisé des outils comme Claude pour m'aider à résoudre des problèmes de code ou à générer des exemples de tests unitaires.
+                    Pour compléter les enseignements reçus, j’ai dû effectuer de nombreuses recherches personnelles. J’ai souvent consulté la documentation officielle d’outils comme libvirt, iptables ou SSH. J’ai utilisé des tutoriels techniques (comme ceux de DigitalOcean ou LinuxHint) pour m’aider à résoudre des problèmes spécifiques rencontrés dans les TP. J’ai aussi utilisé des forums comme Stack Overflow, notamment lors de messages d’erreur ou de blocages liés à la virtualisation. En cryptographie, j’ai étudié des implémentations open source sur GitHub pour mieux comprendre certains algorithmes, et approfondir leur fonctionnement avec des exemples concrets. Tous ces compléments m’ont permis d’aller plus loin que ce qui était proposé en cours, de renforcer ma compréhension, et d'apprendre à chercher l’information de manière autonome, ce qui est essentiel dans le domaine informatique.
                 </p>
 
                 <h5>Si c'était à refaire, qu'est-ce que je changerais ?</h5>
                 <p>
-                    <ul>
-                        <li>Je mettrais en place des tests dès le début (approche TDD) pour éviter les erreurs tardives.</li>
-                        <li>J'impliquerais plus l'équipe dans la rédaction du cahier des charges, pour que chacun comprenne bien le besoin.</li>
-                        <li>J'intégrerais des retours utilisateurs en amont pour améliorer l'ergonomie.</li>
-                        <li>Je structurerais mes projets avec une architecture plus claire dès le départ et des conventions de nommage plus strictes.</li>
-                    </ul>
+                    Si c’était à refaire, je prendrais le temps de mieux documenter chaque étape. Certaines erreurs ou configurations réussies m’auraient été utiles plus tard, et j’aurais gagné en efficacité avec un suivi plus rigoureux. Je créerais également un schéma réseau au début de chaque projet ou TP, afin d’avoir une vision claire de la topologie à mettre en place. J’essaierais aussi d’automatiser davantage les installations et configurations répétitives grâce à des scripts Bash, et je m’intéresserais plus tôt aux outils d’orchestration comme Ansible. Enfin, je tenterais de tester des services plus variés (comme un serveur mail ou un proxy) pour diversifier mes connaissances réseau et système.
                 </p>
             </div>
         </section>

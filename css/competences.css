@@ -560,6 +560,14 @@ a {
     transform: translateY(-2px);
 }
 
+code {
+    background-color: var(--noir);
+    color: var(--jaune);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
 @media (max-width: 768px) {
     #competence-hero {
         padding: 100px 0 30px;
