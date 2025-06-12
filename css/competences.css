@@ -190,12 +190,17 @@ body {
     padding: 0 20px;
 }
 
-#AC1, #AC2, #AC3, #AC4, #conclusion, #auto-evaluation {
+#AC1, #AC2, #AC3, #AC4, #portfolio-previous, #conclusion, #auto-evaluation {
     max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
     border-left: 6px solid var(--bleu);
     scroll-margin-top: 80px;
+}
+
+#portfolio-previous h3 {
+    color: var(--bleu);
+    margin: 0 0 25px;
 }
 
 section[id^="AC"] h3 {
@@ -566,6 +571,167 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
     font-family: monospace;
+}
+
+/* Styles pour la section portfolio PDF */
+.portfolio-section {
+    padding: 80px 0;
+    background: var(--jaune);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--bleu);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.pdf-viewer {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--bleu);
+}
+
+.pdf-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: var(--bleu);
+    color: white;
+}
+
+.pdf-btn {
+    background: var(--jaune);
+    border: 2px solid var(--jaune);
+    color: var(--bleu);
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-btn:hover:not(:disabled) {
+    background: var(--rose);
+    border-color: var(--rose);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.page-info {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--jaune);
+}
+
+.pdf-container {
+    position: relative;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    background: var(--jaune);
+}
+
+#pdf-canvas {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--bleu);
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--bleu);
+}
+
+.loading-spinner p {
+    color: var(--bleu);
+    font-weight: 500;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 40px 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .pdf-controls {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .pdf-container {
+        padding: 20px;
+        min-height: 400px;
+    }
+    
+    .page-info {
+        font-size: 14px;
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .pdf-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+        min-width: 45px;
+    }
+    
+    #pdf-canvas {
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-container {
+        padding: 15px;
+    }
+    
+    .pdf-controls {
+        padding: 12px 15px;
+    }
+    
+    #pdf-canvas {
+        max-height: 50vh;
+    }
 }
 
 @media (max-width: 768px) {

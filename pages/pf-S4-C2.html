@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/competences.css">
     <script src="../../js/header.js"></script>
     <script src="../../js/portfolio.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -156,6 +157,36 @@
             </div>
         </section>
             
+        <!-- Section Portfolio de l'année dernière -->
+        <section id="portfolio-previous" class="portfolio-section">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                Portfolio de l'année dernière
+            </h3>
+            <div class="section-content">
+                <div class="pdf-viewer">
+                    <div class="pdf-controls">
+                        <button id="prev-page" class="pdf-btn" title="Page précédente">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="page-info">
+                            Page <span id="current-page">1</span> sur <span id="total-pages">-</span>
+                        </span>
+                        <button id="next-page" class="pdf-btn" title="Page suivante">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="pdf-container">
+                        <canvas id="pdf-canvas"></canvas>
+                        <div class="loading-spinner" id="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Chargement du portfolio...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="auto-evaluation">
             <h3 class="section-toggle">

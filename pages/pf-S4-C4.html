@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/competences.css">
     <script src="../../js/header.js"></script>
     <script src="../../js/portfolio.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -46,10 +47,10 @@
                 <span class="dropdown-arrow">▼</span>
             </button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#AC1" class="section-link mobile-section-link">AC1 - Spécifications fonctionnelles</a>
-                <a href="#AC2" class="section-link mobile-section-link">AC2 - Accessibilité et ergonomie</a>
-                <a href="#AC3" class="section-link mobile-section-link">AC3 - Bonnes pratiques</a>
-                <a href="#AC4" class="section-link mobile-section-link">AC4 - Tests et validation</a>
+                <a href="#AC1" class="section-link mobile-section-link">AC1 - Optimiser les modèles de données de l'entreprise</a>
+                <a href="#AC2" class="section-link mobile-section-link">AC2 - Assurer la confidentialité des données (intégrité et sécurité)</a>
+                <a href="#AC3" class="section-link mobile-section-link">AC3 - Organiser la restitution de données à travers la programmation et la visualisation</a>
+                <a href="#AC4" class="section-link mobile-section-link">AC4 - Manipuler des données hétérogènes</a>
                 <a href="#auto-evaluation" class="section-link mobile-section-link">Auto-évaluation</a>
                 <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
             </div>
@@ -58,17 +59,34 @@
         <section id="AC1">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC1 - Élaborer et implémenter des spécifications fonctionnelles et non fonctionnelles
+                AC1 - Optimiser les modèles de données de l'entreprise
             </h3>
             <div class="section-content">
-              
+                Dans le cadre de la ressource R4.03 – Qualité et au-delà du relationnel, j'ai étudié un cas concret d'analyse de données : la gestion des inscriptions, du matériel, et des moniteurs d'une école de voile (projet CVE). L'objectif était de construire un modèle conceptuel de données cohérent à partir d'un cahier des charges, en tenant compte de la réalité de gestion et de la logique métier.<br><br>
+
+                J'ai d'abord analysé le processus d'inscription des stagiaires aux stages, en évaluant les cardinalités appropriées. Par exemple, pour autoriser qu'un stagiaire participe à plusieurs semaines de stage, la cardinalité côté stagiaire devait être (1,n), ce qui correspond au besoin fonctionnel exprimé.
+
+                <div class="project-image-container">
+                    <img src="../../imgs/voile.png" alt="Schéma BDD école de voile" class="project-image clickable-image" data-title="Schéma BDD école de voile">
+                    <figcaption>Schéma BDD école de voile</figcaption>
+                </div>
+
+                Ensuite, j'ai étudié le processus de désignation, dans lequel un stagiaire se voit attribuer à la fois un moniteur et un engin. Deux approches ont été comparées : une solution avec deux associations binaires, ou une association ternaire. J'ai compris que, même si les deux peuvent être représentées dans un modèle relationnel avec une table de liaison, l'association ternaire est plus fidèle au processus métier réel, car elle lie simultanément les trois entités.<br><br>
+
+                Une réflexion critique a aussi été menée pour intégrer la contrainte de désignation au processus d'inscription. En effet, le modèle initial ne permettait pas à un stagiaire de changer de moniteur ou d'engin entre deux stages. Pour résoudre ce problème, j'ai proposé de lier la désignation à l'inscription, ce qui aurait nécessité la création d'une association pentanaire impliquant le stagiaire, l'engin, le moniteur, le stage, et l'inscription, avec des cardinalités adaptées.<br><br>
+
+                Enfin, j'ai enrichi le modèle avec la gestion des arrhes, des paiements par chèque, et des groupes de stagiaires. Pour cela, j'ai proposé d'ajouter une colonne paiement dans la table stagiaire, et pour les groupes, deux approches : soit une attribution manuelle via une colonne groupe, soit un algorithme automatique basé sur l'année de naissance. Cela m'a permis d'aller au-delà de la simple modélisation, en pensant à l'exploitation concrète des données dans un contexte applicatif.<br><br>
+
+                Cette étude de cas m'a permis de développer un raisonnement critique sur la qualité des modèles, d'améliorer mes compétences en modélisation conceptuelle et logique, et de travailler dans une logique orientée métier, ce qui est essentiel pour l'optimisation des données en entreprise.
+
+
             </div>
         </section>
 
         <section id="AC2">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC2 - Appliquer des principes d'accessibilité et d'ergonomie
+                AC2 - Assurer la confidentialité des données (intégrité et sécurité)
             </h3>
             <div class="section-content">
                 
@@ -78,7 +96,7 @@
         <section id="AC3">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC3 - Adopter de bonnes pratiques de conception et de programmation
+                AC3 - Organiser la restitution de données à travers la programmation et la visualisation
             </h3>
             <div class="section-content">
                 
@@ -88,13 +106,43 @@
         <section id="AC4">
             <h3 class="section-toggle">
                 <span class="toggle-triangle"></span>
-                AC4 - Vérifier et valider la qualité de l'application par les tests
+                AC4 - Manipuler des données hétérogènes
             </h3>
             <div class="section-content">
                 
             </div>
         </section>
-            
+
+        <!-- Section Portfolio de l'année dernière -->
+        <section id="portfolio-previous" class="portfolio-section">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                Portfolio de l'année dernière
+            </h3>
+            <div class="section-content">
+                <div class="pdf-viewer">
+                    <div class="pdf-controls">
+                        <button id="prev-page" class="pdf-btn" title="Page précédente">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="page-info">
+                            Page <span id="current-page">1</span> sur <span id="total-pages">-</span>
+                        </span>
+                        <button id="next-page" class="pdf-btn" title="Page suivante">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="pdf-container">
+                        <canvas id="pdf-canvas"></canvas>
+                        <div class="loading-spinner" id="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Chargement du portfolio...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>            
 
         <section id="auto-evaluation">
             <h3 class="section-toggle">
