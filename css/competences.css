@@ -227,6 +227,10 @@ section[id^="AC"] li {
     max-height: 200px;
 }
 
+.petite-image {
+    max-height: 300px;
+}
+
 .project-image-container {
     text-align: center;
     margin: 30px 0;
@@ -262,7 +266,6 @@ a {
 #auto-evaluation a:hover {
     transition: all 0.3s ease;
     color: var(--rose);
-    font-style: italic;
 }
 
 #navigation-competences {
@@ -676,7 +679,6 @@ code {
     color: var(--bleu);
     font-weight: 500;
 }
-
 
 
 /* Responsive */

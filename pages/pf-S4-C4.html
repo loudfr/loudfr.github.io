@@ -25,7 +25,6 @@
             <h3>Gérer des données de l'information</h3>
             <p class="competence-description">
                 Concevoir, gérer, administrer et exploiter les données de l'entreprise et mettre à disposition toutes les informations pour un bon pilotage de l'entreprise.
-                En cours ... 17/6
             </p>
         </section>
 
@@ -36,6 +35,7 @@
             <a href="#AC2" class="section-link">AC2</a>
             <a href="#AC3" class="section-link">AC3</a>
             <a href="#AC4" class="section-link">AC4</a>
+            <a href="#portfolio-previous" class="section-link">PF S2</a>
             <a href="#auto-evaluation" class="section-link">Auto-évaluation</a>
             <a href="#conclusion" class="section-link">Conclusion</a>
         </div>
@@ -47,10 +47,11 @@
                 <span class="dropdown-arrow">▼</span>
             </button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#AC1" class="section-link mobile-section-link">AC1 - Optimiser les modèles de données de l'entreprise</a>
-                <a href="#AC2" class="section-link mobile-section-link">AC2 - Assurer la confidentialité des données (intégrité et sécurité)</a>
-                <a href="#AC3" class="section-link mobile-section-link">AC3 - Organiser la restitution de données à travers la programmation et la visualisation</a>
+                <a href="#AC1" class="section-link mobile-section-link">AC1 - Optimisation des modèles</a>
+                <a href="#AC2" class="section-link mobile-section-link">AC2 - Confidentialité des données</a>
+                <a href="#AC3" class="section-link mobile-section-link">AC3 - Restitution de données</a>
                 <a href="#AC4" class="section-link mobile-section-link">AC4 - Manipuler des données hétérogènes</a>
+                <a href="#portfolio-previous" class="section-link mobile-section-link">Portfolio S2</a>
                 <a href="#auto-evaluation" class="section-link mobile-section-link">Auto-évaluation</a>
                 <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
             </div>
@@ -89,7 +90,18 @@
                 AC2 - Assurer la confidentialité des données (intégrité et sécurité)
             </h3>
             <div class="section-content">
-                
+                Dans le projet Java/MySQL, j'ai mis en place une gestion sécurisée des données avec des utilisateurs restreints, des droits SQL définis, et un chiffrement des mots de passe. <br><br>
+
+                J'ai appliqué dans certains TP et SAE des fonctions de hachage comme SHA-256 pour garantir que les mots de passe ne soient jamais stockés en clair. <br><br>
+
+                L'étude de l'architecture réseau et des systèmes m'a permis de comprendre les implications en matière de sécurité d'accès, en lien avec les connexions SQL, la configuration des ports et des services réseau.<br><br>
+
+                J'ai également utilisé Docker pour isoler les bases de données, ce qui a permis de sécuriser leur accès en environnement de développement web (WikiCoaster) et mobile (Flutter/Dart).
+
+                <div class="project-image-container">
+                    <img src="../../imgs/wikicoaster.png" alt="WikiCoaster" class="project-image clickable-image" data-title="WikiCoaster avec Symfony">
+                    <figcaption>WikiCoaster avec Symfony</figcaption>
+                </div>
             </div>
         </section>
 
@@ -99,7 +111,23 @@
                 AC3 - Organiser la restitution de données à travers la programmation et la visualisation
             </h3>
             <div class="section-content">
+                J'ai utilisé JDBC avec Java pour développer une interface connectée à la base de données des vols. Cela m'a permis d'apprendre à écrire des requêtes dynamiques et à les lier à des éléments d'interface (menus, formulaires de recherche).
                 
+                <div class="project-image-container">
+                    <img src="../../imgs/java_sql_vol.png" alt="Gestion de vols via Java et SQL" class="project-image clickable-image" data-title="Gestion de vols via Java et SQL">
+                    <figcaption>Gestion de vols via Java et SQL</figcaption>
+                </div>
+
+                Dans certains projets web, j'ai récupéré des données SQL pour les afficher dans une interface HTML/JS, en utilisant des graphiques et tableaux interactifs.
+
+                <div class="project-image-container">
+                    <img src="../../imgs/asbo_sae4.png" alt="Tableau SQL" class="project-image clickable-image" data-title="Affichage de données via une base de donnée SQL">
+                    <figcaption>Affichage de données via une base de donnée SQL</figcaption>
+                </div>
+
+                Cette compétence m'a aidé à comprendre que la donnée ne doit pas seulement être stockée, mais aussi présentée de façon claire, exploitable et adaptée au besoin métier.
+
+
             </div>
         </section>
 
@@ -109,7 +137,25 @@
                 AC4 - Manipuler des données hétérogènes
             </h3>
             <div class="section-content">
-                
+                J'ai manipulé plusieurs formats de données au fil des projets : fichiers CSV, JSON dans les API, structures NoSQL simples.<br>
+
+                Dans le cadre du développement mobile avec Flutter et Dart, nous avons utilisé Docker pour simuler une base SQL, ce qui m'a permis de travailler avec des environnements de données intégrés (back-end SQL et front-end mobile).
+
+                <div class="project-image-container">
+                    <img src="../../imgs/flutter.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Acteurs)">
+                    <img src="../../imgs/flutter2.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Films en fonctiond e l'Acteur séléctionné)">
+                    <img src="../../imgs/flutter3.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page localisation de Cinémas)">
+                    <figcaption>Gestion d'un cinéma avec Flutter</figcaption>
+                </div>
+
+                J'ai appris à parser des données JSON depuis des API, à les nettoyer et à les injecter dans des bases relationnelles, ou à les afficher dans des interfaces utilisateur.
+
+                <div class="project-image-container">
+                    <img src="../../imgs/api-asterix.png" alt="API Asterix" class="project-image clickable-image petite-image" data-title="API de detection d'Asterix ou Obélix avec IA"> 
+                    <figcaption>API de detection d'Asterix ou Obélix avec IA</figcaption>
+                </div>
+
+                Ces manipulations m'ont montré l'importance d'être capable de travailler avec des formats variés, et d'adapter les traitements selon la source, la structure, ou le volume des données.
             </div>
         </section>
 
@@ -227,17 +273,12 @@
             <div class="section-content">
                 <h5>Quelle évolution ai-je constatée dans ma maîtrise de ces apprentissages ?</h5>
                 <p>
-                    Au début de la formation, je maîtrisais les bases du développement, mais je manquais de méthode pour structurer un projet de bout en bout. Grâce aux SAE et aux ressources enseignées, j'ai appris à partir des besoins exprimés dans un cahier des charges, à les traduire en interfaces accessibles et ergonomiques, à les implémenter en respectant des bonnes pratiques de conception, et à valider la qualité du code à l'aide de tests.
+                    Au début, je savais créer une base de données simple et écrire des requêtes en SQL, mais je n'avais pas encore conscience des enjeux réels liés à l’organisation, la performance et la sécurité des données. Grâce aux différents projets et cas pratiques, j’ai acquis une vision beaucoup plus globale.<br><br>
+                    Par exemple, dans le projet de gestion de vols d’avion, j’ai compris que la façon dont on structure une base a un impact direct sur son exploitation. Nous avions commencé avec deux bases séparées, mais cette organisation posait des problèmes de redondance et de cohérence. En restructurant le modèle en une base unique, plus normalisée, j’ai vu immédiatement la différence dans la clarté du schéma, la simplicité des requêtes SQL, et l’interfaçage avec Java via JDBC.<br><br>
+                    L’étude de cas CVE m’a aussi permis de développer ma réflexion critique : j’ai appris à analyser une modélisation en profondeur, à justifier des choix d’associations, et à anticiper des conflits logiques entre les entités.<br><br>
+                    Enfin, j’ai beaucoup progressé sur la partie restitution et manipulation des données : que ce soit via des scripts, des interfaces ou des visualisations, je sais désormais comment transformer des données brutes en résultats exploitables.
 
-                    Par exemple, lors de la SAE de développement d'une application, j'ai su :
-                    <ul>
-                        <li>Élaborer un cahier des charges fonctionnel et technique structuré avec étude de la concurrence, fonctionnalités, maquettes, Trello, etc.,</li>
-                        <li>Concevoir une interface graphique en Java simple, compréhensible et accessible à tous,</li>
-                        <li>Modéliser le projet en UML, en appliquant les principes SOLID, avec du code clair, modulaire et versionné avec GitHub,</li>
-                        <li>Rédiger des tests unitaires avec JUnit et Mockito, et utiliser des outils comme SonarLint pour garantir la qualité du code.</li>
-                    </ul>
 
-                    Cette progression m'a permis de prendre conscience des exigences réelles du développement professionnel, notamment l'importance de la rigueur, de la documentation et du travail collaboratif.
                 </p>
 
                 <h5>Quelles ressources ai-je mobilisées parmi les enseignements reçus ?</h5>
@@ -267,36 +308,33 @@
 
                 <h5>Est-ce que cela m'a permis de mieux les comprendre/maîtriser ?</h5>
                 <p>
-                    Oui, les mettre en pratique m'a permis de passer de la théorie à la maîtrise concrète. J'ai compris l'intérêt de chaque étape :
-
-                    <ul>
-                        <li>Sans cahier des charges, l'équipe se perd.</li>
-                        <li>Sans interface claire, l'utilisateur se décourage.</li>
-                        <li>Sans bonne conception, le code devient vite ingérable.</li>
-                        <li>Sans tests, on découvre les erreurs trop tard.</li>
-                    </ul>
-
-                    Les projets m'ont permis d'apprendre par la pratique, de mieux communiquer en équipe, de corriger mes erreurs et d'améliorer mes méthodes.
+                    Oui, clairement. La pratique a été déterminante. Utiliser réellement JDBC avec une interface graphique Java m’a fait comprendre les subtilités du dialogue entre application et base.<br><br>
+                    
+                    Restructurer un modèle relationnel m’a permis de voir l’impact d’une conception sur l’efficacité et la maintenabilité du système.<br>
+                    
+                    Travailler avec des données hétérogènes (JSON, CSV, API) m’a appris à m’adapter aux formats variés qu’on peut rencontrer dans un contexte professionnel.<br>
+                    
+                    L’utilisation de Docker dans le cadre d’un projet mobile Flutter m’a aussi permis de visualiser l’ensemble du cycle de vie d’une application avec base embarquée.<br><br>
+                    
+                    En bref, les projets m’ont permis d’aller bien plus loin que la théorie, en me confrontant à des problèmes réels et concrets.
                 </p>
 
                 <h5>Quelles ressources ai-je dû chercher en plus de celles reçues lors des enseignements ?</h5>
                 <p>
-                    <ul>
-                        <li>Documentation officielle de JUnit, Mockito, JavaFX, Bootstrap, Angular, etc.</li>
-                        <li>Tutoriels en ligne (YouTube, OpenClassrooms, Stack Overflow) pour résoudre des problèmes spécifiques (gestion des mocks, routing Angular, tests avancés…).</li>
-                        <li>Projets open source sur GitHub pour comprendre comment les autres organisent leur code, structurent leurs tests, et documentent leurs projets.</li>
-                    </ul>
-
-                    Cela m'a permis d'élargir ma vision et de découvrir d'autres façons de coder, plus professionnelles. De plus l'IA générative évoluant très rapidement, j'ai aussi utilisé des outils comme Claude pour m'aider à résoudre des problèmes de code ou à générer des exemples de tests unitaires.
+                    J’ai eu besoin de compléter mes connaissances avec plusieurs ressources extérieures.
+                    <br><br>
+                    Pour la partie Docker, j’ai suivi des tutoriels (OpenClassrooms, DigitalOcean, documentation Docker officielle) pour comprendre la création de conteneurs, l’écriture de docker-compose.yml, et la gestion des volumes.<br>
+                    Pour le projet avec JDBC, j’ai consulté Stack Overflow et la documentation MySQL Connector pour résoudre des erreurs de connexion, de format de date ou d’encodage.
+                    Pour la gestion de fichiers JSON et l’appel d’API, j’ai utilisé des ressources GitHub et des tutoriels spécifiques.
                 </p>
 
                 <h5>Si c'était à refaire, qu'est-ce que je changerais ?</h5>
                 <p>
                     <ul>
-                        <li>Je mettrais en place des tests dès le début (approche TDD) pour éviter les erreurs tardives.</li>
-                        <li>J'impliquerais plus l'équipe dans la rédaction du cahier des charges, pour que chacun comprenne bien le besoin.</li>
-                        <li>J'intégrerais des retours utilisateurs en amont pour améliorer l'ergonomie.</li>
-                        <li>Je structurerais mes projets avec une architecture plus claire dès le départ et des conventions de nommage plus strictes.</li>
+                        <li>Je structurerais mes projets dès le départ avec un MCD complet et validé. Sur le projet de vols, nous avons commencé trop vite, ce qui a causé des modifications importantes ensuite.</li>
+                        <li>Je documenterais mieux mes requêtes SQL, les scripts de création, et les droits des utilisateurs, pour assurer un suivi plus rigoureux du projet.</li>
+                        <li>J'automatiserais aussi l'installation des environnements avec Docker dès le début pour gagner du temps sur la configuration.</li>
+                        <li>Enfin, j'essaierais de mettre en place une API REST entre la base et l'application mobile ou web, pour rendre mes projets plus proches de ce qui se fait dans le monde professionnel.</li>
                     </ul>
                 </p>
             </div>
