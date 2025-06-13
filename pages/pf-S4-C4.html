@@ -63,24 +63,24 @@
                 AC1 - Optimiser les modèles de données de l'entreprise
             </h3>
             <div class="section-content">
-                Dans le cadre de la ressource R4.03 – Qualité et au-delà du relationnel, j'ai étudié un cas concret d'analyse de données : la gestion des inscriptions, du matériel, et des moniteurs d'une école de voile (projet CVE). L'objectif était de construire un modèle conceptuel de données cohérent à partir d'un cahier des charges, en tenant compte de la réalité de gestion et de la logique métier.<br><br>
+                <p>
+                    Dans le cadre de la ressource R4.03 – Qualité et au-delà du relationnel, j'ai étudié un cas concret d'analyse de données : la gestion des inscriptions, du matériel, et des moniteurs d'une école de voile (projet CVE). L'objectif était de construire un modèle conceptuel de données cohérent à partir d'un cahier des charges, en tenant compte de la réalité de gestion et de la logique métier.<br><br>
 
-                J'ai d'abord analysé le processus d'inscription des stagiaires aux stages, en évaluant les cardinalités appropriées. Par exemple, pour autoriser qu'un stagiaire participe à plusieurs semaines de stage, la cardinalité côté stagiaire devait être (1,n), ce qui correspond au besoin fonctionnel exprimé.
+                    J'ai d'abord analysé le processus d'inscription des stagiaires aux stages, en évaluant les cardinalités appropriées. Par exemple, pour autoriser qu'un stagiaire participe à plusieurs semaines de stage, la cardinalité côté stagiaire devait être (1,n), ce qui correspond au besoin fonctionnel exprimé.
 
-                <div class="project-image-container">
-                    <img src="../../imgs/voile.png" alt="Schéma BDD école de voile" class="project-image clickable-image" data-title="Schéma BDD école de voile">
-                    <figcaption>Schéma BDD école de voile</figcaption>
-                </div>
+                    <div class="project-image-container">
+                        <img src="../../imgs/voile.png" alt="Schéma BDD école de voile" class="project-image clickable-image" data-title="Schéma BDD école de voile">
+                        <figcaption>Schéma BDD école de voile</figcaption>
+                    </div>
 
-                Ensuite, j'ai étudié le processus de désignation, dans lequel un stagiaire se voit attribuer à la fois un moniteur et un engin. Deux approches ont été comparées : une solution avec deux associations binaires, ou une association ternaire. J'ai compris que, même si les deux peuvent être représentées dans un modèle relationnel avec une table de liaison, l'association ternaire est plus fidèle au processus métier réel, car elle lie simultanément les trois entités.<br><br>
+                    Ensuite, j'ai étudié le processus de désignation, dans lequel un stagiaire se voit attribuer à la fois un moniteur et un engin. Deux approches ont été comparées : une solution avec deux associations binaires, ou une association ternaire. J'ai compris que, même si les deux peuvent être représentées dans un modèle relationnel avec une table de liaison, l'association ternaire est plus fidèle au processus métier réel, car elle lie simultanément les trois entités.<br><br>
 
-                Une réflexion critique a aussi été menée pour intégrer la contrainte de désignation au processus d'inscription. En effet, le modèle initial ne permettait pas à un stagiaire de changer de moniteur ou d'engin entre deux stages. Pour résoudre ce problème, j'ai proposé de lier la désignation à l'inscription, ce qui aurait nécessité la création d'une association pentanaire impliquant le stagiaire, l'engin, le moniteur, le stage, et l'inscription, avec des cardinalités adaptées.<br><br>
+                    Une réflexion critique a aussi été menée pour intégrer la contrainte de désignation au processus d'inscription. En effet, le modèle initial ne permettait pas à un stagiaire de changer de moniteur ou d'engin entre deux stages. Pour résoudre ce problème, j'ai proposé de lier la désignation à l'inscription, ce qui aurait nécessité la création d'une association pentanaire impliquant le stagiaire, l'engin, le moniteur, le stage, et l'inscription, avec des cardinalités adaptées.<br><br>
 
-                Enfin, j'ai enrichi le modèle avec la gestion des arrhes, des paiements par chèque, et des groupes de stagiaires. Pour cela, j'ai proposé d'ajouter une colonne paiement dans la table stagiaire, et pour les groupes, deux approches : soit une attribution manuelle via une colonne groupe, soit un algorithme automatique basé sur l'année de naissance. Cela m'a permis d'aller au-delà de la simple modélisation, en pensant à l'exploitation concrète des données dans un contexte applicatif.<br><br>
+                    Enfin, j'ai enrichi le modèle avec la gestion des arrhes, des paiements par chèque, et des groupes de stagiaires. Pour cela, j'ai proposé d'ajouter une colonne paiement dans la table stagiaire, et pour les groupes, deux approches : soit une attribution manuelle via une colonne groupe, soit un algorithme automatique basé sur l'année de naissance. Cela m'a permis d'aller au-delà de la simple modélisation, en pensant à l'exploitation concrète des données dans un contexte applicatif.<br><br>
 
-                Cette étude de cas m'a permis de développer un raisonnement critique sur la qualité des modèles, d'améliorer mes compétences en modélisation conceptuelle et logique, et de travailler dans une logique orientée métier, ce qui est essentiel pour l'optimisation des données en entreprise.
-
-
+                    Cette étude de cas m'a permis de développer un raisonnement critique sur la qualité des modèles, d'améliorer mes compétences en modélisation conceptuelle et logique, et de travailler dans une logique orientée métier, ce qui est essentiel pour l'optimisation des données en entreprise.
+                </p>
             </div>
         </section>
 
@@ -90,18 +90,21 @@
                 AC2 - Assurer la confidentialité des données (intégrité et sécurité)
             </h3>
             <div class="section-content">
-                Dans le projet Java/MySQL, j'ai mis en place une gestion sécurisée des données avec des utilisateurs restreints, des droits SQL définis, et un chiffrement des mots de passe. <br><br>
+                <p>
+                    Dans le projet Java/MySQL, j'ai mis en place une gestion sécurisée des données avec des utilisateurs restreints, des droits SQL définis, et un chiffrement des mots de passe. <br><br>
 
-                J'ai appliqué dans certains TP et SAE des fonctions de hachage comme SHA-256 pour garantir que les mots de passe ne soient jamais stockés en clair. <br><br>
+                    J'ai appliqué dans certains TP et SAE des fonctions de hachage comme SHA-256 pour garantir que les mots de passe ne soient jamais stockés en clair. <br><br>
 
-                L'étude de l'architecture réseau et des systèmes m'a permis de comprendre les implications en matière de sécurité d'accès, en lien avec les connexions SQL, la configuration des ports et des services réseau.<br><br>
+                    L'étude de l'architecture réseau et des systèmes m'a permis de comprendre les implications en matière de sécurité d'accès, en lien avec les connexions SQL, la configuration des ports et des services réseau.<br><br>
 
-                J'ai également utilisé Docker pour isoler les bases de données, ce qui a permis de sécuriser leur accès en environnement de développement web (WikiCoaster) et mobile (Flutter/Dart).
+                    J'ai également utilisé Docker pour isoler les bases de données, ce qui a permis de sécuriser leur accès en environnement de développement web (WikiCoaster) et mobile (Flutter/Dart).
 
-                <div class="project-image-container">
-                    <img src="../../imgs/wikicoaster.png" alt="WikiCoaster" class="project-image clickable-image" data-title="WikiCoaster avec Symfony">
-                    <figcaption>WikiCoaster avec Symfony</figcaption>
-                </div>
+                    <div class="project-image-container">
+                        <img src="../../imgs/wikicoaster.png" alt="WikiCoaster" class="project-image clickable-image" data-title="WikiCoaster avec Symfony">
+                        <figcaption>WikiCoaster avec Symfony</figcaption>
+                    </div>
+                </p>
+                
             </div>
         </section>
 
@@ -111,24 +114,24 @@
                 AC3 - Organiser la restitution de données à travers la programmation et la visualisation
             </h3>
             <div class="section-content">
-                J'ai utilisé JDBC avec Java pour développer une interface connectée à la base de données des vols. Cela m'a permis d'apprendre à écrire des requêtes dynamiques et à les lier à des éléments d'interface (menus, formulaires de recherche).
+                <p>
+                    J'ai utilisé JDBC avec Java pour développer une interface connectée à la base de données des vols. Cela m'a permis d'apprendre à écrire des requêtes dynamiques et à les lier à des éléments d'interface (menus, formulaires de recherche).
                 
-                <div class="project-image-container">
-                    <img src="../../imgs/java_sql_vol.png" alt="Gestion de vols via Java et SQL" class="project-image clickable-image" data-title="Gestion de vols via Java et SQL">
-                    <figcaption>Gestion de vols via Java et SQL</figcaption>
+                    <div class="project-image-container">
+                        <img src="../../imgs/java_sql_vol.png" alt="Gestion de vols via Java et SQL" class="project-image clickable-image" data-title="Gestion de vols via Java et SQL">
+                        <figcaption>Gestion de vols via Java et SQL</figcaption>
+                    </div>
+
+                    Dans certains projets web, j'ai récupéré des données SQL pour les afficher dans une interface HTML/JS, en utilisant des graphiques et tableaux interactifs.
+
+                    <div class="project-image-container">
+                        <img src="../../imgs/asbo_sae4.png" alt="Tableau SQL" class="project-image clickable-image" data-title="Affichage de données via une base de donnée SQL">
+                        <figcaption>Affichage de données via une base de donnée SQL</figcaption>
+                    </div>
+
+                    Cette compétence m'a aidé à comprendre que la donnée ne doit pas seulement être stockée, mais aussi présentée de façon claire, exploitable et adaptée au besoin métier.
+                </p>
                 </div>
-
-                Dans certains projets web, j'ai récupéré des données SQL pour les afficher dans une interface HTML/JS, en utilisant des graphiques et tableaux interactifs.
-
-                <div class="project-image-container">
-                    <img src="../../imgs/asbo_sae4.png" alt="Tableau SQL" class="project-image clickable-image" data-title="Affichage de données via une base de donnée SQL">
-                    <figcaption>Affichage de données via une base de donnée SQL</figcaption>
-                </div>
-
-                Cette compétence m'a aidé à comprendre que la donnée ne doit pas seulement être stockée, mais aussi présentée de façon claire, exploitable et adaptée au besoin métier.
-
-
-            </div>
         </section>
 
         <section id="AC4">
@@ -137,25 +140,27 @@
                 AC4 - Manipuler des données hétérogènes
             </h3>
             <div class="section-content">
-                J'ai manipulé plusieurs formats de données au fil des projets : fichiers CSV, JSON dans les API, structures NoSQL simples.<br>
+                <p>
+                    J'ai manipulé plusieurs formats de données au fil des projets : fichiers CSV, JSON dans les API, structures NoSQL simples.<br>
 
-                Dans le cadre du développement mobile avec Flutter et Dart, nous avons utilisé Docker pour simuler une base SQL, ce qui m'a permis de travailler avec des environnements de données intégrés (back-end SQL et front-end mobile).
+                    Dans le cadre du développement mobile avec Flutter et Dart, nous avons utilisé Docker pour simuler une base SQL, ce qui m'a permis de travailler avec des environnements de données intégrés (back-end SQL et front-end mobile).
 
-                <div class="project-image-container">
-                    <img src="../../imgs/flutter.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Acteurs)">
-                    <img src="../../imgs/flutter2.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Films en fonctiond e l'Acteur séléctionné)">
-                    <img src="../../imgs/flutter3.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page localisation de Cinémas)">
-                    <figcaption>Gestion d'un cinéma avec Flutter</figcaption>
-                </div>
+                    <div class="project-image-container">
+                        <img src="../../imgs/flutter.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Acteurs)">
+                        <img src="../../imgs/flutter2.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page Films en fonctiond e l'Acteur séléctionné)">
+                        <img src="../../imgs/flutter3.png" alt="Cinéma" class="project-image clickable-image petite-image" data-title="Gestion d'un cinéma avec Flutter (page localisation de Cinémas)">
+                        <figcaption>Gestion d'un cinéma avec Flutter</figcaption>
+                    </div>
 
-                J'ai appris à parser des données JSON depuis des API, à les nettoyer et à les injecter dans des bases relationnelles, ou à les afficher dans des interfaces utilisateur.
+                    J'ai appris à parser des données JSON depuis des API, à les nettoyer et à les injecter dans des bases relationnelles, ou à les afficher dans des interfaces utilisateur.
 
-                <div class="project-image-container">
-                    <img src="../../imgs/api-asterix.png" alt="API Asterix" class="project-image clickable-image petite-image" data-title="API de detection d'Asterix ou Obélix avec IA"> 
-                    <figcaption>API de detection d'Asterix ou Obélix avec IA</figcaption>
-                </div>
+                    <div class="project-image-container">
+                        <img src="../../imgs/api-asterix.png" alt="API Asterix" class="project-image clickable-image petite-image" data-title="API de detection d'Asterix ou Obélix avec IA"> 
+                        <figcaption>API de detection d'Asterix ou Obélix avec IA</figcaption>
+                    </div>
 
-                Ces manipulations m'ont montré l'importance d'être capable de travailler avec des formats variés, et d'adapter les traitements selon la source, la structure, ou le volume des données.
+                    Ces manipulations m'ont montré l'importance d'être capable de travailler avec des formats variés, et d'adapter les traitements selon la source, la structure, ou le volume des données.
+                </p>
             </div>
         </section>
 
