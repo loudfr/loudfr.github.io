@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louise - API Astérix</title>
+    <link rel="icon" type="image/x-icon" href="../../imgs/ld.ico">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/project-detail.css">
+    <link rel="stylesheet" href="../../css/competences.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../js/header.js"></script>
+    <script src="../../js/portfolio.js"></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <main>
+        <section class="project-detail-hero">
+            <div class="hero-content">
+                <h1>API Astérix</h1>
+                <p class="project-subtitle">API REST pour la gestion de données avec Node.js et Express</p>
+                <div class="project-meta">
+                    <span class="project-period">BUT2 - Semestre 4</span>
+                    <span class="project-team">Projet individuel</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Code privé
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../../imgs/api-asterix.png" alt="API Astérix" class="clickable-image" data-title="Documentation de l'API Astérix">
+            </div>
+        </section>
+        
+        <section class="project-content">
+            <div class="content-grid">
+                <div class="project-images">
+                    <h4>Aperçu du projet</h4>
+                    <div class="images-gallery">
+                        <img src="../../imgs/api-asterix.png" alt="Documentation API" class="gallery-image clickable-image" data-title="Documentation complète de l'API Astérix">
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="info-section">
+                        <h4>Description du projet</h4>
+                        <p>
+                            Développement d'une API REST complète avec Node.js et Express, thématisée autour de l'univers d'Astérix. 
+                            L'API permet de gérer une base de données de personnages, villages gaulois et aventures, avec toutes 
+                            les opérations CRUD (Create, Read, Update, Delete) et une documentation Swagger intégrée.
+                        </p>
+                        <p>
+                            Ce projet m'a permis d'approfondir mes connaissances en développement backend, architecture REST, 
+                            et bonnes pratiques de développement d'APIs modernes avec authentification et validation des données.
+                        </p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Technologies utilisées</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Express</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Mongoose</span>
+                            <span class="tech-item">JWT</span>
+                            <span class="tech-item">Swagger</span>
+                            <span class="tech-item">Postman</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Fonctionnalités développées</h4>
+                        <ul>
+                            <li>API REST complète avec toutes les méthodes HTTP</li>
+                            <li>Base de données MongoDB avec Mongoose</li>
+                            <li>Système d'authentification JWT</li>
+                            <li>Validation des données d'entrée</li>
+                            <li>Gestion des erreurs et codes de statut HTTP</li>
+                            <li>Documentation automatique avec Swagger</li>
+                            <li>Tests d'endpoints avec Postman</li>
+                            <li>Middleware de sécurité et CORS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Endpoints principaux</h4>
+                        <ul>
+                            <li><strong>GET /personnages</strong> - Liste tous les personnages</li>
+                            <li><strong>POST /personnages</strong> - Crée un nouveau personnage</li>
+                            <li><strong>PUT /personnages/:id</strong> - Met à jour un personnage</li>
+                            <li><strong>DELETE /personnages/:id</strong> - Supprime un personnage</li>
+                            <li><strong>GET /villages</strong> - Gestion des villages gaulois</li>
+                            <li><strong>POST /auth/login</strong> - Authentification utilisateur</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Défis techniques rencontrés</h4>
+                        <ul>
+                            <li><strong>Architecture :</strong> Structuration propre du code en modules</li>
+                            <li><strong>Base de données :</strong> Modélisation efficace avec MongoDB</li>
+                            <li><strong>Sécurité :</strong> Implémentation JWT et validation des données</li>
+                            <li><strong>Documentation :</strong> Création d'une doc Swagger complète</li>
+                            <li><strong>Tests :</strong> Validation de tous les cas d'usage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Compétences développées</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <h5>Backend Node.js</h5>
+                                <p>Express, middleware, routing</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Base de données NoSQL</h5>
+                                <p>MongoDB, Mongoose, modélisation</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Architecture REST</h5>
+                                <p>Bonnes pratiques, codes HTTP, CRUD</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Sécurité API</h5>
+                                <p>JWT, authentification, validation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Documentation et tests</h4>
+                        <p>
+                            Une attention particulière a été portée à la documentation de l'API avec Swagger UI, 
+                            permettant aux développeurs de tester directement les endpoints. Des collections Postman 
+                            complètes ont également été créées pour faciliter les tests et l'intégration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="nav-buttons">
+                <a href="../projets.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i> Retour aux projets
+                </a>
+                <a href="portfolio.html" class="btn-suivant">
+                    Projet suivant <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Retour en haut">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <!-- Modal pour affichage des images -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle"></span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="">
+                    <div class="image-controls">
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="resetZoom">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

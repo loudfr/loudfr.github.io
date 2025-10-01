@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Louise - Projets</title>
+        <link rel="icon" type="image/x-icon" href="../imgs/ld.ico">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/projets.css">
+        <script src="../js/header.js"></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="projets-hero">
+            <h1>Projets</h1>
+        </section>
+
+        <section id="projets-filters">
+            <div class="filter-container">
+                <div class="filter-hover-bg"></div>
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="but1">BUT1</button>
+                <button class="filter-btn" data-filter="but2">BUT2</button>
+                <button class="filter-btn" data-filter="but3">BUT3</button>
+                <button class="filter-btn" data-filter="personnel">Personnel</button>
+            </div>
+        </section>
+
+        <section id="projets-grid">
+            <div class="projects-container">
+                <!-- Projets BUT1 -->
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/logo_rapidos.png" alt="Rapidos">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Rapidos</h4>
+                                <p>Site web pour association sportive</p>
+                                <span class="project-tech">HTML • CSS • PHP • Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/chambregl.png" alt="Chambre Van Gogh">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Chambre Van Gogh 3D</h4>
+                                <p>Modélisation 3D interactive</p>
+                                <span class="project-tech">WebGL • JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/voljavasql.png" alt="Gestion des vols">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Gestion des vols</h4>
+                                <p>Application de gestion avec base de données</p>
+                                <span class="project-tech">Java • MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/chiffrement-cesar.png" alt="Chiffrement César">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Chiffrement César</h4>
+                                <p>Application de cryptographie</p>
+                                <span class="project-tech">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/Skytale.png" alt="Skytale">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Skytale</h4>
+                                <p>Méthode de chiffrement antique</p>
+                                <span class="project-tech">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but1">
+                    <div class="project-image">
+                        <img src="../imgs/kruskal.png" alt="Algorithme de Kruskal">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Algorithme de Kruskal</h4>
+                                <p>Implémentation de l'algorithme des graphes</p>
+                                <span class="project-tech">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projets BUT2 -->
+                <div class="project-card" data-category="but2">
+                    <div class="project-image">
+                        <img src="../imgs/flutter.png" alt="Application Flutter">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Application Mobile</h4>
+                                <p>Application mobile multiplateforme</p>
+                                <span class="project-tech">Flutter • Dart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="but2">
+                    <div class="project-image">
+                        <img src="../imgs/api-asterix.png" alt="API Astérix">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>API Astérix</h4>
+                                <p>API REST pour gestion de données</p>
+                                <span class="project-tech">Node.js • Express</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projets personnels -->
+                <div class="project-card" data-category="personnel">
+                    <div class="project-image">
+                        <img src="../imgs/logo-LD.png" alt="Portfolio">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h4>Portfolio Personnel</h4>
+                                <p>Site web portfolio responsive</p>
+                                <span class="project-tech">HTML • CSS • JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/projets.js"></script>
+</body>

@@ -1,0 +1,281 @@
+body {
+    background-color: var(--jaune);
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    color: var(--bleu);
+}
+
+/* Hero Section */
+.project-detail-hero {
+    padding: 120px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    margin: 0 0 20px 0;
+    -webkit-text-stroke: 3px var(--bleu);
+}
+
+.project-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-direction: column;
+}
+
+.project-meta span {
+    color: var(--rose);
+    font-style: italic;
+
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.github-link {
+    background: var(--bleu);
+    color: var(--jaune);
+}
+
+.github-link:hover {
+    background: var(--rose);
+}
+
+.trello-link {
+    background: #0079BF;
+    color: var(--jaune);
+}
+
+.trello-link:hover {
+    background: var(--rose);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Contenu principal */
+.project-content {
+    padding: 0 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.project-images h4,
+.info-section h4 {
+    color: var(--bleu);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.images-gallery {
+    display: grid;
+    gap: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+.info-section p {
+    color: var(--noir);
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    color: var(--noir);
+    padding-left: 20px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+}
+
+.info-section li strong {
+    color: var(--bleu);
+}
+
+/* Technologies */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-item {
+    background: var(--rose);
+    color: var(--jaune);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-item {
+    border: 2px solid var(--bleu);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.skill-item h5 {
+    color: var(--bleu);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.skill-item p {
+    color: var(--noir);
+    margin: 0;
+}
+
+/* Navigation */
+.project-navigation {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn-retour, 
+.btn-suivant {
+    background: var(--bleu);
+    color: var(--jaune);
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-retour:hover, 
+.btn-suivant:hover {
+    opacity: 0.9;
+}
+
+.btn-retour p,
+.btn-suivant p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-detail-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 100px 20px 40px;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        -webkit-text-stroke: 1px var(--bleu);
+    }
+    
+    .project-meta {
+        justify-content: center;
+    }
+    
+    .project-links {
+        justify-content: center;
+    }
+    
+    .project-content {
+        padding: 0 20px 40px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .project-links a {
+        justify-content: center;
+    }
+}
