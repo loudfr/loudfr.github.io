@@ -190,16 +190,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Event listeners
-    closeBtn.addEventListener('click', closeModal);
-    prevBtn.addEventListener('click', showPrevImage);
-    nextBtn.addEventListener('click', showNextImage);
-    zoomInBtn.addEventListener('click', zoomIn);
-    zoomOutBtn.addEventListener('click', zoomOut);
-    resetZoomBtn.addEventListener('click', resetZoom);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
+    if (nextBtn) nextBtn.addEventListener('click', showNextImage);
+    if (zoomInBtn) zoomInBtn.addEventListener('click', zoomIn);
+    if (zoomOutBtn) zoomOutBtn.addEventListener('click', zoomOut);
+    if (resetZoomBtn) resetZoomBtn.addEventListener('click', resetZoom);
 
     // Keyboard and modal events
     document.addEventListener('keydown', function(e) {
-        if (modal.style.display === 'block') {
+        if (modal && modal.style.display === 'block') {
             if (e.key === 'Escape') {
                 closeModal();
             } else if (e.key === 'ArrowLeft') {
@@ -210,22 +210,245 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
 
-    // Mouse wheel zoom
-    modalImage.addEventListener('wheel', function(e) {
-        e.preventDefault();
-        if (e.deltaY < 0) {
-            zoomIn();
-        } else {
-            zoomOut();
-        }
-    });
+    // Mouse wheel zoom avec passive: false pour éviter l'avertissement
+    if (modalImage) {
+        modalImage.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+                zoomIn();
+            } else {
+                zoomOut();
+            }
+        }, { passive: false });
+    }
 
-    // Initialize
+    // Initialize images
     initializeImages();
+
+    // PDFViewer - seulement si les éléments PDF existent
+    const pdfSection = document.getElementById('portfolio-previous');
+    if (pdfSection) {
+        // Charger PDF.js si ce n'est pas déjà fait
+        if (typeof pdfjsLib === 'undefined') {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+            script.onload = () => {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                initializePDFViewer();
+            };
+            document.head.appendChild(script);
+        } else {
+            initializePDFViewer();
+        }
+    }
 });
+
+// Modifiez la fonction initializePDFViewer pour prendre en paramètre le fichier PDF :
+function initializePDFViewer() {
+    class PDFViewer {
+        constructor() {
+            this.pdf = null;
+            this.currentPage = 1;
+            this.totalPages = 0;
+            this.canvas = document.getElementById('pdf-canvas');
+            
+            // Vérifiez si les éléments existent avant d'initialiser
+            if (!this.canvas) {
+                console.log('Canvas PDF non trouvé, ignorer l\'initialisation du PDFViewer');
+                return;
+            }
+            
+            this.ctx = this.canvas.getContext('2d');
+            this.scale = 1.5;
+            
+            this.initializeControls();
+            this.loadPDF();
+        }
+        
+        initializeControls() {
+            const prevBtn = document.getElementById('prev-page');
+            const nextBtn = document.getElementById('next-page');
+            
+            // Vérifiez si les boutons existent
+            if (!prevBtn || !nextBtn) {
+                console.log('Boutons de navigation PDF non trouvés');
+                return;
+            }
+            
+            prevBtn.addEventListener('click', () => this.prevPage());
+            nextBtn.addEventListener('click', () => this.nextPage());
+            
+            // Navigation au clavier uniquement quand on est sur la section PDF
+            document.addEventListener('keydown', (e) => {
+                // Vérifiez si on est sur la section portfolio et que la modal n'est pas ouverte
+                const modal = document.getElementById('imageModal');
+                const isModalOpen = modal && modal.style.display === 'block';
+                const pdfSection = document.getElementById('portfolio-previous');
+                const isInViewport = pdfSection && this.isElementInViewport(pdfSection);
+                
+                if (!isModalOpen && isInViewport) {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevPage();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        this.nextPage();
+                    }
+                }
+            });
+        }
+        
+        // Méthode pour déterminer le fichier PDF selon la page
+        getPDFPath() {
+            const currentPage = window.location.pathname;
+            
+            if (currentPage.includes('pf-S4-C1.html')) {
+                return '../imgs/pf-S2/portfolios2-1_louise.pdf';
+            } else if (currentPage.includes('pf-S4-C2.html')) {
+                return '../imgs/pf-S2/portfolios2-2_louise.pdf';
+            } else if (currentPage.includes('pf-S4-C3.html')) {
+                return '../imgs/pf-S2/portfolios2-3_louise.pdf';
+            } else if (currentPage.includes('pf-S4-C4.html')) {
+                return '../imgs/pf-S2/portfolios2-4_louise.pdf';
+            } else if (currentPage.includes('pf-S4-C5.html')) {
+                return '../imgs/pf-S2/portfolios2-5_louise.pdf';
+            } else if (currentPage.includes('pf-S4-C6.html')) {
+                return '../imgs/pf-S2/portfolios2-6_louise.pdf';
+            } else {
+                // Fichier par défaut
+                return '../imgs/pf-S2/portfolios2-1_louise.pdf';
+            }
+        }
+        
+        // Nouvelle méthode pour vérifier si un élément est visible
+        isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        async loadPDF() {
+            try {
+                // Utilisez le chemin déterminé par la page actuelle
+                const pdfUrl = this.getPDFPath();
+                
+                const loadingTask = pdfjsLib.getDocument(pdfUrl);
+                this.pdf = await loadingTask.promise;
+                this.totalPages = this.pdf.numPages;
+                
+                const totalPagesElement = document.getElementById('total-pages');
+                const loadingSpinner = document.getElementById('loading-spinner');
+                
+                if (totalPagesElement) {
+                    totalPagesElement.textContent = this.totalPages;
+                }
+                if (loadingSpinner) {
+                    loadingSpinner.style.display = 'none';
+                }
+                
+                this.renderPage(1);
+                this.updateControls();
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement du PDF:', error);
+                const loadingSpinner = document.getElementById('loading-spinner');
+                if (loadingSpinner) {
+                    loadingSpinner.innerHTML = `
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Erreur lors du chargement du portfolio de cette compétence</p>
+                    `;
+                }
+            }
+        }
+        
+        async renderPage(pageNum) {
+            if (!this.pdf || !this.canvas) return;
+            
+            try {
+                const page = await this.pdf.getPage(pageNum);
+                
+                // Calculer le ratio pour maintenir les proportions
+                const viewport = page.getViewport({ scale: 1.0 });
+                const containerWidth = this.canvas.parentElement.clientWidth - 60; // padding
+                const containerHeight = window.innerHeight * 0.8; // 80vh max
+                
+                // Calculer l'échelle pour s'adapter au conteneur tout en gardant les proportions
+                const scaleX = containerWidth / viewport.width;
+                const scaleY = containerHeight / viewport.height;
+                this.scale = Math.min(scaleX, scaleY, 2.0); // Maximum scale de 2.0
+                
+                const finalViewport = page.getViewport({ scale: this.scale });
+                
+                // Ajuster la taille du canvas
+                this.canvas.width = finalViewport.width;
+                this.canvas.height = finalViewport.height;
+                
+                // Effet de transition
+                this.canvas.style.opacity = '0.5';
+                
+                const renderContext = {
+                    canvasContext: this.ctx,
+                    viewport: finalViewport
+                };
+                
+                await page.render(renderContext).promise;
+                
+                // Animation d'apparition
+                this.canvas.style.opacity = '1';
+                
+            } catch (error) {
+                console.error('Erreur lors du rendu de la page:', error);
+            }
+        }
+        
+        prevPage() {
+            if (this.currentPage > 1) {
+                this.currentPage--;
+                this.renderPage(this.currentPage);
+                this.updateControls();
+            }
+        }
+        
+        nextPage() {
+            if (this.currentPage < this.totalPages) {
+                this.currentPage++;
+                this.renderPage(this.currentPage);
+                this.updateControls();
+            }
+        }
+        
+        updateControls() {
+            const currentPageElement = document.getElementById('current-page');
+            const prevBtn = document.getElementById('prev-page');
+            const nextBtn = document.getElementById('next-page');
+            
+            if (currentPageElement) {
+                currentPageElement.textContent = this.currentPage;
+            }
+            if (prevBtn) {
+                prevBtn.disabled = this.currentPage === 1;
+            }
+            if (nextBtn) {
+                nextBtn.disabled = this.currentPage === this.totalPages;
+            }
+        }
+    }
+
+    // Créer une instance du PDFViewer
+    new PDFViewer();
+}
+
+

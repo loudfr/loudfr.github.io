@@ -45,7 +45,7 @@ body {
     }
     
     #portfolio-hero h1 {
-        font-size: 2.5rem;
+        -webkit-text-stroke: 1px var(--bleu);
     }
     
     #choix-competences {
