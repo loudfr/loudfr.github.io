@@ -1,4 +1,4 @@
-/* filepath: c:\Users\louli\Desktop\LOULOU\loudfr.github.io\js\footer.js */
+/* filepath: c:\Users\louli\Desktop\LOULOU\dufourlouise.fr\js\footer.js */
 function getFooterPath() {
     const currentPath = window.location.pathname;
     
