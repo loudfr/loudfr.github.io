@@ -230,6 +230,37 @@ body {
     .project-image {
         height: 250px;
     }
+    
+    /* Overlay mobile - toujours visible sur le dernier tiers droit */
+    .project-overlay {
+        opacity: 1;
+        background: linear-gradient(to left, var(--bleu) 0%, var(--bleu) 45%, transparent 45%);
+        border: none;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+    
+    .project-info {
+        width: 33%;
+        padding: 10px;
+        text-align: right;
+    }
+    
+    .project-info h4,
+    .project-info p,
+    .project-tech {
+        color: var(--noir);
+        font-size: 0.8rem;
+        margin: 2px 0;
+    }
+    
+    .project-info h4 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+
 }
 
 @media (max-width: 480px) {
@@ -237,10 +268,88 @@ body {
         font-size: 2rem;
     }
     
+    /* Menu déroulant pour les filtres */
     .filter-container {
+        position: relative;
+        border: 3px solid var(--rose);
+        border-radius: 15px;
+        background: var(--jaune);
+        padding: 0;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .filter-hover-bg {
+        display: none;
+    }
+    
+    .filter-dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        padding: 15px 20px;
+        background: transparent;
+        border: none;
+        font-weight: 600;
+        color: var(--noir);
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .filter-dropdown-toggle::after {
+        content: '▼';
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .filter-container.open .filter-dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+    
+    .filter-dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        border-top: 2px solid var(--rose);
+        background: var(--jaune);
+        transition: max-height 0.3s ease-out;
+    }
+    
+    .filter-container.open .filter-dropdown-menu {
+        max-height: 300px;
+        transition: max-height 0.4s ease-in;
+    }
+    
+    .filter-btn {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        font-weight: 600;
+        color: var(--noir);
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        text-align: left;
+        border-bottom: 1px solid rgba(233, 84, 32, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    
+    .filter-btn:last-child {
+        border-bottom: none;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+        background: var(--rose);
+        color: var(--jaune);
     }
     
     .project-image {

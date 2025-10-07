@@ -215,3 +215,102 @@ function createProjectDetailPage(projectData) {
     
     return template;
 }
+
+// Gestion du menu déroulant mobile
+function initMobileDropdown() {
+    const filterContainer = document.querySelector('.filter-container');
+    if (!filterContainer) return;
+    
+    // Fonction pour créer et gérer le dropdown mobile
+    function setupMobileDropdown() {
+        if (window.innerWidth <= 480) {
+            // Réinitialiser le container si nécessaire
+            if (filterContainer.querySelector('.filter-dropdown-toggle')) {
+                return; // Déjà configuré
+            }
+            
+            // Sauvegarder les boutons originaux
+            const originalButtons = Array.from(filterContainer.querySelectorAll('.filter-btn'));
+            const activeButton = originalButtons.find(btn => btn.classList.contains('active')) || originalButtons[0];
+            
+            // Créer le bouton toggle
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'filter-dropdown-toggle';
+            toggleBtn.textContent = activeButton ? activeButton.textContent : 'Tous les projets';
+            
+            // Créer le conteneur du menu
+            const dropdownMenu = document.createElement('div');
+            dropdownMenu.className = 'filter-dropdown-menu';
+            
+            // Cloner les boutons dans le menu déroulant
+            originalButtons.forEach((btn, index) => {
+                const newBtn = btn.cloneNode(true);
+                newBtn.setAttribute('data-filter', btn.getAttribute('data-filter'));
+                dropdownMenu.appendChild(newBtn);
+            });
+            
+            // Nettoyer et reconstruire le container
+            filterContainer.innerHTML = '';
+            filterContainer.appendChild(toggleBtn);
+            filterContainer.appendChild(dropdownMenu);
+            
+            // Event listener pour le toggle
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                filterContainer.classList.toggle('open');
+            });
+            
+            // Event listeners pour les boutons de filtre
+            const dropdownButtons = dropdownMenu.querySelectorAll('.filter-btn');
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Filtre mobile cliqué:', this.dataset.filter);
+                    
+                    // Mettre à jour le texte du toggle
+                    toggleBtn.textContent = this.textContent;
+                    
+                    // Gérer les classes active
+                    dropdownButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // FERMER LE MENU IMMEDIATEMENT
+                    filterContainer.classList.remove('open');
+                    
+                    // Appliquer le filtre
+                    const category = this.dataset.filter;
+                    if (typeof filterProjects === 'function') {
+                        filterProjects(category);
+                    }
+                });
+            });
+        }
+    }
+    
+    // Configuration initiale
+    setupMobileDropdown();
+    
+    // Reconfigurer lors du redimensionnement
+    window.addEventListener('resize', function() {
+        setTimeout(setupMobileDropdown, 100);
+    });
+    
+    // Fermer le dropdown en cliquant à l'extérieur
+    document.addEventListener('click', function(e) {
+        const filterContainer = document.querySelector('.filter-container');
+        if (filterContainer && !filterContainer.contains(e.target)) {
+            filterContainer.classList.remove('open');
+        }
+    });
+}
+
+// Initialiser le dropdown mobile
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 480) {
+        // Attendre un peu pour s'assurer que tous les autres scripts sont chargés
+        setTimeout(initMobileDropdown, 500);
+    }
+});
