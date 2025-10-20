@@ -309,23 +309,29 @@ function initializePDFViewer() {
         
         // Méthode pour déterminer le fichier PDF selon la page
         getPDFPath() {
-            const currentPage = window.location.pathname;
+            const currentPath = window.location.pathname;
             
-            if (currentPage.includes('pf-S4-C1.html')) {
-                return '../imgs/pf-S2/portfolios2-1_louise.pdf';
-            } else if (currentPage.includes('pf-S4-C2.html')) {
-                return '../imgs/pf-S2/portfolios2-2_louise.pdf';
-            } else if (currentPage.includes('pf-S4-C3.html')) {
-                return '../imgs/pf-S2/portfolios2-3_louise.pdf';
-            } else if (currentPage.includes('pf-S4-C4.html')) {
-                return '../imgs/pf-S2/portfolios2-4_louise.pdf';
-            } else if (currentPage.includes('pf-S4-C5.html')) {
-                return '../imgs/pf-S2/portfolios2-5_louise.pdf';
-            } else if (currentPage.includes('pf-S4-C6.html')) {
-                return '../imgs/pf-S2/portfolios2-6_louise.pdf';
+            // Détermine le niveau de profondeur du chemin pour les pages dans pf-S4
+            let basePrefix = '../';
+            if (currentPath.includes('/pages/pf-S4/')) {
+                basePrefix = '../../';
+            }
+            
+            if (currentPath.includes('pf-S4-C1.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-1_louise.pdf';
+            } else if (currentPath.includes('pf-S4-C2.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-2_louise.pdf';
+            } else if (currentPath.includes('pf-S4-C3.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-3_louise.pdf';
+            } else if (currentPath.includes('pf-S4-C4.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-4_louise.pdf';
+            } else if (currentPath.includes('pf-S4-C5.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-5_louise.pdf';
+            } else if (currentPath.includes('pf-S4-C6.html')) {
+                return basePrefix + 'imgs/pf-S2/portfolios2-6_louise.pdf';
             } else {
                 // Fichier par défaut
-                return '../imgs/pf-S2/portfolios2-1_louise.pdf';
+                return basePrefix + 'imgs/pf-S2/portfolios2-1_louise.pdf';
             }
         }
         

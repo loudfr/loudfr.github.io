@@ -133,7 +133,7 @@ function moveHoverBgTo(targetLink) {
 function getHeaderPath() {
   const currentPath = window.location.pathname;
   
-  if (currentPath.includes('/pages/')) {
+  if (currentPath.includes('/pages/pf-S4/') || currentPath.includes('/pages/projets-details/')) {
     return "../../includes/header.html";
   } else if (currentPath.includes('/pages/')) {
     return "../includes/header.html";
@@ -149,10 +149,41 @@ window.addEventListener('resize', () => {
   }
 });
 
+function getPathPrefix() {
+  const currentPath = window.location.pathname;
+  
+  if (currentPath.includes('/pages/pf-S4/') || currentPath.includes('/pages/projets-details/')) {
+    return "../..";
+  } else if (currentPath.includes('/pages/')) {
+    return "..";
+  } else {
+    return "";
+  }
+}
+
 fetch(getHeaderPath())
   .then(response => response.text())
   .then(data => {
     document.getElementById("header-placeholder").innerHTML = data;
+    
+    // Corriger les chemins après avoir injecté le header
+    const pathPrefix = getPathPrefix();
+    
+    // Logo
+    const logo = document.querySelector(".logo");
+    if (logo) {
+      logo.src = `${pathPrefix}/imgs/logo-LD.ico`;
+    }
+    
+    // Liens de navigation
+    const homeLink = document.querySelector("#home-nav-link");
+    const projetsLink = document.querySelector("#projets-nav-link");
+    const portfolioLink = document.querySelector("#portfolio-nav-link");
+    
+    if (homeLink) homeLink.href = `${pathPrefix}/`;
+    if (projetsLink) projetsLink.href = `${pathPrefix}/pages/projets.html`;
+    if (portfolioLink) portfolioLink.href = `${pathPrefix}/pages/portfolio.html`;
+    
     initHeader();
   })
   .catch(error => {

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louise - Projet Jikan (emploi du temps)</title>
+    <link rel="icon" type="image/x-icon" href="../../imgs/ld.ico">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/project-detail.css">
+    <link rel="stylesheet" href="../../css/competences.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../js/header.js"></script>
+    <script src="../../js/portfolio.js"></script>
+    <link rel="stylesheet" href="../../css/footer.css">
+    <script src="../../js/footer.js"></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="back-to-projects">
+            <a href="../projets.html"><i class="fas fa-arrow-left"></i> Liste des projets</a>
+        </div>
+        
+        <section class="project-detail-hero">
+            <div class="hero-content">
+                <h1>Jikan</h1>
+                <p class="project-subtitle">Application web de gestion d'emploi du temps</p>
+                <div class="project-meta">
+                    <span class="project-period">BUT2 - Semestre 2</span>
+                    <span class="project-team">Projet en trinôme</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/loudfr/S2-01_jikan" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Voir le code
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../../imgs/jikan-home.png" alt="Maquette / interface Jikan" class="clickable-image"
+                     data-title="Visuel de la maquette Jikan créée avec Balsamiq">
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="content-grid">
+                <div class="project-images">
+                    <h4>Aperçu du projet</h4>
+                    <div class="images-gallery">
+                        <img src="../../imgs/jikan-prom.png" alt="Maquette gestion groupes" class="gallery-image clickable-image"
+                             data-title="Maquette Balsamiq : gestion des groupes">
+                        <img src="../../imgs/jikan-prof.png" alt="Maquette gestion professeurs" class="gallery-image clickable-image"
+                             data-title="Maquette Balsamiq : gestion des professeurs">
+                        <img src="../../imgs/jikan-cours.png" alt="Maquette gestion salles" class="gallery-image clickable-image"
+                             data-title="Maquette Balsamiq : gestion des salles">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="info-section">
+                        <h4>Contexte & rôle dans le projet</h4>
+                        <p>
+                            Dans ce projet de semestre, nous avions pour mission de créer une application de gestion d'emploi du temps. Le travail était réparti entre les membres du groupe.  
+                            Notre partie consistait à gérer les <strong>groupes</strong>, les <strong>professeurs</strong> et les <strong>salles</strong> - c'est-à-dire les entités métiers autour de l'attribution des ressources dans le planning.
+                        </p>
+                        <p>
+                            La maquette initiale du projet a été réalisée avec <strong>Balsamiq</strong>, ce qui nous a permis de définir l'ergonomie et les écrans avant de passer au développement.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Technologies utilisées</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Java</span>
+                            <span class="tech-item">Base de données MySQL</span>
+                            <span class="tech-item">Balsamiq</span>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Fonctionnalités de notre module</h4>
+                        <ul>
+                            <li><strong>Gestion des groupes :</strong> création, modification, suppression des groupes d'étudiants / classes.</li>
+                            <li><strong>Gestion des professeurs :</strong> CRUD des enseignants impliqués dans le planning.</li>
+                            <li><strong>Gestion des salles :</strong> CRUD des salles disponibles pour les cours.</li>
+                            <li><strong>Association ressources-planning :</strong> possibilité d'attribuer un professeur et une salle à un cours ou créneau.</li>
+                            <li><strong>Interface maquette-to-développement :</strong> correspondance entre ce que nous avions défini dans Balsamiq et ce qui a été codé.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Défis techniques rencontrés</h4>
+                        <ul>
+                            <li><strong>Alignement entre maquette & développement :</strong> respecter les écrans définis dans Balsamiq.</li>
+                            <li><strong>Gestion de la relation entre entités :</strong> comment lier groupes, professeurs, salles, les contraintes (disponibilités, conflits).</li>
+                            <li><strong>Validation des données :</strong> vérifier que les données saisies sont cohérentes (ex : pas de double attribution de salle).</li>
+                            <li><strong>Intégration équipe :</strong> coordination du travail, fusion du code, gestion des conflits git.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Compétences développées</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <h5>Modélisation de données</h5>
+                                <p>Entités, relations entre groupes / professeurs / salles</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Prototypage</h5>
+                                <p>Création de maquettes Balsamiq avant le codage</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Développement modulaire</h5>
+                                <p>Implémentation d'un module indépendant au sein d'une application plus large</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Travail en équipe</h5>
+                                <p>Répartition des modules, intégration du code, communication</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Conclusion & apprentissages</h4>
+                        <p>
+                            Ce projet m'a aidé à comprendre comment structurer un module dans une application plus vaste, à faire correspondre une maquette (Balsamiq) à un rendu fonctionnel, et à modéliser des relations entre entités critiques pour un planning.  
+                            Bien que je ne contrôle pas tous les modules (planning global, interface complète), cette partie “gestion des ressources” m'a donné une bonne base de compréhension sur la conception back-end et front-end.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="nav-buttons">
+                <a href="../projets.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i> Retour aux projets
+                </a>
+                <a href="projet-suivant.html" class="btn-suivant">
+                    Projet suivant <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Retour en haut">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle"></span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="">
+                    <div class="image-controls">
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="resetZoom">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+</html>

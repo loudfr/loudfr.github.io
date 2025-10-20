@@ -22,54 +22,165 @@ body {
     box-sizing: border-box;
 }
 
-.filter-container {
-    border: 5px solid var(--rose);
-    border-radius: 25px;
-    padding: 5px;
+/* Styles sections-nav spécifiques pour la page projets */
+#projets-filters .sections-nav {
     display: flex;
-    gap: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
     position: relative;
+    background-color: var(--rose);
+    border-radius: 25px;
 }
 
-.filter-hover-bg {
+#projets-filters .sections-hover-bg {
     position: absolute;
-    background: var(--rose);
-    border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 1;
-    top: 5px;
+    background-color: var(--jaune);
     height: calc(100% - 10px);
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    opacity: 0;
 }
 
-.filter-btn {
-    background: transparent;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    font-weight: 600;
+#projets-filters .section-link.filter-btn {
+    padding: 12px 20px;
     color: var(--noir);
-    cursor: pointer;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    flex: 1;
-    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
     position: relative;
     z-index: 2;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    flex: 1;
 }
 
-.filter-btn:hover {
-    color: var(--jaune);
-}
 
-.filter-btn.active {
-    color: var(--jaune);
-}
-
-.filter-btn.active.temp-inactive {
+#projets-filters .section-link.filter-btn.active.temp-inactive {
     color: var(--noir);
+}
+
+/* Menu déroulant mobile */
+#projets-filters .mobile-sections-dropdown {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#projets-filters .dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bleu);
+    color: var(--jaune);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#projets-filters .dropdown-trigger:hover {
+    background-color: var(--noir);
+}
+
+#projets-filters .dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+#projets-filters .dropdown-trigger.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+#projets-filters .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--jaune);
+    border: 2px solid var(--bleu);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#projets-filters .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#projets-filters .dropdown-menu .section-link {
+    display: block;
+    padding: 15px 20px;
+    color: var(--bleu);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    white-space: normal;
+}
+
+#projets-filters .dropdown-menu .section-link:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+#projets-filters .dropdown-menu .section-link:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+#projets-filters .dropdown-menu .section-link:hover {
+    background-color: var(--bleu);
+    color: var(--jaune);
+    padding-left: 25px;
+}
+
+#projets-filters .dropdown-menu .section-link.active {
+    background-color: var(--jaune);
+    color: var(--bleu);
+}
+
+/* Media queries pour afficher/masquer le menu selon la taille d'écran */
+@media (max-width: 768px) {
+    #projets-filters .sections-nav {
+        display: none;
+    }
+    
+    #projets-filters .mobile-sections-dropdown {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #projets-filters .mobile-sections-dropdown {
+        max-width: 280px;
+        margin: 15px auto;
+    }
+    
+    #projets-filters .dropdown-trigger {
+        padding: 12px 15px;
+    }
+    
+    #projets-filters .dropdown-menu .section-link {
+        padding: 12px 15px;
+    }
 }
 
 /* Grille des projets */
@@ -130,8 +241,7 @@ body {
     right: 0;
     bottom: 0;
     /* background: linear-gradient(to bottom, transparent 0%, var(--rose) 70%); */
-    background-color: rgba(92, 138, 133, 0.7);
-    border: 3px solid var(--bleu);
+    background-color: rgba(var(--bleu-rgb), 0.7);
     border-radius: 20px;
     opacity: 0;
     transition: all 0.3s ease;
@@ -154,20 +264,19 @@ body {
     padding: 20px 20px 30px 20px;
     color: var(--jaune);
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 .project-info h4 {
     color: var(--jaune);
     margin: 0 0 8px 0;
     text-transform: uppercase;
-    font-size: 1.4rem;
     font-weight: 700;
 }
 
 .project-info p {
     color: var(--jaune);
     margin: 0 0 12px 0;
-    font-size: 1rem;
     line-height: 1.4;
 }
 
@@ -176,7 +285,6 @@ body {
     display: inline-block;
     font-style: italic;
     font-weight: 600;
-    font-size: 0.9rem;
 }
 
 /* Animation de filtrage */
@@ -200,7 +308,6 @@ body {
     }
     
     #projets-hero h1 {
-        font-size: 2.5rem;
         -webkit-text-stroke: 2px var(--bleu);
     }
     
@@ -211,7 +318,6 @@ body {
     
     .filter-btn {
         padding: 8px 16px;
-        font-size: 0.8rem;
     }
     
     #projets-grid {
@@ -231,125 +337,45 @@ body {
         height: 250px;
     }
     
-    /* Overlay mobile - toujours visible sur le dernier tiers droit */
+    /* Afficher par défaut les informations sur les cartes de projets pour les écrans tactiles */
     .project-overlay {
         opacity: 1;
-        background: linear-gradient(to left, var(--bleu) 0%, var(--bleu) 45%, transparent 45%);
-        border: none;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: 20px;
+        pointer-events: auto;
+        align-items: flex-end; /* Aligner les éléments en bas */
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            transparent 50%, 
+            rgba(var(--bleu-rgb), 0.85) 50%, 
+            rgba(var(--bleu-rgb), 0.85) 100%); /* Gradient avec la variable bleu */
+        border: none; /* S'assurer qu'il n'y a pas de bordure */
     }
     
     .project-info {
-        width: 33%;
-        padding: 10px;
-        text-align: right;
+        transform: translateY(0);
+        padding-bottom: 15px;
+        position: relative;
+        padding-top: 5px; /* Réduire l'espace en haut */
+        max-height: 50%; /* Limiter à la moitié inférieure */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Aligner le contenu en bas */
     }
     
-    .project-info h4,
-    .project-info p,
-    .project-tech {
-        color: var(--noir);
-        font-size: 0.8rem;
-        margin: 2px 0;
+    /* Désactiver les effets de survol sur tactile */
+    .project-card:hover {
+        transform: none;
     }
     
-    .project-info h4 {
-        font-size: 1rem;
-        font-weight: 700;
+    .project-card:hover .project-image img {
+        transform: none;
     }
-
-
 }
 
 @media (max-width: 480px) {
-    #projets-hero h1 {
-        font-size: 2rem;
-    }
-    
-    /* Menu déroulant pour les filtres */
     .filter-container {
-        position: relative;
-        border: 3px solid var(--rose);
-        border-radius: 15px;
-        background: var(--jaune);
-        padding: 0;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
-    .filter-hover-bg {
-        display: none;
-    }
-    
-    .filter-dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 15px 20px;
-        background: transparent;
-        border: none;
-        font-weight: 600;
-        color: var(--noir);
-        cursor: pointer;
-        font-size: 1rem;
-        text-transform: uppercase;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .filter-dropdown-toggle::after {
-        content: '▼';
-        font-size: 0.8rem;
-        transition: transform 0.3s ease;
-    }
-    
-    .filter-container.open .filter-dropdown-toggle::after {
-        transform: rotate(180deg);
-    }
-    
-    .filter-dropdown-menu {
-        max-height: 0;
-        overflow: hidden;
-        border-top: 2px solid var(--rose);
-        background: var(--jaune);
-        transition: max-height 0.3s ease-out;
-    }
-    
-    .filter-container.open .filter-dropdown-menu {
-        max-height: 300px;
-        transition: max-height 0.4s ease-in;
-    }
-    
-    .filter-btn {
-        display: block;
-        width: 100%;
-        padding: 12px 20px;
-        background: transparent;
-        border: none;
-        font-weight: 600;
-        color: var(--noir);
-        cursor: pointer;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        text-align: left;
-        border-bottom: 1px solid rgba(233, 84, 32, 0.2);
-        transition: background-color 0.3s ease;
-    }
-    
-    .filter-btn:last-child {
-        border-bottom: none;
-        border-radius: 0 0 12px 12px;
-    }
-    
-    .filter-btn:hover,
-    .filter-btn.active {
-        background: var(--rose);
-        color: var(--jaune);
+        gap: 10px;
     }
     
     .project-image {
@@ -360,8 +386,17 @@ body {
         padding: 15px;
     }
     
-    .project-info h4 {
-        font-size: 1.2rem;
+    /* Ajustements spécifiques pour très petits écrans */
+    .project-overlay {
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            transparent 40%, 
+            rgba(var(--bleu-rgb), 0.95) 40%, 
+            rgba(var(--bleu-rgb), 0.95) 100%); /* Gradient ajusté pour petits écrans */
+    }
+    
+    .project-info p {
+        margin-bottom: 8px;
     }
 }
 

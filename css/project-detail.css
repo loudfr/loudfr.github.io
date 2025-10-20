@@ -8,8 +8,32 @@ body {
 }
 
 /* Hero Section */
+.back-to-projects {
+    display: block;
+    margin: 100px auto 0;
+    max-width: 1200px;
+    padding: 0 40px;
+}
+
+.back-to-projects a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--bleu);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.back-to-projects a i {
+    margin-right: 8px;
+}
+
+.back-to-projects a:hover {
+    color: var(--rose);
+}
+
 .project-detail-hero {
-    padding: 120px 40px 60px;
+    padding: 80px 40px 60px;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -217,6 +241,11 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .back-to-projects {
+        margin-top: 80px;
+        padding: 0 20px;
+    }
+    
     .project-detail-hero {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -257,6 +286,11 @@ body {
 }
 
 @media (max-width: 480px) {
+    .back-to-projects {
+        margin-top: 70px;
+        padding: 0 15px;
+    }
+    
     .hero-content h1 {
         font-size: 2rem;
     }

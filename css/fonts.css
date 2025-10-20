@@ -23,6 +23,7 @@
   --jaune: #FEFFDD;
   --rose: #FA9DBC;
   --bleu: #5C8A85;
+  --bleu-rgb: 92, 138, 133; /* Valeur RGB de #5C8A85 pour utilisation avec rgba() */
   --noir: #0E2F2B;
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louise - Application de cinéma</title>
+    <title>Louise - Projet My Band</title>
     <link rel="icon" type="image/x-icon" href="../../imgs/ld.ico">
     <link rel="stylesheet" href="../../css/fonts.css">
     <link rel="stylesheet" href="../../css/header.css">
@@ -25,101 +25,109 @@
         
         <section class="project-detail-hero">
             <div class="hero-content">
-                <h1>CineApp : Gestion Cinéma</h1>
-                <p class="project-subtitle">Application mobile de gestion de films et d'acteurs, développée avec Flutter</p>
+                <h1>My Band</h1>
+                <p class="project-subtitle">Site web avec gestion de contenus (PHP + base de données)</p>
                 <div class="project-meta">
-                    <span class="project-period">BUT3 - Semestre 5</span>
-                    <span class="project-team">Projet individuel</span>
+                    <span class="project-period">Année projet</span>
+                    <span class="project-team">Projet individuel / petit groupe</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/loudfr/appli-cinema" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> Voir sur GitHub
+                    <a href="https://github.com/loudfr/my-band" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Voir le code sur GitHub
                     </a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="../../imgs/flutter.png" alt="Application Flutter Cinéma" class="clickable-image" data-title="Interface de CineApp, application mobile Flutter">
+                <img src="../../imgs/myband-accueil.png" alt="Interface My Band" class="clickable-image"
+                     data-title="Page d'accueil ou interface du site My Band">
             </div>
         </section>
-        
+
         <section class="project-content">
             <div class="content-grid">
                 <div class="project-images">
                     <h4>Aperçu du projet</h4>
                     <div class="images-gallery">
-                        <img src="../../imgs/flutter2.png" alt="Liste des films" class="gallery-image clickable-image" data-title="Liste des films dans l'application">
-                        <img src="../../imgs/flutter3.png" alt="Détail d'un film" class="gallery-image clickable-image" data-title="Écran de détail d'un film/acteur">
+                        <img src="../../imgs/myband-login.png" alt="Page de connexion My Band" class="gallery-image clickable-image"
+                             data-title="Page de connexion du site My Band">
+                        <img src="../../imgs/myband-contact.png" alt="Interface contact My Band" class="gallery-image clickable-image"
+                             data-title="Interface de contact du site My Band">
                     </div>
                 </div>
-                
+
                 <div class="project-info">
                     <div class="info-section">
-                        <h4>Description du projet</h4>
+                        <h4>Contexte & objectif</h4>
                         <p>
-                            C'est une application mobile multiplateforme réalisée en Flutter et Dart pour le suivi et la gestion de données cinématographiques. L'objectif était de concevoir une application moderne permettant de visualiser des informations sur les films et les acteurs, de gérer leurs relations (qui a joué dans quoi), et d'intégrer des fonctionnalités spécifiques comme un scanner de billets et une carte interactive des cinémas proches.
+                            Le projet <strong>My Band</strong> est un site web dynamique construit en PHP, HTML, CSS, avec une base de données pour stocker les contenus (musiques, paroles, pages, etc.).  
+                            L'idée était de rendre les pages modifiables, de lier les contenus via des scripts PHP, et de permettre une interaction entre l'interface front-end et la base de données.
                         </p>
                         <p>
-                            Ce projet a été l'occasion d'approfondir mes compétences en développement mobile, en me concentrant sur la création d'une interface utilisateur fluide et réactive, la gestion d'un état complexe et l'intégration de services externes (APIs de cinéma). Le stockage des données a été géré via PostgreSQL.
+                            Ce projet m'a permis de comprendre comment structurer un site web dynamique, de gérer les requêtes SQL depuis le serveur, et de construire des interfaces d'édition pour le contenu.
                         </p>
                     </div>
-                    
+
                     <div class="info-section">
                         <h4>Technologies utilisées</h4>
                         <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">HTML / CSS</span>
+                            <span class="tech-item">SQL / base de données</span>
                             <span class="tech-item">Git</span>
                         </div>
                     </div>
-                    
+
                     <div class="info-section">
                         <h4>Fonctionnalités clés</h4>
                         <ul>
-                            <li><strong>Consultation de Fiches Cinéma :</strong> Films, acteurs, relations films/acteurs.</li>
-                            <li><strong>Scanner de Billets/QR Code :</strong> Simulation d'une fonctionnalité de validation ou d'accès.</li>
-                            <li><strong>Carte Interactive :</strong> Affichage des cinémas (via intégration Map).</li>
-                            <li><strong>Gestion des Données :</strong> Utilisation de PostgreSQL pour le stockage et la récupération des informations.</li>
-                            <li>Interface utilisateur <strong>Material Design</strong> et animations fluides.</li>
+                            <li><strong>Affichage dynamique des pages :</strong> pages de musique, paroles, actualités ou contenu lié.</li>
+                            <li><strong>Interface d'édition / modification :</strong> possibilité de modifier le contenu (texte, titres, etc.).</li>
+                            <li><strong>Gestion de la base de données :</strong> stockage des données de musique, pages, utilisateurs.</li>
+                            <li><strong>Téléchargement / affichage :</strong> par exemple téléchargement de paroles ou fichiers audio.</li>
+                            <li><strong>Navigation fluide :</strong> liens dynamiques et cohérents entre les pages.</li>
                         </ul>
                     </div>
-                    
+
                     <div class="info-section">
                         <h4>Défis techniques rencontrés</h4>
                         <ul>
-                            <li><strong>Gestion d'État :</strong> Implémentation d'une solution pour gérer l'état de manière scalable (ex: Provider, Riverpod, Bloc).</li>
-                            <li><strong>Intégration Matérielle :</strong> Utilisation de la caméra (scanner) et de la géolocalisation (carte).</li>
-                            <li><strong>Consommation API & BDD :</strong> Structuration des appels asynchrones aux APIs et à la base de données PostgreSQL.</li>
-                            <li><strong>Responsive Design :</strong> Assurer un affichage optimal sur les différents formats de smartphones et tablettes.</li>
+                            <li><strong>Connexion base de données :</strong> sécurisation des requêtes, gestion des erreurs de connexion.</li>
+                            <li><strong>Injection SQL & sécurité :</strong> éviter les injections, valider / assainir les entrées utilisateur.</li>
+                            <li><strong>Synchronisation front-end / back-end :</strong> que les modifications via PHP se reflètent correctement côté interface.</li>
+                            <li><strong>Organisation des fichiers PHP :</strong> structurer les include (header, footer, dbconnect, etc.) pour éviter la duplication.</li>
                         </ul>
                     </div>
-                    
+
                     <div class="info-section">
                         <h4>Compétences développées</h4>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <h5>Développement mobile</h5>
-                                <p>Flutter, Dart, widgets, routing</p>
+                                <h5>Développement web dynamique</h5>
+                                <p>PHP, liaison avec base de données, page modifiable</p>
                             </div>
                             <div class="skill-item">
-                                <h5>Gestion de Données</h5>
-                                <p>PostgreSQL, Modélisation de base de données relationnelle, Appels API REST</p>
+                                <h5>SQL & structure de données</h5>
+                                <p>Requêtes, tables, relations, gestion de contenu</p>
                             </div>
                             <div class="skill-item">
-                                <h5>UX/UI Mobile</h5>
-                                <p>Design d'interface intuitif, Material Design</p>
+                                <h5>Architecture simple</h5>
+                                <p>Fichiers séparés (header, footer, connect, pages), modularité</p>
                             </div>
                             <div class="skill-item">
-                                <h5>Architecture</h5>
-                                <p>Clean Code, Structure de projet Flutter, séparation des couches (MVC/MVVM).</p>
+                                <h5>Sécurité & validation</h5>
+                                <p>Échapper les entrées, éviter les erreurs et injections, gestion des erreurs</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="info-section">
-                        <h4>Conclusion du Projet</h4>
+                        <h4>Conclusion & perspectives</h4>
                         <p>
-                            Ce projet a été une excellente initiation au développement d'applications mobiles complètes avec Flutter. J'ai acquis de l'expérience dans la gestion des interactions avec le matériel (caméra, GPS), l'intégration de services tiers (APIs externes, services de cartographie) et la manipulation de données via une base de données PostgreSQL. L'accent a été mis sur la qualité du code et l'expérience utilisateur.
+                            Avec My Band, j'ai mis en pratique la création d'un site web **interactif et modifiable** par l'utilisateur.  
+                            Ce projet m'a permis de faire le lien entre front-end et back-end, de manipuler une base de données, et de construire une interface d'édition.
+                        </p>
+                        <p>
+                            À l'avenir, j'aurais pu ajouter une gestion d'utilisateurs/authentification, une interface plus moderne (Ajax / JS), ou la gestion des fichiers audio / streaming.
                         </p>
                     </div>
                 </div>
@@ -131,7 +139,7 @@
                 <a href="../projets.html" class="btn-retour">
                     <i class="fas fa-arrow-left"></i> Retour aux projets
                 </a>
-                <a href="api-asterix.html" class="btn-suivant">
+                <a href="projet-suivant.html" class="btn-suivant">
                     Projet suivant <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
