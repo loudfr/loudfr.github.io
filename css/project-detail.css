@@ -13,6 +13,7 @@ body {
     margin: 100px auto 0;
     max-width: 1200px;
     padding: 0 40px;
+    font-style: italic;
 }
 
 .back-to-projects a {
@@ -33,7 +34,7 @@ body {
 }
 
 .project-detail-hero {
-    padding: 80px 40px 60px;
+    padding: 20px 40px 60px;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -82,6 +83,15 @@ body {
 }
 
 .github-link:hover {
+    background: var(--rose);
+}
+
+.portfolio-link {
+    background: var(--noir);
+    color: var(--jaune);
+}
+
+.portfolio-link:hover {
     background: var(--rose);
 }
 
@@ -212,11 +222,18 @@ body {
 .nav-buttons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination-buttons {
+    display: flex;
     gap: 20px;
 }
 
 .btn-retour, 
-.btn-suivant {
+.btn-suivant,
+.btn-precedent {
     background: var(--bleu);
     color: var(--jaune);
     padding: 15px 30px;
@@ -230,12 +247,15 @@ body {
 }
 
 .btn-retour:hover, 
-.btn-suivant:hover {
+.btn-suivant:hover,
+.btn-precedent:hover {
+    background: var(--rose);
     opacity: 0.9;
 }
 
 .btn-retour p,
-.btn-suivant p {
+.btn-suivant p,
+.btn-precedent p {
     margin: 0;
 }
 
@@ -244,12 +264,13 @@ body {
     .back-to-projects {
         margin-top: 80px;
         padding: 0 20px;
+        text-align: center;
     }
     
     .project-detail-hero {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 100px 20px 40px;
+        padding: 40px 20px 40px;
         text-align: center;
     }
     
@@ -282,6 +303,20 @@ body {
     .nav-buttons {
         flex-direction: column;
         gap: 20px;
+    }
+    
+    .pagination-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .btn-retour, 
+    .btn-suivant,
+    .btn-precedent {
+        width: 100%;
+        justify-content: center;
     }
 }
 
