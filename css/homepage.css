@@ -10,11 +10,12 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 155px 155px 100px 155px;
+    padding: 155px 0 100px;
 }
 
 #presentation h1 {
     -webkit-text-stroke: 3px var(--jaune);
+    max-width: 75%;
 }
 
 #presentation span {

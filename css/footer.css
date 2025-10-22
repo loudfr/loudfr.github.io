@@ -11,12 +11,20 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 60px;
+    gap: 30px;
 }
 
 .footer-section {
-    flex: 1;
     text-align: left;
+}
+
+.footer-section:first-child {
+    flex: 2; /* Takes half of the space (2/4) */
+}
+
+.footer-section:nth-child(2),
+.footer-section:nth-child(3) {
+    flex: 1; /* Takes quarter of the space (1/4) */
 }
 
 .footer-section h4,
@@ -155,7 +163,12 @@
         padding: 30px 15px;
     }
     
-    .footer-section {
+    .footer-section,
+    .footer-section:first-child,
+    .footer-section:nth-child(2),
+    .footer-section:nth-child(3) {
+        flex: none;
+        width: 100%;
         text-align: center;
     }
     
