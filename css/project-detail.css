@@ -21,7 +21,6 @@ body {
     align-items: center;
     color: var(--bleu);
     text-decoration: none;
-    font-size: 16px;
     transition: color 0.3s ease;
 }
 
@@ -242,15 +241,14 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-weight: 600;
     transition: all 0.3s ease;
+    font-style: italic;
 }
 
 .btn-retour:hover, 
 .btn-suivant:hover,
 .btn-precedent:hover {
     background: var(--rose);
-    opacity: 0.9;
 }
 
 .btn-retour p,
@@ -275,7 +273,6 @@ body {
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
         -webkit-text-stroke: 1px var(--bleu);
     }
     
@@ -302,12 +299,14 @@ body {
     
     .nav-buttons {
         flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
     
     .pagination-buttons {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         gap: 15px;
     }
@@ -316,6 +315,7 @@ body {
     .btn-suivant,
     .btn-precedent {
         width: 100%;
+        max-width: 300px;
         justify-content: center;
     }
 }
@@ -324,14 +324,6 @@ body {
     .back-to-projects {
         margin-top: 70px;
         padding: 0 15px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .project-subtitle {
-        font-size: 1.1rem;
     }
     
     .project-meta {
@@ -346,5 +338,9 @@ body {
     
     .project-links a {
         justify-content: center;
+    }
+
+    .download-cv-btn{
+        max-width: 200px;
     }
 }

@@ -286,10 +286,14 @@ a {
     padding: 15px 30px;
     border-radius: 25px;
     text-decoration: none;
+    font-style: italic;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn-retour:hover, .btn-suivant:hover {
-    opacity: 0.9;
+    background-color: var(--rose);
 }
 
 .tableau-evaluation {
@@ -588,7 +592,6 @@ code {
     text-align: center;
     color: var(--bleu);
     margin-bottom: 40px;
-    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -618,7 +621,6 @@ code {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 16px;
     font-weight: bold;
     min-width: 50px;
     display: flex;
@@ -634,8 +636,6 @@ code {
 }
 
 .page-info {
-    font-weight: 600;
-    font-size: 16px;
     color: var(--jaune);
 }
 
@@ -670,7 +670,6 @@ code {
 }
 
 .loading-spinner i {
-    font-size: 2rem;
     margin-bottom: 10px;
     color: var(--bleu);
 }
@@ -688,7 +687,6 @@ code {
     }
     
     .section-title {
-        font-size: 2rem;
         margin-bottom: 30px;
     }
     
@@ -704,7 +702,6 @@ code {
     }
     
     .page-info {
-        font-size: 14px;
         order: 3;
         width: 100%;
         text-align: center;
@@ -713,7 +710,6 @@ code {
     
     .pdf-btn {
         padding: 10px 12px;
-        font-size: 14px;
         min-width: 45px;
     }
     
@@ -862,8 +858,6 @@ code {
         content: "*I = Insuffisant, B = Bien, TB = Très bien, E = Excellent";
     }
     .tableau-evaluation {
-
-        font-size: 0.75rem;
         margin: 15px 0;
         padding: 0;
     }
@@ -875,11 +869,9 @@ code {
     .tableau-evaluation th,
     .tableau-evaluation td {
         padding: 6px 3px;
-        font-size: 0.75rem;
     }
     
     .tableau-evaluation th {
-        font-size: 0.7rem;
         line-height: 1.1;
     }
     
@@ -901,7 +893,6 @@ code {
     .tableau-evaluation th:nth-child(3),
     .tableau-evaluation th:nth-child(4),
     .tableau-evaluation th:nth-child(5) {
-        font-size: 0;
         width: 40px;
         min-width: 40px;
     }
@@ -910,20 +901,17 @@ code {
     .tableau-evaluation th:nth-child(3)::after,
     .tableau-evaluation th:nth-child(4)::after,
     .tableau-evaluation th:nth-child(5)::after {
-        font-size: 0.8rem;
         font-weight: bold;
     }
     
     .tableau-evaluation td:first-child {
         max-width: 120px;
-        font-size: 0.75rem;
         line-height: 1.2;
     }
 
     .tableau-evaluation td:not(:first-child) {
         width: 40px;
         min-width: 40px;
-        font-size: 0.9rem;
     }
 }
 

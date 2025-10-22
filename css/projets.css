@@ -308,7 +308,7 @@ body {
     }
     
     #projets-hero h1 {
-        -webkit-text-stroke: 2px var(--bleu);
+        -webkit-text-stroke: 1px var(--bleu);
     }
     
     .filter-container {
