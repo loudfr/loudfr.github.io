@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Jikan': 'projets-details/jikan.html',
                 'My Band': 'projets-details/my-band.html',
                 'Projets en C': 'projets-details/app-C.html',
+                'Bibliothèque OpenCV': 'projets-details/opencv-traitement-image.html'
             };
             
             const route = projectRoutes[projectTitle];

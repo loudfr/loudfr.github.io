@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louise - Traitement d'images avec OpenCV</title>
+    <link rel="icon" type="image/x-icon" href="../../imgs/ld.ico">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/project-detail.css">
+    <link rel="stylesheet" href="../../css/competences.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../js/header.js"></script>
+    <script src="../../js/portfolio.js"></script>
+    <link rel="stylesheet" href="../../css/footer.css">
+    <script src="../../js/footer.js"></script>
+    <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ94WH1E75"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MQ94WH1E75');
+        </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="back-to-projects">
+            <a href="../projets.html">Retour aux projets</a>
+        </div>
+        
+        <section class="project-detail-hero">
+            <div class="hero-content">
+                <h1>Traitement d'images avec OpenCV</h1>
+                <p class="project-subtitle">Implémentation d'algorithmes de traitement d'images et de vision par ordinateur avec OpenCV JS</p>
+                <div class="project-meta">
+                    <span class="project-period">BUT3</span>
+                    <span class="project-team">Projet individuel</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/loudfr/traitement-image-opencv" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Voir sur GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../../imgs/opencv.png" alt="OpenCV" class="clickable-image" data-title="Traitement d'images avec OpenCV JS">
+            </div>
+        </section>
+        
+        <section class="project-content">
+            <div class="content-grid">
+                <div class="project-images">
+                    <h4>Aperçu du projet</h4>
+                    <div class="images-gallery">
+                        <img src="../../imgs/opencv-1.png" alt="OpenCV Détection de contours" class="gallery-image clickable-image" data-title="Détection de contours avec différents algorithmes">
+                        <img src="../../imgs/opencv-2.png" alt="Fusion d'images" class="gallery-image clickable-image" data-title="Fusion d'images par pyramides">
+                        <img src="../../imgs/opencv-3.png" alt="Détection par la couleur" class="gallery-image clickable-image" data-title="Segmentation par couleur HSV">
+                        <img src="../../imgs/opencv-4.png" alt="Détection d'objets géométriques" class="gallery-image clickable-image" data-title="Détection d'objets géométriques">
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="info-section">
+                        <h4>Description du projet</h4>
+                        <p>
+                            Ce projet de travaux pratiques vise à explorer les fondamentaux du traitement d'images et de la vision par ordinateur en utilisant la bibliothèque OpenCV dans son implémentation JavaScript. À travers plusieurs exercices progressifs, j'ai pu manipuler et transformer des images pour en extraire des informations pertinentes.
+                        </p>
+                        <p>
+                            L'approche méthodique du TP permet de découvrir les principales opérations de traitement d'images : des manipulations basiques comme le chargement et la conversion d'espaces colorimétriques, jusqu'aux techniques avancées de détection de contours, de segmentation par couleur et de reconnaissance de formes géométriques.
+                        </p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Technologies utilisées</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">OpenCV.js</span>
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">HTML5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Exercices réalisés</h4>
+                        <ul>
+                            <li><strong>OpenCV JS - Opérations de base :</strong> Chargement d'images, changement d'espaces couleurs (RGB, HSV, niveaux de gris), seuillage interactif avec sliders pour ajuster les paramètres en temps réel.</li>
+                            <li><strong>Détection de contours :</strong> Implémentation et comparaison de plusieurs algorithmes de détection de contours (Prewitt, Sobel, Canny) avec identification du contour le plus long.</li>
+                            <li><strong>Fusion d'images :</strong> Techniques de fusion de deux images (pomme et orange) : fusion directe, fusion par pondération et fusion avancée par pyramides de Laplace et Gaussiennes.</li>
+                            <li><strong>Détection par la couleur :</strong> Segmentation d'image basée sur l'espace colorimétrique HSV avec contrôles interactifs (sliders H, S, V min/max) pour créer un masque binaire et isoler des zones de couleur spécifiques.</li>
+                            <li><strong>Détection d'objets géométriques :</strong> Pipeline complet de détection : conversion en niveaux de gris, lissage de l'image, extraction de contours, calcul de boîtes englobantes, et reconnaissance d'objets avec labels (triangles, rectangles, cercles).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Défis techniques rencontrés</h4>
+                        <ul>
+                            <li><strong>Manipulation de matrices OpenCV :</strong> Comprendre la structure des objets cv.Mat et les opérations matricielles sur les images.</li>
+                            <li><strong>Optimisation des paramètres :</strong> Ajustement des seuils et paramètres pour obtenir des résultats optimaux selon les images (détection de contours, seuillage HSV).</li>
+                            <li><strong>Performance JavaScript :</strong> Gestion efficace des calculs intensifs de traitement d'images dans le navigateur.</li>
+                            <li><strong>Interface interactive :</strong> Création de sliders et contrôles permettant l'ajustement en temps réel des paramètres de traitement.</li>
+                            <li><strong>Pyramides d'images :</strong> Implémentation de la fusion par pyramides de Laplace et Gaussiennes, une technique avancée de composition d'images.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Compétences développées</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <h5>Vision par ordinateur</h5>
+                                <p>Algorithmes de détection de contours, segmentation, reconnaissance de formes</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Traitement d'images</h5>
+                                <p>Espaces colorimétriques, filtres, seuillage, pyramides d'images</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>OpenCV.js</h5>
+                                <p>Maîtrise de la bibliothèque OpenCV en JavaScript, manipulation de matrices cv.Mat</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Développement interactif</h5>
+                                <p>Interfaces utilisateur avec contrôles en temps réel, Canvas HTML5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Résultats obtenus</h4>
+                        <p>
+                            <strong>Détection de contours :</strong> Comparaison visuelle des différents algorithmes (Prewitt, Sobel, Canny) montrant leurs forces respectives. L'algorithme de Canny s'est révélé le plus performant pour détecter des contours nets avec moins de bruit.
+                        </p>
+                        <p>
+                            <strong>Fusion d'images :</strong> La technique de fusion par pyramides a produit des résultats nettement supérieurs à la fusion simple, avec des transitions naturelles entre les deux images (pomme et orange).
+                        </p>
+                        <p>
+                            <strong>Segmentation par couleur :</strong> Le système de contrôle HSV interactif permet d'isoler précisément des objets par leur couleur, créant un masque binaire efficace pour la segmentation.
+                        </p>
+                        <p>
+                            <strong>Reconnaissance de formes :</strong> Le pipeline de détection identifie avec succès les formes géométriques simples (triangles, rectangles, cercles) en analysant les contours et leurs propriétés (nombre de sommets, circularité).
+                        </p>
+                    </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Conclusion du Projet</h4>
+                        <p>
+                            Ce TP m'a permis de découvrir les bases du traitement d'images et de la vision par ordinateur, des domaines essentiels en informatique moderne. L'utilisation d'OpenCV.js offre une approche pratique et immédiate pour expérimenter avec ces concepts directement dans le navigateur.
+                        </p>
+                        <p>
+                            Les compétences acquises sont directement applicables dans de nombreux domaines : reconnaissance d'objets, analyse médicale, robotique, réalité augmentée, contrôle qualité industriel, et bien d'autres applications nécessitant l'analyse automatique d'images.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="nav-buttons">
+                <a href="../projets.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i> Retour aux projets
+                </a>
+                <div class="pagination-buttons">
+                    <a href="app-C.html" class="btn-precedent">
+                        <i class="fas fa-arrow-left"></i> Projet précédent
+                    </a>
+                    <a href="rapidos.html" class="btn-suivant">
+                        Projet suivant <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Retour en haut">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle"></span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="">
+                    <div class="image-controls">
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="resetZoom">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
