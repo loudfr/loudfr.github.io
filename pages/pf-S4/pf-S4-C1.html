@@ -42,6 +42,7 @@
         <!-- Menu desktop -->
         <div class="sections-nav">
             <div class="sections-hover-bg"></div>
+            <a href="#S6-AC1" class="section-link">PF S6</a>
             <a href="#S4-AC1" class="section-link">PF S4</a>
             <a href="#portfolio-previous" class="section-link">PF S2</a>
             <a href="#auto-evaluation" class="section-link">Auto-évaluation</a>
@@ -55,12 +56,77 @@
                 <span class="dropdown-arrow">▼</span>
             </button>
             <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#S6-AC1" class="section-link mobile-section-link">Portfolio S6</a>
                 <a href="#S4-AC1" class="section-link mobile-section-link">Portfolio S4</a>
                 <a href="#portfolio-previous" class="section-link mobile-section-link">Portfolio S2</a>
                 <a href="#auto-evaluation" class="section-link mobile-section-link">Auto-évaluation</a>
                 <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
             </div>
         </div>
+
+        <section id="S6-AC1" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC1 - Choisir et implémenter les architectures adaptées
+            </h3>
+            <div class="section-content">
+                <p>
+                    Au cours de cette troisième année, j'ai appris à concevoir des architectures applicatives robustes, découplées et adaptées à des environnements multi-supports. Il ne s'agit plus seulement de coder une fonctionnalité, mais de structurer le code pour qu'il soit scalable, maintenable et performant. <br><br>
+                    Dans le cadre de notre projet majeur SAE5 (Application de Gestion des Dépôts), nous avons fait le choix d'implémenter une architecture de type RESTful utilisant le frameworkFlask (Python) pour le backend, assurant une séparation claire entre la logique métier et l'interface utilisateur. Cette structure en couches (Modèles, Routes, Services) permet d'exposer les données des points de collecte sous forme de flux JSON standardisés, rendant le backend totalement agnostique du support client (qu'il s'agisse de notre frontend web en Jinja2/JavaScript ou d'une future application mobile).
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/jardin/architecture.png" alt="Diagramme d'architecture de la SAE5" class="project-image clickable-image" data-title="Architecture en couches et API REST Flask">
+                    <figcaption>Diagramme d'architecture découplée de l'application Flask</figcaption>
+                </div>
+                <p>
+                    Par ailleurs, pour la persistance des données, l'utilisation de l'ORM SQLAlchemy a permis d'isoler la logique relationnelle de la base de données (SQLite en développement, MariaDB en cible). Cette abstraction architecturale facilite le passage d'un SGBD à un autre sans impacter le reste du code applicatif, répondant ainsi aux contraintes de flexibilité d'un projet informatique moderne.
+                </p>
+            </div>
+        </section>
+
+        <section id="S6-AC2" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC2 - Faire évoluer une application existante
+            </h3>
+            <div class="section-content">
+                <p>
+                    L'adaptation et l'évolution de bases de code héritées ("legacy code") constituent un enjeu majeur du Parcours A. J'ai développé une méthodologie rigoureuse pour auditer, corriger et enrichir des applications existantes sans introduire de régressions. <br><br>
+                    Lors des phases d'évolution de nos projets de BUT3, nous avons dû reprendre des modules existants pour y intégrer de nouvelles fonctionnalités complexes, telles que le filtrage en temps réel par critères géographiques ou la visualisation cartographique interactive via des technologies WebGL. 
+                </p>
+                <p>
+                    Pour faire évoluer ce code en toute sécurité, j'ai mis en place un workflow basé sur Git, utilisant des branches de fonctionnalités ("feature branches") et des revues de code systématiques. L'approche a consisté à encapsuler les modifications dans le modèle ORM `Depot` existant en y ajoutant les attributs de géolocalisation (latitude et longitude) tout en garantissant l'indempotence du script d'initialisation (<code>init_db.py</code>`). Cela a permis d'assurer que l'application continue de fonctionner pour les utilisateurs actuels tout en offrant les nouvelles fonctionnalités de cartographie.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/jardin/depots.png" alt="Interface de filtrage dynamique" class="project-image clickable-image" data-title="Évolution de l'interface : intégration du filtre dynamique">
+                    <figcaption>Interface utilisateur après l'évolution du module de recherche en temps réel</figcaption>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section id="S6-AC3" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC3 - Intégrer des solutions dans un environnement de production
+            </h3>
+            <div class="section-content">
+                <p>
+                    En troisième année, l'accent a été mis sur la culture DevOps, la validation automatique du code et l'assurance qu'une application puisse être intégrée et déployée de manière fiable et reproductible dans un environnement de production. <br><br>
+                    Dans le cadre du projet <b>TP Automatisation - CI complète</b>, j'ai mis en place une chaîne d'intégration continue (CI) robuste afin d'automatiser la phase de validation avant toute livraison. Pour ce faire, j'ai configuré un pipeline de déploiement qui exécute de manière systématique l'ensemble de notre suite de tests unitaires développée sous PHPUnit (<a href="https://gitlab.univ-lorraine.fr/e9267u/tp-automatisation-ci-complete" target="_blank">voir le dépôt du projet</a>). Ce processus permet de garantir qu'aucune régression logicielle ne vienne corrompre l'environnement de production lors d'une mise à jour.
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/autres/pipeline.png" alt="Exécution réussie des tests PHPUnit" class="project-image clickable-image" data-title="Pipeline CI : Validation des tests unitaires">
+                    <figcaption>Pipeline CI validant le passage des tests sous PHPUnit</figcaption>
+                </div>
+                <p>
+                    L'un des défis majeurs a été de structurer les tests pour qu'ils s'adaptent dynamiquement à l'environnement d'exécution (local vs conteneur de build CI). Dans la classe <code>DatabaseTest.php</code>, j'ai configuré les méthodes de cycle de vie <code>setUp()</code> et <code>tearDown()</code> pour basculer dynamiquement l'application en mode d'évaluation via la variable d'environnement <code>APP_ENV=testing</code>. De plus, afin d'éviter le blocage de la chaîne de déploiement en cas d'indisponibilité momentanée du serveur de données, j'ai implémenté une gestion rigoureuse des exceptions capturant les erreurs de connexion au bloc <code>PDO</code> et exploitant la méthode <code>$this->markTestSkipped()</code>.
+                </p>
+                <p>
+                    Parallèlement, la validation de la logique métier a été sécurisée via le fichier <code>WelcomeRobotTest.php</code>, où j'ai mis en place des assertions strictes (comme <code>assertStringContainsString</code> et <code>assertMatchesRegularExpression</code>) pour valider les formats de dates et de chaînes de caractères attendus en production. Grâce à cette automatisation, chaque commit poussé sur la branche principale déclenche l'isolation de l'application, l'installation des dépendances Composer, et la validation des tests, sécurisant ainsi l'ensemble du workflow de livraison applicative.
+                </p>
+            </div>
+        </section>
 
         <section id="S4-AC1" class="pf-s4">
             <h3 class="section-toggle">
