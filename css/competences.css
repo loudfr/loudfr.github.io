@@ -680,6 +680,9 @@ code {
     font-weight: 500;
 }
 
+b {
+    color: var(--bleu)!important;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

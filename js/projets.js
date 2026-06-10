@@ -141,7 +141,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Jikan': 'projets-details/jikan.html',
                 'My Band': 'projets-details/my-band.html',
                 'Projets en C': 'projets-details/app-C.html',
-                'Bibliothèque OpenCV': 'projets-details/opencv-traitement-image.html'
+                'Bibliothèque OpenCV': 'projets-details/opencv-traitement-image.html',
+                'Jardins de Cocagne': 'projets-details/asso-jardin.html',
+                'Parc d\'attractions': 'projets-details/parc-attraction.html'
             };
             
             const route = projectRoutes[projectTitle];

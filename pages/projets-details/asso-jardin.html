@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louise - Projet SAE5 Application de gestion des dépôts</title>
+    <link class="icon" type="image/x-icon" href="../../imgs/ld.ico">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/project-detail.css">
+    <link rel="stylesheet" href="../../css/competences.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../js/header.js"></script>
+    <script src="../../js/portfolio.js"></script>
+    <link rel="stylesheet" href="../../css/footer.css">
+    <script src="../../js/footer.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ94WH1E75"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MQ94WH1E75');
+    </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="back-to-projects">
+            <a href="../projets.html">Retour aux projets</a>
+        </div>
+        
+        <section class="project-detail-hero">
+            <div class="hero-content">
+                <h1>SAE5 - Application de Gestion des Dépôts</h1>
+                <p class="project-subtitle">Plateforme web complète pour la gestion et la cartographie d'un réseau de points de collecte collaboratifs</p>
+                <div class="project-meta">
+                    <span class="project-period">BUT 3 - Semestre 5</span>
+                    <span class="project-team">Projet collectif</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/loudfr/jardin" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Repository GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../../imgs/jardin/logo.png" alt="Illustration du projet SAE5" class="clickable-image" data-title="Plateforme SAE5 - Gestion des dépôts">
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="content-grid">
+                <div class="project-images">
+                    <h4>Aperçu du projet</h4>
+                    <div class="images-gallery">
+                        <img src="../../imgs/jardin/depots.png" alt="Page d'accueil SAE5" class="gallery-image clickable-image" data-title="Interface d'accueil de l'application">
+                        <img src="../../imgs/jardin/jardin.png" alt="Carte interactive des dépôts" class="gallery-image clickable-image" data-title="Visualisation cartographique des dépôts géolocalisés">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="info-section">
+                        <h4>Description du projet</h4>
+                        <p>
+                            <strong>SAE5</strong> est une application web moderne développée en <strong>Flask</strong> (Python) pour gérer et visualiser un réseau collaboratif de <strong>dépôts de partage et de collecte</strong> dans la région des Vosges.
+                        </p>
+                        <p>
+                            Cette plateforme centralise les informations sur 25+ points de collecte, offrant une interface interactive avec <strong>cartographie géolocalisée</strong>, recherche, et gestion documentaire. Le projet englobe l'architecture complète d'une application web moderne : backend RESTful, frontend dynamique, base de données relationnelle, et containerisation Docker.
+                        </p>
+                        <p>
+                            Ce projet répond à un vrai besoin : centraliser et rendre accessible le réseau de dépôts collaboratifs pour les utilisateurs finaux. Au-delà de l'application elle-même, l'objectif pédagogique était de maîtriser l'architecture complète d'une application web modélisée et de comprendre les défis de l'intégration frontend/backend, ainsi que les bonnes pratiques DevOps.
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Technologies utilisées</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python 3.12</span>
+                            <span class="tech-item">Flask 3.1</span>
+                            <span class="tech-item">SQLAlchemy</span>
+                            <span class="tech-item">SQLite</span>
+                            <span class="tech-item">HTML5 / CSS3</span>
+                            <span class="tech-item">JavaScript / WebGL</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Gunicorn</span>
+                            <span class="tech-item">GitHub Actions</span>
+                            <span class="tech-item">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Fonctionnalités clés</h4>
+                        <ul>
+                            <li><strong>Modules & Endpoints :</strong> Landing page d'accueil (/), liste des dépôts (/depots) avec affichage tabulaire, espace jardin (/jardin) et section de téléchargement des rendus (/documents).</li>
+                            <li><strong>Recherche et filtrage :</strong> Système dynamique côté client (depots-search.js) pour filtrer les dépôts en temps réel par nom, ville ou code postal.</li>
+                            <li><strong>Cartographie interactive :</strong> Visualisation WebGL (depots-map.js) des dépôts avec géolocalisation fluide basée sur les coordonnées longitude et latitude intégrées au modèle.</li>
+                            <li><strong>Données gérées en BDD :</strong> Stockage structuré de chaque point de collecte (nom, capacité de 20 à 100 emplacements, adresse complète, coordonnées GPS).</li>
+                            <li><strong>Données brutes :</strong> API REST exposant de manière transparente les données géolocalisées au format JSON via la route dédiée.</li>
+                            <li><strong>Automatisation & Pipeline :</strong> Initialisation automatique de la BDD au démarrage (init_db.py) et intégration continue via GitHub Actions pour la validation.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Défis techniques rencontrés</h4>
+                        <ul>
+                            <li><strong>Architecture complète & Intégration :</strong> Coordination et passage correct des données du backend Flask (templating Jinja2) au JavaScript frontend au format JSON.</li>
+                            <li><strong>Gestion des données & Modélisation :</strong> Conception du schéma SQLAlchemy pour stocker la géolocalisation, la capacité, et assurer l'intégrité ainsi que la population automatique (idempotence) de la BDD.</li>
+                            <li><strong>Interface dynamique & Cartographie :</strong> Utilisation performante de WebGL pour afficher plus de 25 marqueurs géolocalisés de manière fluide et réactive côté client.</li>
+                            <li><strong>Conteneurisation & Routage :</strong> Gestion rigoureuse des chemins d'accès au sein du conteneur Docker, configuration des routes statiques pour la pile de fichiers du dossier static/, et gestion cohérente des URLs relatives.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Compétences développées</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <h5>Front-end Web</h5>
+                                <p>HTML5, CSS3, JavaScript Vanilla (manipulation du DOM), interactions en temps réel, intégration WebGL pour cartographie</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Back-end Web</h5>
+                                <p>Python 3.12, Flask 3.1, Architecture MVC, Routage, API RESTful, Sérialisation JSON, Serveur WSGI Gunicorn</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Base de Données</h5>
+                                <p>SQLite, SQLAlchemy (ORM), Modélisation relationnelle, Pattern Factory pour l'initialisation automatique, persistance et intégrité des données</p>
+                            </div>
+                            <div class="skill-item">
+                                <h5>Déploiement</h5>
+                                <p>Docker (Containerisation complète, images slim), DevOps basique, CI/CD avec pipelines GitHub Actions, gestion des environnements local vs production</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Conclusion du Projet</h4>
+                        <p>
+                            Ce projet d'application de gestion des dépôts collaboratifs constitue une expérience complète de développement full-stack ancrée dans un besoin concret. Il m'a permis de consolider la maîtrise du cycle requête-réponse HTTP, de concevoir des architectures modulaires et scalables grâce à la conteneurisation, et de proposer une UX interactive riche incluant de la géolocalisation.
+                        </p>
+                        <p>
+                            L'accent mis sur les bonnes pratiques DevOps (Docker, Git, GitHub Actions) couplé à une documentation soignée (README, commentaires, rapports PDF) m'a permis de comprendre les enjeux essentiels de la maintenance applicative et du déploiement agile en production.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="nav-buttons">
+                <a href="../projets.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i> Retour aux projets
+                </a>
+                <div class="pagination-buttons">
+                    <a href="votre-projet-precedent.html" class="btn-precedent">
+                        <i class="fas fa-arrow-left"></i> Projet précédent
+                    </a>
+                    <a href="votre-projet-suivant.html" class="btn-suivant">
+                        Projet suivant <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Retour en haut">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle"></span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-container">
+                    <img id="modalImage" src="" alt="">
+                    <div class="image-controls">
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="resetZoom">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
