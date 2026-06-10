@@ -684,6 +684,15 @@ b {
     color: var(--bleu)!important;
 }
 
+.back-to-portfolios {
+    color: var(--rose);
+}
+
+.back-to-portfolios:hover {
+    color: var(--bleu);
+    text-decoration: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .portfolio-section {

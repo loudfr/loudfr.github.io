@@ -32,6 +32,7 @@
         </button>
         
         <section id="competence-hero">
+            <a href="../portfolio.html" class="back-to-portfolios">Retour aux portfolios</a>
             <h1>Compétence 2</h1>
             <h3>Optimiser des applications informatiques</h3>
             <p class="competence-description">
@@ -42,6 +43,7 @@
         <!-- Menu desktop -->
         <div class="sections-nav">
             <div class="sections-hover-bg"></div>
+            <a href="#S6-AC1" class="section-link">PF S6</a>
             <a href="#S4-AC1" class="section-link">PF S4</a>
             <a href="#portfolio-previous" class="section-link">PF S2</a>
             <a href="#auto-evaluation" class="section-link">Auto-évaluation</a>
@@ -61,6 +63,58 @@
                 <a href="#conclusion" class="section-link mobile-section-link">Conclusion</a>
             </div>
         </div>
+
+        <section id="S6-AC1" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC1 - Anticiper les résultats des diverses métriques (temps d'exécution, occupation mémoire)
+            </h3>
+            <div class="section-content">
+                <p>
+                    L'optimisation commence dès la phase de conception par une analyse théorique de l'impact des algorithmes sur les ressources de la machine. J'ai appris à anticiper et calculer la complexité algorithmique temporelle et spatiale avant même l'écriture des lignes de code. <br><br>
+                    Lors de la manipulation de volumes de données croissants (comme l'analyse des logs d'accès ou la recherche multicritères parmi de nombreux points de collecte), j'ai mis en pratique l'analyse de complexité (notations Grand O). Par exemple, lors de la conception du module de recherche côté client, j'ai anticipé l'impact d'une recherche linéaire $O(N)$ face à une structure de données indexée. En évaluant en amont l'occupation mémoire en fonction de la taille de la base SQLite, nous avons pu dimensionner correctement la mémoire allouée au sein de notre conteneur Docker, évitant ainsi les crashs de type *Out Of Memory (OOM)* en production.
+                </p>
+                <p>
+                    Cette anticipation des métriques s'applique également chez SIDev, notamment lors de la phase de transition entre les maquettes graphiques issues de <code>Figma</code> et l'intégration finale. Avant d'écrire la moindre ligne de code, j'analyse la structure visuelle pour anticiper les métriques de performance web (Core Web Vitals, temps de rendu du DOM). En concevant en amont l'imbrication de mes structures <code>Sass</code> et l'héritage de mes blocs <code>Twig</code>, j'évite la surcharge de sélecteurs et le code redondant, garantissant ainsi un chargement ultra-rapide des pages dès leur déploiement.
+                </p>
+            </div>
+        </section>
+
+        <section id="S6-AC2" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC2 - Profiler, analyser et justifier le comportement d'un code existant
+            </h3>
+            <div class="section-content">
+                <p>
+                    Face à un goulot d'étranglement ou une lenteur applicative, l'intuition ne suffit pas : il faut des données factuelles. J'ai appris à utiliser des outils de profilage pour identifier précisément les sections de code consommatrices en temps d'exécution ou en mémoire. <br><br>
+                    Dans nos projets de traitement de données, j'ai mis en œuvre des outils de*profiling (tels que <code>cProfile</code> en Python ou les outils de performance des DevTools de Chrome pour la partie JavaScript). L'analyse des traces d'exécution nous a permis de découvrir que la lenteur lors du chargement initial de la carte interactive ne provenait pas du rendu WebGL en lui-même, mais du nombre excessif de requêtes SQL redondantes (problème du N+1 requêtes) générées par l'ORM. 
+                </p>
+                <div class="project-image-container">
+                    <img src="../../imgs/jardin/documents.png" alt="Analyse des performances de chargement" class="project-image clickable-image" data-title="Profilage des requêtes et chargement des ressources">
+                    <figcaption>Analyse des temps de réponse et de rendu de l'interface applicative</figcaption>
+                </div>
+                <p>
+                    En modifiant nos requêtes SQLAlchemy pour inclure des jointures anticipées, j'ai pu diviser le temps de réponse de l'API par quatre, justifiant ainsi scientifiquement les modifications apportées au code par des métriques avant/après.
+                </p>
+            </div>
+        </section>
+
+        <section id="S6-AC3" class="pf-s4">
+            <h3 class="section-toggle">
+                <span class="toggle-triangle"></span>
+                S6 - AC3 - Choisir et utiliser les bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, IA, jeux vidéos, parallélisme, calcul formel)
+            </h3>
+            <div class="section-content">
+                <p>
+                    Un bon développeur sait quand réinventer la roue et quand s'appuyer sur l'état de l'art technologique. Selon le domaine d'application visé (IA, imagerie, parallélisme), j'ai appris à évaluer, sélectionner et intégrer les bibliothèques spécialisées les plus performantes. <br><br>
+                    Par exemple, pour les besoins de visualisation cartographique et de traitement de données graphiques de nos applications, l'utilisation du JavaScript standard pour manipuler des centaines d'éléments du DOM aurait provoqué d'importants ralentissements. Nous avons donc sélectionné des méthodes dédiées à l'**imagerie et à la visualisation avancée (WebGL)**. 
+                </p>
+                <p>
+                    De même, pour les projets de traitement d'images ou d'analyse matricielle abordés au cours du BUT (notamment avec <code>OpenCV</code> ou <code>NumPy</code>), j'ai compris l'importance d'utiliser des bibliothèques compilées en C/C++ sous le capot. L'utilisation des opérations vectorisées de NumPy, à la place de boucles `for` imbriquées traditionnelles en Python, m'a permis d'optimiser radicalement les calculs mathématiques, illustrant ma capacité à choisir l'outil optimal pour un domaine technique précis.
+                </p>
+            </div>
+        </section>
 
         <section id="S4-AC1" class="pf-s4">
             <h3 class="section-toggle">
