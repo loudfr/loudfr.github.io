@@ -190,7 +190,7 @@ body {
     padding: 0 20px;
 }
 
-#AC1, #AC2, #AC3, #AC4, #portfolio-previous, #conclusion, #auto-evaluation {
+#AC1, #AC2, #AC3, #AC4, .pf-s4, #portfolio-previous, #conclusion, #auto-evaluation {
     max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
@@ -374,6 +374,7 @@ a {
 }
 
 .section-toggle {
+    color: var(--bleu);
     cursor: pointer;
     display: flex;
     align-items: center;
